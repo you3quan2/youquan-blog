@@ -1,8 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-03-26T05:54:52-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">An Example Markdown Post</title><link href="https://you3quan2.github.io/youquan-blog/markdown/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="An Example Markdown Post" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/markdown/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/markdown/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h1 id=&quot;example-markdown-post&quot;&gt;Example Markdown Post&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-03-26T07:19:20-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Setting Up Git and Gitlab on Linux Ubuntu</title><link href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="Setting Up Git and Gitlab on Linux Ubuntu" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 
-&lt;h2 id=&quot;basic-setup&quot;&gt;Basic setup&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we will learn:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;How to setup Git in our Linux workstation.&lt;/li&gt;
+  &lt;li&gt;How to push C codes from our workstation to our Gitlab’s repository.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ubuntu (Mine is 18.04.4 LTS, check yours with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/os-release&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;CLion (An IDE for C++ and C by JetBrains)&lt;/li&gt;
+  &lt;li&gt;Git. It can be installed using the following commands:
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-add-repository ppa:git-core/ppa
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;xclip for retrieving SSH keys. To install xclip, we can run:
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;xclip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Gitlab - Create an account &lt;a href=&quot;https://about.gitlab.com/&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once we have all these ready, then we are good to go!&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-git&quot;&gt;Setting up Git&lt;/h2&gt;
+&lt;p&gt;First, check if we have Git installed by typing the following command in our terminal:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Git version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The command tells us which Git version we have on our workstation. If you don’t receive a &lt;code class=&quot;highlighter-rouge&quot;&gt;Git version&lt;/code&gt; message, it means that you need to install Git (check on the &lt;code class=&quot;highlighter-rouge&quot;&gt;Requirements&lt;/code&gt; section).&lt;/p&gt;
+
+&lt;p&gt;https://about.gitlab.com/&lt;/p&gt;
+
+&lt;p&gt;, and Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-filename.md&lt;/code&gt;&lt;/p&gt;
 
@@ -117,7 +148,7 @@ wget https://example.com/cat_photo1.png
       &lt;p&gt;This is the footnote. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Example Markdown Post</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test.html">&lt;!--
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Learning Outcomes</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/jupyter/2020/02/20/test.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
