@@ -1,15 +1,47 @@
 ---
 toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
-categories: [markdown]
-title: An Example Markdown Post
+description: A tutorial on how to setup Git and Gitlab on Linux Ubuntu.
+categories: [git, gitlab, ubuntu, clion, c, programming]
+title: Setting Up Git and Gitlab on Linux Ubuntu
 ---
-# Example Markdown Post
 
-## Basic setup
+## Learning Outcomes
 
-Jekyll requires blog post files to be named according to the following format:
+In this tutorial, we will learn:
+- How to setup Git in our Linux workstation.
+- How to push C codes from our workstation to our Gitlab's repository.
+
+## Requirements
+- Ubuntu (Mine is 18.04.4 LTS, check yours with the command `cat /etc/os-release`)
+- CLion (An IDE for C++ and C by JetBrains)
+- Git. It can be installed using the following commands:
+```shell
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+```
+- xclip for retrieving SSH keys. To install xclip, we can run:
+```shell
+sudo apt install xclip
+```
+- Gitlab - Create an account [here](https://about.gitlab.com/)
+
+Once we have all these ready, then we are good to go!
+
+## Setting up Git
+First, check if we have Git installed by typing the following command in our terminal:
+```shell
+Git version
+```
+The command tells us which Git version we have on our workstation. If you don't receive a `Git version` message, it means that you need to install Git (check on the `Requirements` section).
+
+
+https://about.gitlab.com/
+
+
+
+, and Jekyll requires blog post files to be named according to the following format:
 
 `YEAR-MONTH-DAY-filename.md`
 
