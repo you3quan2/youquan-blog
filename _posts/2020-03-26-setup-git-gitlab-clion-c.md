@@ -34,10 +34,92 @@ First, check if we have Git installed by typing the following command in our ter
 ```shell
 Git version
 ```
-The command tells us which Git version we have on our workstation. If you don't receive a `Git version` message, it means that you need to install Git (check on the `Requirements` section).
+
+The command tells us which Git version we have on our workstation. If you don't receive a `Git version` message, it means that you need to install Git (check on the `Requirements` section). Next, we need to configure our Git username and email address, since every Git commit will use this information to identify us as the author.
+
+Add our Git username and email by using the following commands:
+```shell
+git config --global user.name "[your_username]"
+git config --global user.email "[your_email_address]@[yourdomain].com"
+```
+
+## Generating a SSH key pair for our Gitlab account
+Open a new terminal on Linux and generate a new ED25519 SSH key pair:
+```shell
+ssh-keygen -t ed25519 -C "[your_email_address]@[yourdomain].com"
+```
+
+ED25519 is the most recommended public-key algorithm available today! You can read more about it [here](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54).
+
+We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH pair. Both of these can be ignore by pressing `ENTER`. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key's randomart image.
+
+```shell
+Your identification has been saved in ~/.ssh/id_ed25519.
+Your public key has been saved in ~/.ssh/id_ed25519.pub.
+The key fingerprint is:
+SHA256:XXX [your_email_address]@[yourdomain].com
+The key's randomart image is:
++--[ED25519 256]--+
+|     .*=XXo      |
+|     .oOO=o      |
+|     .+o+o       |
+|   .o..=o.       |
+|  E o*.oS.       |
+|   .+.+ .        |
+|  . o=           |
+|.+ o.o.          |
+|* o++..          |
++----[SHA256]-----+
+```
+
+## Adding our SSH key pair into the Gitlab account
+To retrieve our SSH key pair, we first need to save the key pair into a text file using xclip:
+```shell
+xclip -sel clip < ~/.ssh/id_ed25519.pub -o > ~/gitlabsshkeypair.txt
+```
+
+Now, add the SSH key pair into our Gitlab account by following these steps:
+1. Open the `gitlabsshkeypair.txt` and copy our SSH key pair.
+1. Open the Gitlab account in a browser, click the Gitlab avatar in the upper right corner and select Settings.
+1. Navigate to `SSH Keys` and paste the SSH key pair which we have copied to the `Key` field.
+1. Fill in the `Title` text box. It can be anything we like. We can leave the `Expires at` text box empty.
+1. Click the `Add key` button.
+
+## Testing that everything is set up correctly
+Let's test if everything is set up correctly by typing the following line into our terminal:
+```shell
+ssh -T git@gitlab.com
+```
+
+Since it is the first time we connect to Gitlab via SSH, we will be asked to verify the authenticity of the GitLab host we are connecting to. We are supposed to get a message as follow:
+```shell
+The authenticity of host 'gitlab.com (xxx.xxx.xxx.xxx)' can't be established.
+ECDSA key fingerprint is SHA256:XXXX.
+Are you sure you want to continue connecting (yes/no)? 
+```
+
+Type `yes`. We will get a warning message followed by a welcome message:
+```shell
+Warning: Permanently added 'gitlab.com (xxx.xxx.xxx.xxx)' (ECDSA) to the list of known hosts.
+Welcome to GitLab, [your_Gitlab_username]!
+```
+
+## Push our code from CLion to Gitlab
+Suppose we have created a C Project and this project is stored in a folder named `CProject` and we want to push this project into our Gitlab's repository. To achieve this, we need to use the `init` command to Git to begin tracking the directory
+
+Now, navigate to this folder and initiliase this di
 
 
-https://about.gitlab.com/
+`~/CLionProjects/CProject`
+
+
+answer yes to add GitLab.com to the list of trusted hosts:
+
+yes
+Warning: Permanently added 'gitlab.com,35.231.145.151' (ECDSA) to the list of known hosts.
+
+
+
 
 
 
