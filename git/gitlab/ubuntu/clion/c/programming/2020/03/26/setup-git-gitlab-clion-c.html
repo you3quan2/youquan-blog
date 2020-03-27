@@ -191,7 +191,7 @@ git config <span class="nt">--global</span> user.email <span class="s2">"[your_e
 
 <p>ED25519 is the most recommended public-key algorithm available today! You can read more about it <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">here</a>.</p>
 
-<p>We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH pair. Both of these can be ignore by pressing <code class="highlighter-rouge">ENTER</code>. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key’s randomart image.</p>
+<p>We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH key pair. Both of these can be ignore by pressing <code class="highlighter-rouge">ENTER</code>. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key’s randomart image.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your identification has been saved <span class="k">in</span> ~/.ssh/id_ed25519.
 Your public key has been saved <span class="k">in</span> ~/.ssh/id_ed25519.pub.
@@ -245,7 +245,9 @@ Welcome to GitLab, <span class="o">[</span>your_Gitlab_username]!
 
 <h2 id="push-our-code-from-clion-to-gitlab">
 <a class="anchor" href="#push-our-code-from-clion-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push our code from CLion to Gitlab</h2>
-<p>Suppose we have created a C Project and this project is stored in a folder named <code class="highlighter-rouge">CProject</code> and we want to push this project into our Gitlab’s repository. To achieve this, we need to use the <code class="highlighter-rouge">init</code> command to Git to begin tracking the directory</p>
+<p>Suppose we have created a C Executable project and this project is stored in the following directory in our workstation: <code class="highlighter-rouge">~/CLionProjects/CProject</code>. In order to push this project to our Gitlab’s account, we need to creat a new repository in Gitlab.</p>
+
+<p>a folder named <code class="highlighter-rouge">CProject</code> and now we want to push this project into our Gitlab’s repository. To achieve this, we need to use the <code class="highlighter-rouge">init</code> command to Git to begin tracking the directory</p>
 
 <p>Now, navigate to this folder and initiliase this di</p>
 
