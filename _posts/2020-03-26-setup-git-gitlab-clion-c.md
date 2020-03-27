@@ -51,7 +51,7 @@ ssh-keygen -t ed25519 -C "[your_email_address]@[yourdomain].com"
 
 ED25519 is the most recommended public-key algorithm available today! You can read more about it [here](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54).
 
-We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH pair. Both of these can be ignore by pressing `ENTER`. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key's randomart image.
+We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH key pair. Both of these can be ignore by pressing `ENTER`. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key's randomart image.
 
 ```shell
 Your identification has been saved in ~/.ssh/id_ed25519.
@@ -105,7 +105,12 @@ Welcome to GitLab, [your_Gitlab_username]!
 ```
 
 ## Push our code from CLion to Gitlab
-Suppose we have created a C Project and this project is stored in a folder named `CProject` and we want to push this project into our Gitlab's repository. To achieve this, we need to use the `init` command to Git to begin tracking the directory
+Suppose we have created a C Executable project and this project is stored in the following directory in our workstation: `~/CLionProjects/CProject`. In order to push this project to our Gitlab's account, we need to creat a new repository in Gitlab.
+
+
+
+
+a folder named `CProject` and now we want to push this project into our Gitlab's repository. To achieve this, we need to use the `init` command to Git to begin tracking the directory
 
 Now, navigate to this folder and initiliase this di
 
