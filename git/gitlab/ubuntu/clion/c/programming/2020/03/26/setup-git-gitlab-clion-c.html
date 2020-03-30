@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -128,6 +128,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
 <li class="toc-entry toc-h2"><a href="#setting-up-git">Setting up Git</a></li>
 <li class="toc-entry toc-h2"><a href="#generating-a-ssh-key-pair-for-our-gitlab-account">Generating a SSH key pair for our Gitlab account</a></li>
@@ -135,14 +136,18 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#testing-that-everything-is-set-up-correctly">Testing that everything is set up correctly</a></li>
 <li class="toc-entry toc-h2"><a href="#push-our-project-from-our-workstation-to-gitlab">Push our project from our workstation to Gitlab</a></li>
 <li class="toc-entry toc-h2"><a href="#update-changes-in-our-workstation-to-gitlab">Update changes in our workstation to Gitlab</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
-
 <p>In this tutorial, we will learn:</p>
 <ul>
   <li>How to setup Git in our Linux workstation.</li>
-  <li>How to push C codes from our workstation to our Gitlab’s repository.</li>
+  <li>How to push C codes from our workstation to our Gitlab’s repository using Git.</li>
 </ul>
+
+<h2 id="why-we-need-to-learn-this">
+<a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
+<p>Imagine you are part of a large team which works on a software project. How you are going to keep track of the changes you and your team members have made over time? This is when a version control system like Git comes into handy. Git allows us to manage these ever-changing projects by storing the information about these projects in the data structure called a repository. In this tutorial, we are going to use Git along with Gitlab, a web-based Git repository. Gitlab allows a team of software developers to manage a single software project from anywhere on the earth, as long as they have Internet access. However, bear in mind that it is still possible to manage a software project with Git without a web-based repository and Internet access. You can read more about this <a href="https://medium.com/@udnisap/share-collaborate-code-with-git-without-github-or-internet-2a71991c0089">here</a>.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -161,8 +166,7 @@ window.onload = wrap_img;
 <div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>xclip
 </code></pre></div>    </div>
   </li>
-  <li>Gitlab - Create an account <a href="https://about.gitlab.com/">here</a>
-</li>
+  <li>Gitlab. Create an account <a href="https://about.gitlab.com/">here</a>.</li>
 </ul>
 
 <p>Once we have all these ready, then we are good to go!</p>
@@ -188,7 +192,7 @@ git config <span class="nt">--global</span> user.email <span class="s2">"[your_e
 
 <p>ED25519 is the most recommended public-key algorithm available today! You can read more about it <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">here</a>.</p>
 
-<p>We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH key pair. Both of these can be ignore by pressing <code class="highlighter-rouge">ENTER</code>. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key’s randomart image.</p>
+<p>We will be asked to input a file path to save our SSH key pair and a passphrase to secure our new SSH key pair. Both of these can be ignored by pressing <code class="highlighter-rouge">ENTER</code>. If we did this correctly, we will get multiple messages, telling us where our identification and public key have been saved. We will also get our key fingerprint and our key’s randomart image.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your identification has been saved <span class="k">in</span> ~/.ssh/id_ed25519.
 Your public key has been saved <span class="k">in</span> ~/.ssh/id_ed25519.pub.
@@ -217,7 +221,7 @@ The key<span class="s1">'s randomart image is:
 <p>Now, add the SSH key pair into our Gitlab account by following these steps:</p>
 <ol>
   <li>Open the <code class="highlighter-rouge">gitlabsshkeypair.txt</code> and copy our SSH key pair.</li>
-  <li>Open the Gitlab account in a browser, click the Gitlab avatar in the upper right corner and select Settings.</li>
+  <li>Open the Gitlab account in a browser, click the Gitlab avatar in the upper right corner and select <code class="highlighter-rouge">Settings</code>.</li>
   <li>Navigate to <code class="highlighter-rouge">SSH Keys</code> and paste the SSH key pair which we have copied to the <code class="highlighter-rouge">Key</code> field.</li>
   <li>Fill in the <code class="highlighter-rouge">Title</code> text box. It can be anything we like. We can leave the <code class="highlighter-rouge">Expires at</code> text box empty.</li>
   <li>Click the <code class="highlighter-rouge">Add key</code> button.</li>
@@ -239,6 +243,7 @@ Are you sure you want to continue connecting (yes/no)?
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning: Permanently added <span class="s1">'gitlab.com (xxx.xxx.xxx.xxx)'</span> <span class="o">(</span>ECDSA<span class="o">)</span> to the list of known hosts.
 Welcome to GitLab, <span class="o">[</span>your_Gitlab_username]!
 </code></pre></div></div>
+<p>By now, we can push and pull codes between our workstation and Gitlab securely!</p>
 
 <h2 id="push-our-project-from-our-workstation-to-gitlab">
 <a class="anchor" href="#push-our-project-from-our-workstation-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push our project from our workstation to Gitlab</h2>
@@ -273,7 +278,9 @@ git push <span class="nt">-u</span> origin master
 
 <h2 id="update-changes-in-our-workstation-to-gitlab">
 <a class="anchor" href="#update-changes-in-our-workstation-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update changes in our workstation to Gitlab</h2>
-<p>Now, we have the exact same project in our workstation and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in our workstation. Here are the codes in the <code class="highlighter-rouge">main.c</code> file:</p>
+<p>Now, we have the exact same project in our workstation and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in our workstation. I will show you an example how we can do this.</p>
+
+<p>In my C project, there is a <code class="highlighter-rouge">main.c</code> file which contains the following codes:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#include &lt;stdio.h&gt;
 </span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
@@ -281,7 +288,7 @@ git push <span class="nt">-u</span> origin master
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p>In my case, I updated my <code class="highlighter-rouge">main.c</code> file and changed the line from <code class="highlighter-rouge">Hello, World!</code> to <code class="highlighter-rouge">Goodbye, World!</code>:</p>
+<p>I updated my <code class="highlighter-rouge">main.c</code> file and changed the line from <code class="highlighter-rouge">Hello, World!</code> to <code class="highlighter-rouge">Goodbye, World!</code>:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#include &lt;stdio.h&gt;
 </span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
@@ -289,6 +296,8 @@ git push <span class="nt">-u</span> origin master
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<p><em>Note:</em> You can make changes in any files you like within your project.</p>
+
 <p>To update these changes to my Gitlab project, I used:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
 git commit <span class="nt">-m</span> <span class="s2">"COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"</span>
@@ -299,6 +308,9 @@ git push origin master
 <p>Go to the Gitlab account and check on the specific file which we have modified. We are supposed to see the changes which we have made. If we click on the <code class="highlighter-rouge">History</code> button, we will see our commit changes:</p>
 
 <p><img src="/youquan-blog/images/blog1_commitchanges.png" alt="" title="Commit changes in Gitlab"></p>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
