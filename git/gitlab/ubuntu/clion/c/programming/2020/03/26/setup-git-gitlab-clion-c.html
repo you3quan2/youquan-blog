@@ -91,7 +91,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -129,7 +129,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#generating-a-ssh-key-pair-for-our-gitlab-account">Generating a SSH key pair for our Gitlab account</a></li>
 <li class="toc-entry toc-h2"><a href="#adding-our-ssh-key-pair-into-the-gitlab-account">Adding our SSH key pair into the Gitlab account</a></li>
 <li class="toc-entry toc-h2"><a href="#testing-that-everything-is-set-up-correctly">Testing that everything is set up correctly</a></li>
-<li class="toc-entry toc-h2"><a href="#push-our-code-from-clion-to-gitlab">Push our code from CLion to Gitlab</a></li>
+<li class="toc-entry toc-h2"><a href="#push-our-project-from-our-workstation-to-gitlab">Push our project from our workstation to Gitlab</a></li>
+<li class="toc-entry toc-h2"><a href="#update-changes-in-our-workstation-to-gitlab">Update changes in our workstation to Gitlab</a></li>
 <li class="toc-entry toc-h2"><a href="#basic-formatting">Basic formatting</a></li>
 <li class="toc-entry toc-h2"><a href="#lists">Lists</a></li>
 <li class="toc-entry toc-h2"><a href="#boxes-and-stuff">Boxes and stuff</a></li>
@@ -243,20 +244,65 @@ Are you sure you want to continue connecting (yes/no)?
 Welcome to GitLab, <span class="o">[</span>your_Gitlab_username]!
 </code></pre></div></div>
 
-<h2 id="push-our-code-from-clion-to-gitlab">
-<a class="anchor" href="#push-our-code-from-clion-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push our code from CLion to Gitlab</h2>
-<p>Suppose we have created a C Executable project and this project is stored in the following directory in our workstation: <code class="highlighter-rouge">~/CLionProjects/CProject</code>. In order to push this project to our Gitlab’s account, we need to creat a new repository in Gitlab.</p>
+<h2 id="push-our-project-from-our-workstation-to-gitlab">
+<a class="anchor" href="#push-our-project-from-our-workstation-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push our project from our workstation to Gitlab</h2>
+<p>We are going to push our codes from the our workstation to our Gitlab account. In order to do this, we first need to have:</p>
+<ol>
+  <li>A project created in our workstation. In my case, I have a C Executable project created using CLion IDE and stored in the following directory: <code class="highlighter-rouge">~/CLionProjects/CProject</code>.</li>
+  <li>An empty project created in our Gitlab account, where we are going to push the project’s codes from our workstation into this empty project.</li>
+</ol>
 
-<p>a folder named <code class="highlighter-rouge">CProject</code> and now we want to push this project into our Gitlab’s repository. To achieve this, we need to use the <code class="highlighter-rouge">init</code> command to Git to begin tracking the directory</p>
+<p>We can create a project in Gitlab account by following these steps:</p>
+<ol>
+  <li>Clik the <code class="highlighter-rouge">New Project</code> button in the upper right corner of our Gitlab account.</li>
+  <li>Give a name to our project (I used CProject) and click on <code class="highlighter-rouge">Create Project</code>.</li>
+  <li>We will be redirected to the project page. This project should be empty.</li>
+</ol>
 
-<p>Now, navigate to this folder and initiliase this di</p>
+<p>Now, go back to our workstation and go to the directory where we saved our project. First, we need to use the <code class="highlighter-rouge">init</code> command for Git to begin tracking the directory:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/CLionProjects/CProject
+git init
+</code></pre></div></div>
+<p>Note that your directory can be different than mine.</p>
 
-<p><code class="highlighter-rouge">~/CLionProjects/CProject</code></p>
+<p>Finally, use the following commands to push our project:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@gitlab.com:[yourGitLabUsername]/[yourprojectname].git
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git push <span class="nt">-u</span> origin master
+</code></pre></div></div>
+<p>In my case, I used <code class="highlighter-rouge">git remote add origin git@gitlab.com:you3quan2/cproject.git</code>.</p>
 
-<p>answer yes to add GitLab.com to the list of trusted hosts:</p>
+<p>Go to our Gitlab account and we are supposed to see the same set of codes in our workstation’s project folders and the Gitlab’s project folders.</p>
 
-<p>yes
-Warning: Permanently added ‘gitlab.com,35.231.145.151’ (ECDSA) to the list of known hosts.</p>
+<h2 id="update-changes-in-our-workstation-to-gitlab">
+<a class="anchor" href="#update-changes-in-our-workstation-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update changes in our workstation to Gitlab</h2>
+<p>Now, we have the exact same project in our workstation and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in our workstation. Here are the codes in the <code class="highlighter-rouge">main.c</code> file:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#include &lt;stdio.h&gt;
+</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>In my case, I updated my <code class="highlighter-rouge">main.c</code> file and changed the line from <code class="highlighter-rouge">Hello, World!</code> to <code class="highlighter-rouge">Goodbye, World!</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#include &lt;stdio.h&gt;
+</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Goodbye, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>To update these changes to my Gitlab project, I used:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"</span>
+git push origin master
+</code></pre></div></div>
+<p>My comment is <code class="highlighter-rouge">Change from Hello World to Goodbye World</code>.</p>
+
+<p>Go to the Gitlab account and check on the specific file which we have modified. We are supposed to see the changes which we have made. If we click on the <code class="highlighter-rouge">History</code> button, we will see our commit changes:</p>
+
+<p>Suppose we are working on our workstation and want to keep the Gitlab’s project updated with the changes we made in our</p>
 
 <p>, and Jekyll requires blog post files to be named according to the following format:</p>
 

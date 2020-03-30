@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-03-27T16:27:49-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Setting Up Git and Gitlab on Linux Ubuntu</title><link href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="Setting Up Git and Gitlab on Linux Ubuntu" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-03-30T05:38:08-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Setting Up Git and Gitlab on Linux Ubuntu</title><link href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="Setting Up Git and Gitlab on Linux Ubuntu" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 
 &lt;p&gt;In this tutorial, we will learn:&lt;/p&gt;
 &lt;ul&gt;
@@ -94,19 +94,63 @@ Are you sure you want to continue connecting (yes/no)?
 Welcome to GitLab, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;your_Gitlab_username]!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;push-our-code-from-clion-to-gitlab&quot;&gt;Push our code from CLion to Gitlab&lt;/h2&gt;
-&lt;p&gt;Suppose we have created a C Executable project and this project is stored in the following directory in our workstation: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/CLionProjects/CProject&lt;/code&gt;. In order to push this project to our Gitlab’s account, we need to creat a new repository in Gitlab.&lt;/p&gt;
+&lt;h2 id=&quot;push-our-project-from-our-workstation-to-gitlab&quot;&gt;Push our project from our workstation to Gitlab&lt;/h2&gt;
+&lt;p&gt;We are going to push our codes from the our workstation to our Gitlab account. In order to do this, we first need to have:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;A project created in our workstation. In my case, I have a C Executable project created using CLion IDE and stored in the following directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/CLionProjects/CProject&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;An empty project created in our Gitlab account, where we are going to push the project’s codes from our workstation into this empty project.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;a folder named &lt;code class=&quot;highlighter-rouge&quot;&gt;CProject&lt;/code&gt; and now we want to push this project into our Gitlab’s repository. To achieve this, we need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; command to Git to begin tracking the directory&lt;/p&gt;
+&lt;p&gt;We can create a project in Gitlab account by following these steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Clik the &lt;code class=&quot;highlighter-rouge&quot;&gt;New Project&lt;/code&gt; button in the upper right corner of our Gitlab account.&lt;/li&gt;
+  &lt;li&gt;Give a name to our project (I used CProject) and click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Create Project&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;We will be redirected to the project page. This project should be empty.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Now, navigate to this folder and initiliase this di&lt;/p&gt;
+&lt;p&gt;Now, go back to our workstation and go to the directory where we saved our project. First, we need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; command for Git to begin tracking the directory:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/CLionProjects/CProject
+git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that your directory can be different than mine.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~/CLionProjects/CProject&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Finally, use the following commands to push our project:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin git@gitlab.com:[yourGitLabUsername]/[yourprojectname].git
+git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Initial commit&quot;&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In my case, I used &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote add origin git@gitlab.com:you3quan2/cproject.git&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;answer yes to add GitLab.com to the list of trusted hosts:&lt;/p&gt;
+&lt;p&gt;Go to our Gitlab account and we are supposed to see the same set of codes in our workstation’s project folders and the Gitlab’s project folders.&lt;/p&gt;
 
-&lt;p&gt;yes
-Warning: Permanently added ‘gitlab.com,35.231.145.151’ (ECDSA) to the list of known hosts.&lt;/p&gt;
+&lt;h2 id=&quot;update-changes-in-our-workstation-to-gitlab&quot;&gt;Update changes in our workstation to Gitlab&lt;/h2&gt;
+&lt;p&gt;Now, we have the exact same project in our workstation and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in our workstation. Here are the codes in the &lt;code class=&quot;highlighter-rouge&quot;&gt;main.c&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In my case, I updated my &lt;code class=&quot;highlighter-rouge&quot;&gt;main.c&lt;/code&gt; file and changed the line from &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, World!&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Goodbye, World!&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Goodbye, World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To update these changes to my Gitlab project, I used:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;My comment is &lt;code class=&quot;highlighter-rouge&quot;&gt;Change from Hello World to Goodbye World&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Go to the Gitlab account and check on the specific file which we have modified. We are supposed to see the changes which we have made. If we click on the &lt;code class=&quot;highlighter-rouge&quot;&gt;History&lt;/code&gt; button, we will see our commit changes:&lt;/p&gt;
+
+&lt;p&gt;Suppose we are working on our workstation and want to keep the Gitlab’s project updated with the changes we made in our&lt;/p&gt;
 
 &lt;p&gt;, and Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
