@@ -14,4 +14,4 @@ This site is built with [fastpages](https://github.com/fastai/fastpages), an eas
 
 ## Contact
 
-Email me at [youquan]@[protonmail.com] if you have any questions.
+Email me at youquan[at]protonmail[dot]com if you have any questions.
