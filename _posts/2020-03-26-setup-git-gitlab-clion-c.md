@@ -104,24 +104,69 @@ Warning: Permanently added 'gitlab.com (xxx.xxx.xxx.xxx)' (ECDSA) to the list of
 Welcome to GitLab, [your_Gitlab_username]!
 ```
 
-## Push our code from CLion to Gitlab
-Suppose we have created a C Executable project and this project is stored in the following directory in our workstation: `~/CLionProjects/CProject`. In order to push this project to our Gitlab's account, we need to creat a new repository in Gitlab.
+## Push our project from our workstation to Gitlab
+We are going to push our codes from the our workstation to our Gitlab account. In order to do this, we first need to have:
+1. A project created in our workstation. In my case, I have a C Executable project created using CLion IDE and stored in the following directory: `~/CLionProjects/CProject`.
+1. An empty project created in our Gitlab account, where we are going to push the project's codes from our workstation into this empty project. 
+
+We can create a project in Gitlab account by following these steps:
+1. Clik the `New Project` button in the upper right corner of our Gitlab account.
+1. Give a name to our project (I used CProject) and click on `Create Project`.
+1. We will be redirected to the project page. This project should be empty.
+
+Now, go back to our workstation and go to the directory where we saved our project. First, we need to use the `init` command for Git to begin tracking the directory:
+```shell
+cd ~/CLionProjects/CProject
+git init
+```
+Note that your directory can be different than mine. 
+
+Finally, use the following commands to push our project:
+```shell
+git remote add origin git@gitlab.com:[yourGitLabUsername]/[yourprojectname].git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+In my case, I used `git remote add origin git@gitlab.com:you3quan2/cproject.git`.
+
+Go to our Gitlab account and we are supposed to see the same set of codes in our workstation's project folders and the Gitlab's project folders.
+
+## Update changes in our workstation to Gitlab
+Now, we have the exact same project in our workstation and Gitlab. But, we still need to update the Gitlab's project every time we made changes on the project in our workstation. Here are the codes in the `main.c` file:
+```python
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+In my case, I updated my `main.c` file and changed the line from `Hello, World!` to `Goodbye, World!`:
+```python
+#include <stdio.h>
+
+int main() {
+    printf("Goodbye, World!\n");
+    return 0;
+}
+```
+To update these changes to my Gitlab project, I used:
+```shell
+git add .
+git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+git push origin master
+```
+My comment is `Change from Hello World to Goodbye World`.
+
+Go to the Gitlab account and check on the specific file which we have modified. We are supposed to see the changes which we have made. If we click on the `History` button, we will see our commit changes:
 
 
 
-
-a folder named `CProject` and now we want to push this project into our Gitlab's repository. To achieve this, we need to use the `init` command to Git to begin tracking the directory
-
-Now, navigate to this folder and initiliase this di
+Suppose we are working on our workstation and want to keep the Gitlab's project updated with the changes we made in our 
 
 
-`~/CLionProjects/CProject`
 
-
-answer yes to add GitLab.com to the list of trusted hosts:
-
-yes
-Warning: Permanently added 'gitlab.com,35.231.145.151' (ECDSA) to the list of known hosts.
 
 
 
