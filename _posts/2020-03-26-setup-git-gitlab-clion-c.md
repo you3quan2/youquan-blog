@@ -14,7 +14,9 @@ In this tutorial, we will learn:
 - How to push C codes from our workstation to our Gitlab's repository using Git.
 
 ## Why we need to learn this?
-Imagine you are part of a large team which works on a software project. How you are going to keep track of the changes you and your team members have made over time? This is when a version control system like Git comes into handy. Git allows us to manage these ever-changing projects by storing the information about these projects in the data structure called a repository. In this tutorial, we are going to use Git along with Gitlab, a web-based Git repository. Gitlab allows a team of software developers to manage a single software project from anywhere on the earth, as long as they have Internet access. However, bear in mind that it is still possible to manage a software project with Git without a web-based repository and Internet access. You can read more about this [here](https://medium.com/@udnisap/share-collaborate-code-with-git-without-github-or-internet-2a71991c0089).
+Imagine you are part of a large team which works on a software project. How you are going to keep track of the changes you and your team members have made over time? This is when a version control system like [Git](https://git-scm.com/) comes into handy. Git allows us to manage these ever-changing projects by storing the information about these projects in the data structure called a repository. 
+
+In this tutorial, we are going to use Git along with [Gitlab](https://about.gitlab.com/), a web-based Git repository. Gitlab allows a team of software developers to manage a single software project from anywhere on the earth, as long as they have Internet access. However, bear in mind that it is still possible to manage a software project with Git without a web-based repository and Internet access. You can read more about this [here](https://medium.com/@udnisap/share-collaborate-code-with-git-without-github-or-internet-2a71991c0089).
 
 ## Requirements
 - Ubuntu (Mine is 18.04.4 LTS, check yours with the command `cat /etc/os-release`)
