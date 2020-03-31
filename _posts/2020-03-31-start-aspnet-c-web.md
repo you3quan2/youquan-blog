@@ -4,7 +4,7 @@ layout: post
 comments: true
 author: You Quan
 description: A tutorial on how to setup Git and Gitlab on Linux Ubuntu.
-categories: [visual studio, asp.net, c, web, programming]
+categories: [visual studio, asp.net, c#, web, programming]
 title: Getting Started ASP.NET Web Programming with C# #
 ---
 
