@@ -14,6 +14,6 @@ In this tutorial, we will:
 - Familiarise with the components in Visual Studio, including Solution Explorer, Toolbox, Properties and Project View.
 
 ## Why we need to learn this?
-bla bla bla
+bla bla bla ab
 
 ## Requirements
