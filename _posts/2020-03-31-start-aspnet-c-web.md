@@ -3,9 +3,9 @@ toc: true
 layout: post
 comments: true
 author: You Quan
-description: A tutorial to familiarise with Visual Studio to learn ASP\.Net web programming with C\#.
-categories: [visual studio, asp.net, c\#, web, programming]
-title: Getting Started\: ASP\.NET Web Programming with C\#
+description: A tutorial on how to setup Git and Gitlab on Linux Ubuntu.
+categories: [git, gitlab, ubuntu, clion, c, programming]
+title: Setting Up Git and Gitlab on Linux Ubuntu
 ---
 
 ## Learning Outcomes
