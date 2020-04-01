@@ -21,12 +21,12 @@ Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.m
 
 ## Create the Project
 1. Open our Visual Studio IDE and click on:
-![]({{ site.baseurl }}/images/blog2_createproject.png)
+  ![]({{ site.baseurl }}/images/blog2_createproject.png)
 
-Alternatively, click on **FILE** and **New Project**.
+  Alternatively, click on **FILE** and **New Project**.
 
 1. Choose the ASP.NET Web Application (.NET Framework). Make sure it is the C# template.
-![]({{ site.baseurl }}/images/blog2_createprojectnetframework.png)
+  ![]({{ site.baseurl }}/images/blog2_createprojectnetframework.png)
 
 
 
