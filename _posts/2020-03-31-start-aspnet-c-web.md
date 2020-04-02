@@ -10,11 +10,13 @@ title: 'Getting Started: ASP.NET Web Programming with C#'
 
 ## Learning Outcomes
 In this tutorial, we will:
-- Learn how to to setup a one-page ASP.NET web application with Visual Studio.
 - Familiarise with the components in Visual Studio, including **Solution Explorer**, **Toolbox**, **Properties** and **Project View**.
+- Learn how to to setup a one-page ASP.NET web application with Visual Studio.
 
 ## Why we need to learn this?
-I believe you are here because you want to learn ASP.NET Web Programming, and Microsoft Visual Studio is the tool which you must learn how to use as it is the defacto IDE for ASP.NET. My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. It is going to save a huge amount of time throughout our learning process later on. We can save the questions like: *Where is my toolbox?*, *Where is my button's properties?* etc.
+I believe you are here because you want/have to learn [ASP.NET Web Programming](https://dotnet.microsoft.com/apps/aspnet). To learn ASP.NET, we need to use its defacto IDE - [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
+
+My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. It is going to save a huge amount of time throughout our learning process later on if we first learn to master the tools.
 
 ## Requirements
 Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019) on how to download and install.
@@ -36,38 +38,36 @@ Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.m
 1. The new project will be opened and the **Solution Explorer** will display the details of this project (my project is **ASPNetTutorial**). That is fine if you cannot find your **Solution Explorer** now, we will give you a tour on Visual Studio in the next section.
 
 ## Familiarise with Visual Studio
-1. There are five must-know components in Visual Studio: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**. Usually, we will have the **Solution Explorer** when a project is opened. When we click on the project name in the **Solution Explorer** (mine one is **ASPNetTutorial** which highlighted in blue), we will also see the **Project Properties**:
+1. There are four must-know components in Visual Studio: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**. Usually, the **Solution Explorer** will be readily available when we open a project is opened. When we click on the project name in the **Solution Explorer** (mine is **ASPNetTutorial** which highlighted in blue), we will also see the **Project Properties**:
 ![]({{ site.baseurl }}/images/blog2_newproject.png)  
 However, if you cannot see your **Solution Explorer**, go to the top of the Visual Studio and click on **View** &rarr; **Solution Explorer**. 
   
-1. To introduce the functionalities of others components, we need to first create an empty web form. Right click on the project name (e.g. **ASPNetTutorial**), then click **Add** &rarr; **Web Form**. Give the item the name **Login** as we are going to create a simple Login interface. Now, we are supposed to have a `Login.aspx`  file as follow:  
+1. To introduce the functionalities of others components, we need to first create an empty web form. Right click on the project's name (mine is **ASPNetTutorial**), then click **Add** &rarr; **Web Form**. Name the item as **Login** because we are going to create a simple Login interface. Now, we are supposed to have a `Login.aspx` file. This file contains basic HTML codes with `<head></head>`, `<form></form>` and `<body></body>`.
 
-```python
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ASPNetTutorial.Login" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+    ```python
+    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ASPNetTutorial.Login" %>
+    
+    <!DOCTYPE html>
+    
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
     <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+    </head>
+    <body>
+      <form id="form1" runat="server">
         <div>
         </div>
-    </form>
-</body>
-</html>
-```
+      </form>
+     </body>
+     </html>
+    ```
 
-1. Below `Login.aspx` file, there is a component which I called it as **Project View**. It allows us to view our project in three different views: **Design**, **Split** and **Source**:
+1. Below the `Login.aspx` file, there is a component which I call it as **Project View**. It allows us to view our project in three different views: **Design**, **Split** and **Source**. Personally, I like **Split** view which provides us with **Source** and **Design** in the same window.
 
+1. Another important component which we will use frequently is the **Toolbox**. To add this component, go to the top of the Visual Studio and click on **View** &rarr; **Toolbox**. In the **Toolbox**, there are various types of elements which we knows as **Controls** in ASP.NET. These controls help to speed up our developmenet process. We will see how **Toolbox** and **Controls** work in the next section.  
+![]({{ site.baseurl }}/images/blog2_toolbox.png) 
 
-
-1. Another important component which we will use frequently is the **Toolbox**. To add this component, go to the top of the Visual Studio and click on **View** &rarr; **Toolbox**.
-
-
-1. 
+## Our First ASP.NET Web Page
 
 
 
