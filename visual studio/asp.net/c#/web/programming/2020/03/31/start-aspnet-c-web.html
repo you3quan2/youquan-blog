@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -128,6 +128,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
 <li class="toc-entry toc-h2"><a href="#create-the-project">Create the Project</a></li>
+<li class="toc-entry toc-h2"><a href="#familiarise-with-visual-studio">Familiarise with Visual Studio</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -150,13 +151,54 @@ window.onload = wrap_img;
   <li>
     <p>Open our Visual Studio IDE and click on:<br>
   <img src="/youquan-blog/images/blog2_createproject.png" alt=""><br>
-  Alternatively, click on <strong>FILE</strong> and <strong>New Project</strong>.</p>
+  Alternatively, click on <strong>FILE</strong> → <strong>New Project</strong>.</p>
   </li>
   <li>
     <p>Choose the ASP.NET Web Application (.NET Framework). Make sure it is the C# template.<br>
   <img src="/youquan-blog/images/blog2_createprojectnetframework.png" alt=""></p>
   </li>
+  <li>
+    <p>Configure the project by having a <strong>Project Name</strong> and <strong>Solution name</strong>. Take note on the location where the project is going to be saved. The version of framework which I am using is <strong>.NET Framework 4.7.2</strong>.  Click <strong>Create</strong>.<br>
+<img src="/youquan-blog/images/blog2_configureproject.png" alt=""></p>
+  </li>
+  <li>
+    <p>Create a new ASP.NET web application by choosing the <strong>Empty</strong> template. Click <strong>Create</strong> again.<br>
+<img src="/youquan-blog/images/blog2_createwebapp.png" alt=""></p>
+  </li>
+  <li>
+    <p>The new project will be opened and the <strong>Solution Explorer</strong> will display the details of this project (my project is <strong>ASPNetTutorial</strong>). That is fine if you cannot find your <strong>Solution Explorer</strong> now, we will give you a tour on Visual Studio in the next section.</p>
+  </li>
 </ol>
+
+<h2 id="familiarise-with-visual-studio">
+<a class="anchor" href="#familiarise-with-visual-studio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Familiarise with Visual Studio</h2>
+<ol>
+  <li>
+    <p>There are five must-know components in Visual Studio: <strong>Solution Explorer</strong>, <strong>Toolbox</strong>, <strong>Properties</strong> and <strong>Project View</strong>. Usually, we will have the Solution Explorer when a project is opened:<br>
+<img src="/youquan-blog/images/blog2_newproject.png" alt=""><br>
+However, if you cannot see your <strong>Solution Explorer</strong>, go to the top of the Visual Studio and click on <strong>View</strong> → <strong>Solution Explorer</strong>.</p>
+  </li>
+  <li>
+    <p>To introduce the functionalities of others components, we need to first create an empty web form. Right click on the project name in the <strong>Solution Explorer</strong> (mine one is <strong>ASPNetTutorial</strong> which highlighted in blue, see figure above), then click <strong>Add</strong> → <strong>Web Form</strong>. Give the item the name <strong>Login</strong> as we are going to create a simple Login interface. Now, we are supposed to have a <code class="highlighter-rouge">Login.aspx</code>  file as follow:</p>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Login.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Login"</span> <span class="o">%&gt;</span>
+
+<span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
