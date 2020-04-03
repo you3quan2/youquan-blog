@@ -71,7 +71,7 @@ However, if you cannot see your **Solution Explorer**, go to the top of the Visu
 Now, we are going to familiarise with the components in Visual Studio by creating a simple Login interface. This Login interface will have an username textbox, an username textbox and a login button. The textboxes and the button will be placed in a 3 (rows) x 2 (columns) table:
 
 |Username:    |Username's Textbox  |
-|------------ |--------------------|
+|:----------: |:------------------:|
 |Password:    |Password's Textbox  |
 |Login button |                    |
 
@@ -79,6 +79,6 @@ If you have learnt HTML, then you must know the we can manually code the layout 
  
 However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.
 
-
+1. Let's start by adding a 3 (rows) x 2 (columns) table inside the `<div></div>` tag. 
 
 
