@@ -16,7 +16,7 @@ In this tutorial, we will:
 ## Why we need to learn this?
 I believe you are here because you want/have to learn [ASP.NET Web Programming](https://dotnet.microsoft.com/apps/aspnet). To learn ASP.NET, we need to use its defacto IDE - [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
 
-My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. It is going to save a huge amount of time throughout our learning process later on if we first learn to master the tools.
+My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. It is going to save a huge amount of time throughout the learning process later if we first learn to master the tools.
 
 ## Requirements
 Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019) on how to download and install.
@@ -29,20 +29,20 @@ Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.m
 1. Choose the ASP.NET Web Application (.NET Framework). Make sure it is the C# template.  
   ![]({{ site.baseurl }}/images/blog2_createprojectnetframework.png)
 
-1. Configure the project by having a **Project Name** and **Solution name**. Take note on the location where the project is going to be saved. The version of framework which I am using is **.NET Framework 4.7.2**.  Click **Create**.  
+1. Configure the project by having a **Project name** and **Solution name**. Take note on the location where the project is going to be saved. The version of the framework which I am using is **.NET Framework 4.7.2**.  Click **Create**.  
 ![]({{ site.baseurl }}/images/blog2_configureproject.png)  
 
 1. Create a new ASP.NET web application by choosing the **Empty** template. Click **Create** again.  
 ![]({{ site.baseurl }}/images/blog2_createwebapp.png)  
 
-1. The new project will be opened and the **Solution Explorer** will display the details of this project (my project is **ASPNetTutorial**). That is fine if you cannot find your **Solution Explorer** now, we will give you a tour on Visual Studio in the next section.
+1. The new project will be opened and the **Solution Explorer** will display the details of this project (my project is **ASPNetTutorial**). That is fine if you cannot find your **Solution Explorer** now, I will give you a tour of Visual Studio in the next section.
 
 ## Familiarise with Visual Studio
-1. There are four must-know components in Visual Studio: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**. Usually, the **Solution Explorer** will be readily available when we open a project is opened. When we click on the project name in the **Solution Explorer** (mine is **ASPNetTutorial** which highlighted in blue), we will also see the **Project Properties**:
+1. There are four must-know components in Visual Studio: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**. Usually, the **Solution Explorer** will be readily available when we open a project. When we click on the project name in the **Solution Explorer** (mine is **ASPNetTutorial** which highlighted in blue), we will also see the **Project Properties**:
 ![]({{ site.baseurl }}/images/blog2_newproject.png)  
 However, if you cannot see your **Solution Explorer**, go to the top of the Visual Studio and click on **View** &rarr; **Solution Explorer**. 
   
-1. To introduce the functionalities of others components, we need to first create an empty web form. Right click on the project's name (mine is **ASPNetTutorial**), then click **Add** &rarr; **Web Form**. Name the item as **Login** because we are going to create a simple Login interface. Now, we are supposed to have a `Login.aspx` file. This file contains basic HTML codes with `<head></head>`, `<form></form>` and `<body></body>`.
+1. To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project's name (mine is **ASPNetTutorial**), then click **Add** &rarr; **Web Form**. Name the item as **Login** because we are going to create a simple Login interface. Now, we are supposed to have a `Login.aspx` file. This file contains basic HTML codes with `<head></head>`, `<form></form>` and `<body></body>`.
 
     ```python
     <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ASPNetTutorial.Login" %>
@@ -64,10 +64,22 @@ However, if you cannot see your **Solution Explorer**, go to the top of the Visu
 
 1. Below the `Login.aspx` file, there is a component which I call it as **Project View**. It allows us to view our project in three different views: **Design**, **Split** and **Source**. Personally, I like **Split** view which provides us with **Source** and **Design** in the same window.
 
-1. Another important component which we will use frequently is the **Toolbox**. To add this component, go to the top of the Visual Studio and click on **View** &rarr; **Toolbox**. In the **Toolbox**, there are various types of elements which we knows as **Controls** in ASP.NET. These controls help to speed up our developmenet process. We will see how **Toolbox** and **Controls** work in the next section.  
+1. Another important component which we will use frequently is the **Toolbox**. To add this component, go to the top of the Visual Studio and click on **View** &rarr; **Toolbox**. In the **Toolbox**, there are various types of elements which we know as **Controls** in ASP.NET. These controls help to speed up our development process. We will see how **Toolbox** and **Controls** work in the next section.  
 ![]({{ site.baseurl }}/images/blog2_toolbox.png) 
 
 ## Our First ASP.NET Web Page
+Now, we are going to familiarise with the components in Visual Studio by creating a simple Login interface. This Login interface will have an username textbox, an username textbox and a login button. The textboxes and the button will be placed in a 3 (rows) x 2 (columns) table:
+
+|             |                    |
+|-------------|--------------------|
+|Username:    |Username's Textbox  |
+|Password:    |Password's Textbox  |
+|Login button |                    |
+
+If you have learnt HTML, then you must know the we can manually code the layout presented above using HTML syntax such as `<form></form>`, `<table></table>`, `<tr></tr>`, `<td></td>`, `<input type="text">` and `<input type="submit">`.
+ 
+However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.
+
 
 
 
