@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-03T05:44:22-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Getting Started: ASP.NET Web Programming with C#</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html" rel="alternate" type="text/html" title="Getting Started: ASP.NET Web Programming with C#" /><published>2020-03-31T00:00:00-05:00</published><updated>2020-03-31T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-03T08:30:37-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Getting Started: ASP.NET Web Programming with C#</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html" rel="alternate" type="text/html" title="Getting Started: ASP.NET Web Programming with C#" /><published>2020-03-31T00:00:00-05:00</published><updated>2020-03-31T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 &lt;p&gt;In this tutorial, we will:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Familiarise with the components in Visual Studio, including &lt;strong&gt;Solution Explorer&lt;/strong&gt;, &lt;strong&gt;Toolbox&lt;/strong&gt;, &lt;strong&gt;Properties&lt;/strong&gt; and &lt;strong&gt;Project View&lt;/strong&gt;.&lt;/li&gt;
@@ -79,25 +79,29 @@ However, if you cannot see your &lt;strong&gt;Solution Explorer&lt;/strong&gt;, 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;Username:&lt;/th&gt;
-      &lt;th&gt;Username’s Textbox&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Username:&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Username’s Textbox&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;Password:&lt;/td&gt;
-      &lt;td&gt;Password’s Textbox&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Password:&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Password’s Textbox&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Login button&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Login button&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 &lt;p&gt;If you have learnt HTML, then you must know the we can manually code the layout presented above using HTML syntax such as &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;form&amp;gt;&amp;lt;/form&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;table&amp;gt;&amp;lt;/table&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;tr&amp;gt;&amp;lt;/tr&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;text&quot;&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;submit&quot;&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.&lt;/p&gt;</content><author><name>You Quan</name></author><summary type="html">Learning Outcomes In this tutorial, we will: Familiarise with the components in Visual Studio, including Solution Explorer, Toolbox, Properties and Project View. Learn how to to setup a one-page ASP.NET web application with Visual Studio.</summary></entry><entry><title type="html">Setting Up Git and Gitlab on Linux Ubuntu</title><link href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="Setting Up Git and Gitlab on Linux Ubuntu" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
+&lt;p&gt;However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Let’s start by adding a 3 (rows) x 2 (columns) table inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>You Quan</name></author><summary type="html">Learning Outcomes In this tutorial, we will: Familiarise with the components in Visual Studio, including Solution Explorer, Toolbox, Properties and Project View. Learn how to to setup a one-page ASP.NET web application with Visual Studio.</summary></entry><entry><title type="html">Setting Up Git and Gitlab on Linux Ubuntu</title><link href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html" rel="alternate" type="text/html" title="Setting Up Git and Gitlab on Linux Ubuntu" /><published>2020-03-26T00:00:00-05:00</published><updated>2020-03-26T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html">&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 &lt;p&gt;In this tutorial, we will learn:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;How to setup Git in our Linux workstation.&lt;/li&gt;
