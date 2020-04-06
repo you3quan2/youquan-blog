@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -142,7 +142,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
 <p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its defacto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
 
-<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. It is going to save a huge amount of time throughout the learning process later if we first learn to master the tools.</p>
+<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -203,7 +203,8 @@ However, if you cannot see your <strong>Solution Explorer</strong>, go to the to
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Below the <code class="highlighter-rouge">Login.aspx</code> file, there is a component which I call it as <strong>Project View</strong>. It allows us to view our project in three different views: <strong>Design</strong>, <strong>Split</strong> and <strong>Source</strong>. Personally, I like <strong>Split</strong> view which provides us with <strong>Source</strong> and <strong>Design</strong> in the same window.</p>
+    <p>Below the <code class="highlighter-rouge">Login.aspx</code> file, there is a component which I call it as <strong>Project View</strong>. It allows us to view our project in three different views: <strong>Design</strong>, <strong>Split</strong> and <strong>Source</strong>. Personally, I like <strong>Split</strong> view which provides us with <strong>Source</strong> and <strong>Design</strong> in the same window.
+<img src="/youquan-blog/images/blog2_projectview.png" alt=""></p>
   </li>
   <li>
     <p>Another important component which we will use frequently is the <strong>Toolbox</strong>. To add this component, go to the top of the Visual Studio and click on <strong>View</strong> → <strong>Toolbox</strong>. In the <strong>Toolbox</strong>, there are various types of elements which we know as <strong>Controls</strong> in ASP.NET. These controls help to speed up our development process. We will see how <strong>Toolbox</strong> and <strong>Controls</strong> work in the next section.<br>
@@ -239,7 +240,43 @@ However, if you cannot see your <strong>Solution Explorer</strong>, go to the to
 <p>However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.</p>
 
 <ol>
-  <li>Let’s start by adding a 3 (rows) x 2 (columns) table inside the <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> tag.</li>
+  <li>
+    <p>Let’s start by adding a 3 (rows) x 2 (columns) table inside the <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> tag. Move our mouse cursor inside the <code class="highlighter-rouge">&lt;div&gt;</code> box:<br>
+<img src="/youquan-blog/images/blog2_div.png" alt=""><br>
+Go to the top of the Visual Studio and click on <strong>Table</strong> → <strong>Insert Table</strong>. Create a 3 (rows) x 2 (columns) table.</p>
+  </li>
+  <li>
+    <p>Type the text <code class="highlighter-rouge">Username</code> and <code class="highlighter-rouge">Password</code> into the designated table cells.</p>
+  </li>
+  <li>
+    <p>Now, we are going to use the <strong>Toolbox</strong> to create our textboxes and button. In the <strong>Toolbox</strong>, select <strong>Standard</strong> → <strong>TextBox</strong>. Click on the <strong>TextBox</strong>, and drag-and-drop it into the designated <code class="highlighter-rouge">Username's Textbox</code> cell. Repeat for <code class="highlighter-rouge">Password's Textbox</code>.</p>
+  </li>
+  <li>
+    <p>To add the Login button, select <strong>Standard</strong> → <strong>Button</strong>. Click on the <strong>Button</strong>, and drag-and-drop it into the designated <code class="highlighter-rouge">Login button</code> cell. By now, we should have a layout as follow:<br>
+<img src="/youquan-blog/images/blog2_loginv1.png" alt=""></p>
+  </li>
+  <li>
+    <p>Note that the text inside the Login button is <code class="highlighter-rouge">Button</code>. To change the text to <code class="highlighter-rouge">Login</code>, click on the Login button. The <strong>Properties</strong> window of the Login button will be shown right below the <strong>Solution Explorer</strong>. Change the <code class="highlighter-rouge">Text</code> of the button to <code class="highlighter-rouge">LOGIN</code>.<br>
+<img src="/youquan-blog/images/blog2_buttonproperties.png" alt=""></p>
+  </li>
+  <li>
+    <p>We can always make changes on this Login page by adding or modifying the HTML codes, without using the <strong>Toolbox</strong>. Let say if I want to add a title to this page, I can add the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> directly to the existing HTML codes:</p>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">My</span> <span class="n">First</span> <span class="n">Login</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">table</span> <span class="n">style</span><span class="o">=</span><span class="s">"width: 100</span><span class="si">%</span><span class="s">"</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+                 <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Username</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+             <span class="o">...</span> <span class="n">other</span> <span class="n">codes</span> <span class="n">here</span> <span class="o">....</span>
+             <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+         <span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+
+    <p>Everytime we make changes to the code, a warning message <code class="highlighter-rouge">Design view is out of sync with Source view. Click here to synchronize views will be displayed</code>. Click on the message and we will see the changes we made reflected in the <strong>Design view</strong>.</p>
+  </li>
 </ol>
 
 
