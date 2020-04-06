@@ -177,5 +177,8 @@ Go to the Gitlab account and check on the specific file which we have modified. 
 ## Takeaways
 I hope by now you know how to setup your Linux workstation and Gitlab in order for you to push your project from your workstation to Gitlab using Git.
 
+I hope you found this tutorial helpful!  
+Have more questions about creating this? Let me know by commenting below!
+
 ## References
 
