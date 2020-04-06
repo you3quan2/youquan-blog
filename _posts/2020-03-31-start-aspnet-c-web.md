@@ -136,7 +136,7 @@ The names which are automatically assigned to the HTML elements by Visual Studio
 ```
 Note that we can change these names by modifying the HTML codes directly, or by changing the properties of these controls (e.g. button, textbox) via the **Properties** window.
 
-## Takeways
+## Takeaways
 I hope by now:
 - You know how to use Visual Studio along with its components: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**.
 - You are confident to create a single ASP.NET web page with Visual Studio (e.g. a login page, a form).
