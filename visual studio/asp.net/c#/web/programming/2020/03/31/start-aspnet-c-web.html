@@ -130,6 +130,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#create-the-project">Create the Project</a></li>
 <li class="toc-entry toc-h2"><a href="#familiarise-with-visual-studio">Familiarise with Visual Studio</a></li>
 <li class="toc-entry toc-h2"><a href="#our-first-aspnet-web-page">Our First ASP.NET Web Page</a></li>
+<li class="toc-entry toc-h2"><a href="#best-practices">Best Practices</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -249,7 +250,7 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
     <p>Type the text <code class="highlighter-rouge">Username</code> and <code class="highlighter-rouge">Password</code> into the designated table cells.</p>
   </li>
   <li>
-    <p>Now, we are going to use the <strong>Toolbox</strong> to create our textboxes and button. In the <strong>Toolbox</strong>, select <strong>Standard</strong> → <strong>TextBox</strong>. Click on the <strong>TextBox</strong>, and drag-and-drop it into the designated <code class="highlighter-rouge">Username's Textbox</code> cell. Repeat for <code class="highlighter-rouge">Password's Textbox</code>.</p>
+    <p>We are going to use the <strong>Toolbox</strong> to create our textboxes and button. In the <strong>Toolbox</strong>, select <strong>Standard</strong> → <strong>TextBox</strong>. Click on the <strong>TextBox</strong>, and drag-and-drop it into the designated <code class="highlighter-rouge">Username's Textbox</code> cell. Repeat for <code class="highlighter-rouge">Password's Textbox</code>.</p>
   </li>
   <li>
     <p>To add the Login button, select <strong>Standard</strong> → <strong>Button</strong>. Click on the <strong>Button</strong>, and drag-and-drop it into the designated <code class="highlighter-rouge">Login button</code> cell. By now, we should have a layout as follow:<br>
@@ -259,8 +260,7 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
     <p>Note that the text inside the Login button is <code class="highlighter-rouge">Button</code>. To change the text to <code class="highlighter-rouge">Login</code>, click on the Login button. The <strong>Properties</strong> window of the Login button will be shown right below the <strong>Solution Explorer</strong>. Change the <code class="highlighter-rouge">Text</code> of the button to <code class="highlighter-rouge">LOGIN</code>.<br>
 <img src="/youquan-blog/images/blog2_buttonproperties.png" alt=""></p>
   </li>
-  <li>
-    <p>We can always make changes on this Login page by adding or modifying the HTML codes, without using the <strong>Toolbox</strong>. Let say if I want to add a title to this page, I can add the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> directly to the existing HTML codes:</p>
+  <li>We can always make changes on this Login page by adding or modifying the HTML codes, without using the <strong>Toolbox</strong>. Let say if I want to add a title to this page, I can add the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> directly to the existing HTML codes:
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
      <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
@@ -275,9 +275,20 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
  <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
 
-    <p>Everytime we make changes to the code, a warning message <code class="highlighter-rouge">Design view is out of sync with Source view. Click here to synchronize views will be displayed</code>. Click on the message and we will see the changes we made reflected in the <strong>Design view</strong>.</p>
+    <p>Everytime we make changes to the code, a warning message <em>Design view is out of sync with Source view. Click here to synchronize views will be displayed</em>. Click on the message and we will see the changes we made reflected in the <strong>Design view</strong>.</p>
   </li>
+  <li>
+    <p>Now, let’s try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the downarrow and select Google Chrome (if you have Google Chrome installed). 
+<img src="/youquan-blog/images/blog2_runproject.png" alt=""></p>
+  </li>
+  <li>Click on <code class="highlighter-rouge">IIS Express (Google Chrome)</code>. Google Chrome will open shortly with our very first Login page developed using ASP.NET:
+<img src="/youquan-blog/images/blog2_firstloginpage.png" alt="">
+</li>
 </ol>
+
+<h2 id="best-practices">
+<a class="anchor" href="#best-practices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Best Practices</h2>
+<p>There are many best coding practices (which you can read <a href="https://en.wikipedia.org/wiki/Best_coding_practices#Naming_conventions">here</a>). But, I just want to focus on one in this tutorial - <strong>Naming conventions</strong>.</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
