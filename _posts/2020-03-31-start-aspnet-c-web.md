@@ -86,7 +86,7 @@ Go to the top of the Visual Studio and click on **Table** &rarr; **Insert Table*
 
 1. Type the text `Username` and `Password` into the designated table cells.
 
-1. Now, we are going to use the **Toolbox** to create our textboxes and button. In the **Toolbox**, select **Standard** &rarr; **TextBox**. Click on the **TextBox**, and drag-and-drop it into the designated `Username's Textbox` cell. Repeat for `Password's Textbox`.
+1. We are going to use the **Toolbox** to create our textboxes and button. In the **Toolbox**, select **Standard** &rarr; **TextBox**. Click on the **TextBox**, and drag-and-drop it into the designated `Username's Textbox` cell. Repeat for `Password's Textbox`.
 
 1. To add the Login button, select **Standard** &rarr; **Button**. Click on the **Button**, and drag-and-drop it into the designated `Login button` cell. By now, we should have a layout as follow:  
 ![]({{ site.baseurl }}/images/blog2_loginv1.png) 
@@ -109,8 +109,16 @@ Go to the top of the Visual Studio and click on **Table** &rarr; **Insert Table*
     </form>
     ```  
     
-    Everytime we make changes to the code, a warning message `Design view is out of sync with Source view. Click here to synchronize views will be displayed`. Click on the message and we will see the changes we made reflected in the **Design view**.
+    Everytime we make changes to the code, a warning message *Design view is out of sync with Source view. Click here to synchronize views will be displayed*. Click on the message and we will see the changes we made reflected in the **Design view**.
     
+1. Now, let's try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the downarrow and select Google Chrome (if you have Google Chrome installed). 
+![]({{ site.baseurl }}/images/blog2_runproject.png) 
+
+1. Click on `IIS Express (Google Chrome)`. Google Chrome will open shortly with our very first Login page developed using ASP.NET:
+![]({{ site.baseurl }}/images/blog2_firstloginpage.png) 
+
+## Best Practices 
+There are many best coding practices (which you can read [here](https://en.wikipedia.org/wiki/Best_coding_practices#Naming_conventions)). But, I just want to focus on one in this tutorial - **Naming conventions**. 
 
 
 
