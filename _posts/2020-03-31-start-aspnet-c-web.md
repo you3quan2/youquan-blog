@@ -11,7 +11,7 @@ title: 'Getting Started: ASP.NET Web Programming with C#'
 ## Learning Outcomes
 In this tutorial, we will:
 - Familiarise with the components in Visual Studio, including **Solution Explorer**, **Toolbox**, **Properties** and **Project View**.
-- Learn how to to setup a one-page ASP.NET web application with Visual Studio.
+- Learn how to to develop a single ASP.NET webpage with Visual Studio.
 
 ## Why we need to learn this?
 I believe you are here because you want/have to learn [ASP.NET Web Programming](https://dotnet.microsoft.com/apps/aspnet). To learn ASP.NET, we need to use its defacto IDE - [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
@@ -114,12 +114,39 @@ Go to the top of the Visual Studio and click on **Table** &rarr; **Insert Table*
 1. Now, let's try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the downarrow and select Google Chrome (if you have Google Chrome installed). 
 ![]({{ site.baseurl }}/images/blog2_runproject.png) 
 
-1. Click on `IIS Express (Google Chrome)`. Google Chrome will open shortly with our very first Login page developed using ASP.NET:
+1. Click on `IIS Express (Google Chrome)`. Google Chrome will open shortly with our very first Login page developed using ASP.NET:  
 ![]({{ site.baseurl }}/images/blog2_firstloginpage.png) 
 
 ## Best Practices 
-There are many best coding practices (which you can read [here](https://en.wikipedia.org/wiki/Best_coding_practices#Naming_conventions)). But, I just want to focus on one in this tutorial - **Naming conventions**. 
+There are many best coding practices (which you can read [here](https://en.wikipedia.org/wiki/Best_coding_practices)). But, I just want to focus on one of these practices in this tutorial - **Naming conventions**. Using meaningless naming can cause confusion to reduce the readibility of our codes. Take our Login page for example, if we browse through these HTML codes, we will notice some meaningless naming as follow:
 
+```python
+<form id="form1" runat="server">
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+<asp:Button ID="Button1" runat="server" Text="LOGIN" />
+```
+
+The names which are automatically assigned to the HTML elements by Visual Studio can cause confusion, especially when our web project grows bigger. Hence, it is always a good practice to replace these IDs with meaningful names:
+```python
+<form id="login_form" runat="server">
+<asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
+<asp:TextBox ID="pwd_txtbox" runat="server"></asp:TextBox>
+<asp:Button ID="login_button" runat="server" Text="LOGIN" />
+```
+Note that we can change these names by modifying the HTML codes directly, or by changing the properties of these controls (e.g. button, textbox) via the **Properties** window.
+
+## Takeways
+I hope by now:
+- You know how to use Visual Studio along with its components: **Solution Explorer**, **Toolbox**, **Properties** and **Project View**.
+- You are confident to create a single ASP.NET web page with Visual Studio (e.g. a login page, a form).
+
+Coming up next, we will learn:
+- How to create a Master page to standardise the design across multiple webpages.
+- How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
+
+I hope you found this tutorial helpful!
+Have more questions about creating this? Let me know by commenting below!
 
 
 
