@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -131,12 +131,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#familiarise-with-visual-studio">Familiarise with Visual Studio</a></li>
 <li class="toc-entry toc-h2"><a href="#our-first-aspnet-web-page">Our First ASP.NET Web Page</a></li>
 <li class="toc-entry toc-h2"><a href="#best-practices">Best Practices</a></li>
+<li class="toc-entry toc-h2"><a href="#takeways">Takeways</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
 <ul>
   <li>Familiarise with the components in Visual Studio, including <strong>Solution Explorer</strong>, <strong>Toolbox</strong>, <strong>Properties</strong> and <strong>Project View</strong>.</li>
-  <li>Learn how to to setup a one-page ASP.NET web application with Visual Studio.</li>
+  <li>Learn how to to develop a single ASP.NET webpage with Visual Studio.</li>
 </ul>
 
 <h2 id="why-we-need-to-learn-this">
@@ -281,14 +282,45 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
     <p>Now, let’s try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the downarrow and select Google Chrome (if you have Google Chrome installed). 
 <img src="/youquan-blog/images/blog2_runproject.png" alt=""></p>
   </li>
-  <li>Click on <code class="highlighter-rouge">IIS Express (Google Chrome)</code>. Google Chrome will open shortly with our very first Login page developed using ASP.NET:
+  <li>Click on <code class="highlighter-rouge">IIS Express (Google Chrome)</code>. Google Chrome will open shortly with our very first Login page developed using ASP.NET:<br>
 <img src="/youquan-blog/images/blog2_firstloginpage.png" alt="">
 </li>
 </ol>
 
 <h2 id="best-practices">
 <a class="anchor" href="#best-practices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Best Practices</h2>
-<p>There are many best coding practices (which you can read <a href="https://en.wikipedia.org/wiki/Best_coding_practices#Naming_conventions">here</a>). But, I just want to focus on one in this tutorial - <strong>Naming conventions</strong>.</p>
+<p>There are many best coding practices (which you can read <a href="https://en.wikipedia.org/wiki/Best_coding_practices">here</a>). But, I just want to focus on one of these practices in this tutorial - <strong>Naming conventions</strong>. Using meaningless naming can cause confusion to reduce the readibility of our codes. Take our Login page for example, if we browse through these HTML codes, we will notice some meaningless naming as follow:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"TextBox1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"TextBox2"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Button</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Button1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"LOGIN"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>The names which are automatically assigned to the HTML elements by Visual Studio can cause confusion, especially when our web project grows bigger. Hence, it is always a good practice to replace these IDs with meaningful names:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"login_form"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"pwd_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Button</span> <span class="n">ID</span><span class="o">=</span><span class="s">"login_button"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"LOGIN"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+<p>Note that we can change these names by modifying the HTML codes directly, or by changing the properties of these controls (e.g. button, textbox) via the <strong>Properties</strong> window.</p>
+
+<h2 id="takeways">
+<a class="anchor" href="#takeways" aria-hidden="true"><span class="octicon octicon-link"></span></a>Takeways</h2>
+<p>I hope by now:</p>
+<ul>
+  <li>You know how to use Visual Studio along with its components: <strong>Solution Explorer</strong>, <strong>Toolbox</strong>, <strong>Properties</strong> and <strong>Project View</strong>.</li>
+  <li>You are confident to create a single ASP.NET web page with Visual Studio (e.g. a login page, a form).</li>
+</ul>
+
+<p>Coming up next, we will learn:</p>
+<ul>
+  <li>How to create a Master page to standardise the design across multiple webpages.</li>
+  <li>How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).</li>
+</ul>
+
+<p>I hope you found this tutorial helpful!
+Have more questions about creating this? Let me know by commenting below!</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
