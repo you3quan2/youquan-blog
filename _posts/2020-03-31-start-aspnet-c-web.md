@@ -145,15 +145,5 @@ Coming up next, we will learn:
 - How to create a Master page to standardise the design across multiple webpages.
 - How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
 
-I hope you found this tutorial helpful!
+I hope you found this tutorial helpful!  
 Have more questions about creating this? Let me know by commenting below!
-
-
-
-
-
-
-
-
-
-
