@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -125,9 +125,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
 <li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
-<li class="toc-entry toc-h2"><a href="#prerequiste">Prerequiste</a></li>
 <li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
+<li class="toc-entry toc-h2"><a href="#introduction-to-web-layout-and-the-sitemap">Introduction to Web Layout and the Sitemap</a></li>
+<li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this-1">Why we need to learn this?</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -136,19 +138,26 @@ window.onload = wrap_img;
   <li>Expose to basic web page design using Bootstrap, with focus on navigation menu.</li>
 </ul>
 
+<h2 id="prerequisite">
+<a class="anchor" href="#prerequisite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisite</h2>
+<p>If you are new to ASP.NET, I suggest you to look into this <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">tutorial</a> to learn how to create a ASP.NET web project with Microsoft Visual Studio.</p>
+
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
-<p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its defacto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
+<p>I believe you have know learn how to create a single ASP.NET web page. However, in real life, a web application is made up from multiple web pages. Take Twitter as example:
+<img src="/youquan-blog/images/blog3_twitterpages.png" alt=""></p>
 
-<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
+<p>If we visit our Twitter page, we can see links to multiple pages (e.g. Home, Explore, Notification, Messages etc.) on the left hand side of the page. We call it as navigation bar, which helps us to navigate from one page to another. When we browse from the Home page to the Explore page, the navigation bar remain the same, and only a specific portion of the web page changed.</p>
 
-<h2 id="prerequiste">
-<a class="anchor" href="#prerequiste" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequiste</h2>
+<p>Hence, it is impractical if we are going to write the codes for the navigation bar in every single web pages within our web application. ASP.NET offers us a solution - the Master Page. By using the Master page, we will only need to code the standard layout in the <code class="highlighter-rouge">Site.Master</code>, and this will be implemented into the rest of the pages within our web application.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 <p>Microsoft Visual Studio (I am using the 2019 version). See <a href="https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019">here</a> on how to download and install.</p>
 
+<h2 id="introduction-to-web-layout-and-the-sitemap">
+<a class="anchor" href="#introduction-to-web-layout-and-the-sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction to Web Layout and the Sitemap</h2>
+<p>Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?v</p>
 <ol>
   <li>
     <p>To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project’s name (mine is <strong>ASPNetTutorial</strong>), then click <strong>Add</strong> → <strong>Web Form</strong>. Name the item as <strong>Login</strong> because we are going to create a simple Login interface. Now, we are supposed to have a <code class="highlighter-rouge">Login.aspx</code> file. This file contains basic HTML codes with <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code>, <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code>.</p>
@@ -175,9 +184,17 @@ window.onload = wrap_img;
  <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Bel</p>
-  </li>
+</ol>
+
+<h2 id="why-we-need-to-learn-this-1">
+<a class="anchor" href="#why-we-need-to-learn-this-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
+
+<p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its defacto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
+
+<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
+
+<ol>
+  <li>Bel</li>
 </ol>
 
   </div><!-- from https://github.com/utterance/utterances -->
