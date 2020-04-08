@@ -57,7 +57,7 @@ By now, we can have a rough idea that our website is going to look something lik
 - Footer region (website's info, copyright etc.)
 
 ## Create a Master Page with ASP.NET
-*Note*: We can still use the **ASP.NetTutorial** project which we have created in the previous tutorial.
+*Note*: We can still use the **ASP.NetTutorial** project which we have created in the previous tutorial. Keep the **Login** page for now.
 
 1. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Forms Master Page**. We can specifiy the name for the Master page. I maintain its default name - `Site1`.
 ![]({{ site.baseurl }}/images/blog3_masterpage.png)  
@@ -154,10 +154,10 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
 
             </ul>
         </div>
-        </nav>
+    </nav>
     ```  
     
-You can learn more about Bootstrap navigation bar by following this [link](https://getbootstrap.com/docs/4.0/components/navbar/).  
+    You can learn more about Bootstrap navigation bar by following this [link](https://getbootstrap.com/docs/4.0/components/navbar/).  
 
 1. Finally, add the following line within the `<footer></footer>` tag.  
 
@@ -165,8 +165,34 @@ You can learn more about Bootstrap navigation bar by following this [link](https
     ASP.NET Tutorial by @youquan in 2020.
     ```  
     
-    Of course you can put your own information within the `<footer>`. Now, view `Site1.Master` in **Split** or **Design** mode to check on the design of our Master page.
+    Of course you can put your own information within the `<footer></footer>` tag. Now, view `Site1.Master` in **Split** or **Design** mode to check on the design of our Master page.
 
 ## Add Content to Other Pages
-*Note*: We can still use the **ASP.NetTutorial** project which we...
+We are now going to add unique content into each pages within the web site (except the Master page). Go to `Home.aspx` and add a heading within the **Content** control:
 
+```python
+    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
+    <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    </asp:Content>
+    <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <h2> This is my HOME page. </h2>
+    </asp:Content>
+``` 
+
+Repeat this for other pages, but change the content of the heading accordingly (e.g. This is my PROFILE page.).
+
+## Set the Start Page and Run Our Project
+Commonly, a web site always start with the **Home** page. Hence, whenever we test our web project, we would like to firs start with this page. To do this, right click on the Home page file - `Home.aspx` and select **Set As Start Page**. Now, run the project and test the navigation bar, which should lead you to different pages.
+
+![]({{ site.baseurl }}/images/blog3_allpages.png)  
+
+## Takeaways
+I hope by now:
+- You can explain what is a web page layout and what is a sitemap.
+- You are confident to create a Master page for a multiple pages web site in ASP.NET.
+- You know how to create a navigation bar using Bootstrap.
+
+Coming up next, we will learn:
+- How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
+
+I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below. :smiley:
