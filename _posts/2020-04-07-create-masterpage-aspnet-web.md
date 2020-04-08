@@ -171,12 +171,12 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
 We are now going to add unique content into each pages within the web site (except the Master page). Go to `Home.aspx` and add a heading within the **Content** control:
 
 ```python
-    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
-    <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    </asp:Content>
-    <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <h2> This is my HOME page. </h2>
-    </asp:Content>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h2> This is my HOME page. </h2>
+</asp:Content>
 ``` 
 
 Repeat this for other pages, but change the content of the heading accordingly (e.g. This is my PROFILE page.).
