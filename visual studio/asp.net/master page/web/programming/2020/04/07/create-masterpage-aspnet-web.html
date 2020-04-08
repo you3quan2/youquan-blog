@@ -230,7 +230,16 @@ A <code class="highlighter-rouge">Site1.Master</code> page will be created autom
   </li>
   <li>
     <p>Next, we create the rest of the pages in our web site. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page which we have created earlier.<br>
-<img src="/youquan-blog/images/blog3_selectmasterpage.png" alt=""></p>
+<img src="/youquan-blog/images/blog3_selectmasterpage.png" alt=""><br>
+A <code class="highlighter-rouge">Site1.Master</code> page will be created automatically with the codes as follow:</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+ <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
   </li>
 </ol>
 
