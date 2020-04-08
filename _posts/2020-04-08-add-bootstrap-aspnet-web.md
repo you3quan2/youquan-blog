@@ -25,25 +25,25 @@ Follow the steps below to add Bootstrap to our ASP.NET web project:
 
 1. If the installation is successful, we will see multiple files (.css, map, .js) aaded to the Content and Scripts folder under our web project.  
 
-![]({{ site.baseurl }}/images/blog4_newfiles.png) 
+![]({{ site.baseurl }}/images/blog4_newfiles.png)  
 
 1. Drag and drop these three specific files into the <head></head> section of the web page where we want to code with Bootstrap.
 - jQuery.3.0.0
 - popper.js.1.16.0
-- bootstrap.4.4.1 
+- bootstrap.4.4.1  
 
-```python
-<html>
-<head runat="server">
-    <title></title>
+    ```python
+    <html>
+    <head runat="server">
+        <title></title>
 
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="Scripts/jquery-3.0.0.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
     
-</head>
-<body>
-   ...other codes...
-</body>
-</html>
-``` 
+    </head>
+    <body>
+       ...other codes...
+    </body>
+    </html>
+    ``` 
