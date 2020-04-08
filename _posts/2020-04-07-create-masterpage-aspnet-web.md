@@ -38,23 +38,23 @@ For the sake of simplicity, we will focus only on three regions: **Header**, **C
 Hence, we will define the **Header** and **Footer** region in our ASP.NET Master page and create the unique content in the rest of the web pages within the same web application.
 
 ## The Sitemap
-Before we start to develop our web site, we need to first have a [sitemap](https://en.wikipedia.org/wiki/Site_map) , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like Home page, Explorer page, Profile page, now we are going to create a sitemap for our own web site.
+Before we start to develop our web site, we need to first have a [sitemap](https://en.wikipedia.org/wiki/Site_map) , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like **Home** page, **Explorer** page, **Profile** page, now we are going to create a sitemap for our own web site.
 
 Our web site, which I known as **ASP.NET Tutorial** website has the following web pages:
 - Home page
 - Profile page
 - Contact
-  -Web Chat page
-  -Online Enquiry page
+  - Web Chat page
+  - Online Enquiry page
 
 The sitemap above shows that we have four web pages: **Home**, **Profile**, **Web Chat** and **Online Enquiry** page. Note that in this example, we do not have a page for **Contact**. The users can directly access the **Web Chat** page and **Online Enquiry** page, which are categorised under **Contact**. 
 
 By now, we can have a rough idea that our website is going to look something like the one below:
 ![]({{ site.baseurl }}/images/blog3_webpagelayout.png) 
 
--Header region (with a navigation bar, which created based on our sitemap)
--Content region (a simple text which indicates what page it is)
--Footer region (website's info, copyright etc.)
+- Header region (with a navigation bar, which created based on our sitemap)
+- Content region (a simple text which indicates what page it is)
+- Footer region (website's info, copyright etc.)
 
 ## Create a Masterpage with ASP.NET
 *Note*: We can still use the **ASP.NetTutorial** project which we have created in the previous tutorial.
@@ -88,7 +88,8 @@ A `Site1.Master` page will be created automatically with the codes as follow:
 1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select `Site1.Master`, which is the Master page which we have created earlier.
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
 
-Note that the web page which we have created only a few lines of codes as follow:  
+Note that the web page which we have created only a few lines of codes as follow:
+
     ```python
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -98,17 +99,3 @@ Note that the web page which we have created only a few lines of codes as follow
     ```
 
 
-
-To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project's name (mine is **ASPNetTutorial**), then click **Add** &rarr; **Web Form**. Name the item as **Login** because we are going to create a simple Login interface. Now, we are supposed to have a `Login.aspx` file. This file contains basic HTML codes with `<head></head>`, `<form></form>` and `<body></body>`.
-
-
-## Create the Masterpage using Bootstrap
-I believe you are here because you want/have to learn [ASP.NET Web Programming](https://dotnet.microsoft.com/apps/aspnet). To learn ASP.NET, we need to use its defacto IDE - [Microsoft Visual Studio](https://visualstudio.microsoft.com/).
-
-My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.
-
-
-https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
-
-
-1. Bel
