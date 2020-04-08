@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -130,7 +130,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
 <li class="toc-entry toc-h2"><a href="#a-web-page-layout">A Web page Layout</a></li>
 <li class="toc-entry toc-h2"><a href="#the-sitemap">The Sitemap</a></li>
-<li class="toc-entry toc-h2"><a href="#create-a-masterpage-with-aspnet">Create a Masterpage with ASP.NET</a></li>
+<li class="toc-entry toc-h2"><a href="#create-a-master-page-with-aspnet">Create a Master Page with ASP.NET</a></li>
+<li class="toc-entry toc-h2"><a href="#code-the-master-page-with-bootstrap">Code the Master Page with Bootstrap</a></li>
+<li class="toc-entry toc-h2"><a href="#add-content-to-other-pages">Add Content to Other Pages</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -196,8 +198,8 @@ window.onload = wrap_img;
   <li>Footer region (website’s info, copyright etc.)</li>
 </ul>
 
-<h2 id="create-a-masterpage-with-aspnet">
-<a class="anchor" href="#create-a-masterpage-with-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Masterpage with ASP.NET</h2>
+<h2 id="create-a-master-page-with-aspnet">
+<a class="anchor" href="#create-a-master-page-with-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Master Page with ASP.NET</h2>
 <p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we have created in the previous tutorial.</p>
 
 <ol>
@@ -229,9 +231,9 @@ A <code class="highlighter-rouge">Site1.Master</code> page will be created autom
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Next, we create the rest of the pages in our web site. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page which we have created earlier.<br>
+    <p>Next, we create the rest of the pages in our web site. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page for these pages.<br>
 <img src="/youquan-blog/images/blog3_selectmasterpage.png" alt=""><br>
-Note that the web page which we have created only have a few lines of codes as follow:</p>
+Note that these web page have a few lines of codes readily available as follow:</p>
 
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
@@ -241,10 +243,92 @@ Note that the web page which we have created only have a few lines of codes as f
  <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
   </li>
+</ol>
+
+<p>We can see a <strong>ContentPlaceHolder</strong> control with ID <code class="highlighter-rouge">ContentPlaceHolder1</code> in <code class="highlighter-rouge">Site1.Master</code>. This is the place where other pages have their own unique content. The common design for all pages within a web site (e.g. Header, Footer etc.) is placed outside this <strong>ContentPlaceHolder</strong>.</p>
+
+<p>In other pages (e.g. <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>), the Master page of these pages are defined in the <code class="highlighter-rouge">&lt;%@ Page %&gt;</code> directive (<code class="highlighter-rouge">MasterPageFile="~/Site1.Master</code>). These pages also have a <strong>Content</strong> control, which allow us to place unique content for every single page.</p>
+
+<h2 id="code-the-master-page-with-bootstrap">
+<a class="anchor" href="#code-the-master-page-with-bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code the Master Page with Bootstrap</h2>
+<p>As mentioned earlier, our Master page consists of three regions: <strong>Header</strong>, <strong>Content</strong> and <strong>Footer</strong>, and we know that there is a <strong>ContentPlaceHolder</strong> within <strong>Content</strong> region.</p>
+
+<ol>
   <li>
-    <p>Next line ….</p>
+    <p>Create the <strong>Header</strong> region by adding a <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> tag within the <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> but <strong>BEFORE</strong> the <strong>ContentPlaceHolder</strong> control.</p>
+  </li>
+  <li>
+    <p>Then, add the <strong>Footer</strong> region by adding a <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag within the <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> but <strong>AFTER</strong> the <strong>ContentPlaceHolder</strong> control.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">head</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+   <span class="o">...</span><span class="n">other</span> <span class="n">codes</span><span class="o">...</span>
+   <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">header</span><span class="o">&gt;&lt;/</span><span class="n">header</span><span class="o">&gt;</span>
+     <span class="o">...</span><span class="n">other</span> <span class="n">codes</span><span class="o">...</span>
+     <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">ContentPlaceHolder</span> <span class="n">ID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">ContentPlaceHolder</span><span class="o">&gt;</span>
+     <span class="o">...</span><span class="n">other</span> <span class="n">codes</span><span class="o">...</span>
+     <span class="o">&lt;</span><span class="n">footer</span><span class="o">&gt;&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Next, add the Bootstrap navigation bar codes into <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> tag.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">nav</span> <span class="n">class</span><span class="o">=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"navbar-brand"</span> <span class="n">href</span><span class="o">=</span><span class="s">"#"</span><span class="o">&gt;</span><span class="n">ASP</span><span class="o">.</span><span class="n">NET</span> <span class="n">Tutorial</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s">"navbar-toggler"</span> <span class="nb">type</span><span class="o">=</span><span class="s">"button"</span> <span class="n">data</span><span class="o">-</span><span class="n">toggle</span><span class="o">=</span><span class="s">"collapse"</span> <span class="n">data</span><span class="o">-</span><span class="n">target</span><span class="o">=</span><span class="s">"#navbarNavDropdown"</span> <span class="n">aria</span><span class="o">-</span><span class="n">controls</span><span class="o">=</span><span class="s">"navbarNavDropdown"</span> <span class="n">aria</span><span class="o">-</span><span class="n">expanded</span><span class="o">=</span><span class="s">"false"</span> <span class="n">aria</span><span class="o">-</span><span class="n">label</span><span class="o">=</span><span class="s">"Toggle navigation"</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s">"navbar-toggler-icon"</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+        
+     <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"collapse navbar-collapse"</span> <span class="nb">id</span><span class="o">=</span><span class="s">"navbarNavDropdown"</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"navbar-nav"</span><span class="o">&gt;</span>
+
+         <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-item active"</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-link"</span> <span class="n">href</span><span class="o">=</span><span class="s">"Home.aspx"</span><span class="o">&gt;</span><span class="n">Home</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+         <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+
+         <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-link"</span> <span class="n">href</span><span class="o">=</span><span class="s">"Profile.aspx"</span><span class="o">&gt;</span><span class="n">Profile</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+         <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+
+         <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-item dropdown"</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="n">href</span><span class="o">=</span><span class="s">"#"</span> <span class="nb">id</span><span class="o">=</span><span class="s">"navbarDropdownMenuLink"</span> <span class="n">data</span><span class="o">-</span><span class="n">toggle</span><span class="o">=</span><span class="s">"dropdown"</span> <span class="n">aria</span><span class="o">-</span><span class="n">haspopup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">aria</span><span class="o">-</span><span class="n">expanded</span><span class="o">=</span><span class="s">"false"</span><span class="o">&gt;</span><span class="n">Contact</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"dropdown-menu"</span> <span class="n">aria</span><span class="o">-</span><span class="n">labelledby</span><span class="o">=</span><span class="s">"navbarDropdownMenuLink"</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"dropdown-item"</span> <span class="n">href</span><span class="o">=</span><span class="s">"WebChat.aspx"</span><span class="o">&gt;</span><span class="n">Web</span> <span class="n">Chat</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s">"dropdown-item"</span> <span class="n">href</span><span class="o">=</span><span class="s">"EnquiryForm.aspx"</span><span class="o">&gt;</span><span class="n">Enquiry</span> <span class="n">Form</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+         <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+         <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+
+         <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+     <span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
   </li>
 </ol>
+
+<p>You can learn more about Bootstrap navigation bar by following this <a href="https://getbootstrap.com/docs/4.0/components/navbar/">link</a>.</p>
+
+<ol>
+  <li>
+    <p>Finally, add the following line within the <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="n">ASP</span><span class="o">.</span><span class="n">NET</span> <span class="n">Tutorial</span> <span class="n">by</span> <span class="o">@</span><span class="n">youquan</span> <span class="ow">in</span> <span class="mf">2020.</span>
+</code></pre></div>    </div>
+
+    <p>Of course you can put your own information within the <code class="highlighter-rouge">&lt;footer&gt;</code>. Now, view <code class="highlighter-rouge">Site1.Master</code> in <strong>Split</strong> or <strong>Design</strong> mode to check on the design of our Master page.</p>
+  </li>
+</ol>
+
+<h2 id="add-content-to-other-pages">
+<a class="anchor" href="#add-content-to-other-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add Content to Other Pages</h2>
+<p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we…</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
