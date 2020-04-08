@@ -31,7 +31,7 @@ Hence, it is impractical if we write the codes for the navigation bar in every s
 
 ## A Web page Layout
 Let's start by understanding the basic concept of the layout of a web page. The sample below shows a web page which has five regions: **Header**, **Content**, **Advertisement**, **Recommended Book** and **Footer**.
-![]({{ site.baseurl }}/images/blog3_webpagelayout.png) 
+![]({{ site.baseurl }}/images/blog3_webpagelayout.png)  
 
 For the sake of simplicity, we will focus only on three regions: **Header**, **Content** and **Footer**. Recall the example of the Twitter page discussed above, a web application usually has the same **Header** and **Footer** across all pages. The **Content** is the region where the unique content for each individual web page is located.
 
@@ -50,7 +50,7 @@ Our web site, which I known as **ASP.NET Tutorial** website has the following we
 The sitemap above shows that we have four web pages: **Home**, **Profile**, **Web Chat** and **Online Enquiry** page. Note that in this example, we do not have a page for **Contact**. The users can directly access the **Web Chat** page and **Online Enquiry** page, which are categorised under **Contact**. 
 
 By now, we can have a rough idea that our website is going to look something like the one below:
-![]({{ site.baseurl }}/images/blog3_webpagelayout.png) 
+![]({{ site.baseurl }}/images/blog3_ourwebsite.png)
 
 - Header region (with a navigation bar, which created based on our sitemap)
 - Content region (a simple text which indicates what page it is)
@@ -88,7 +88,7 @@ A `Site1.Master` page will be created automatically with the codes as follow:
 1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select `Site1.Master`, which is the Master page which we have created earlier.
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
 
-Note that the web page which we have created only a few lines of codes as follow:
+Note that the web page which we have created only a few lines of codes as follow:  
 
     ```python
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
