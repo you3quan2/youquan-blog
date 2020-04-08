@@ -85,10 +85,10 @@ A `Site1.Master` page will be created automatically with the codes as follow:
     </html>
     ```
     
-1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select `Site1.Master`, which is the Master page which we have created earlier.
+1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select `Site1.Master`, which is the Master page which we have created earlier.  
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
 
-Note that the web page which we have created only a few lines of codes as follow:  
+Note that the web page which we have created only a few lines of codes as follow:   
 
     ```python
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
@@ -98,4 +98,5 @@ Note that the web page which we have created only a few lines of codes as follow
     </asp:Content>
     ```
 
+1. Next line ....
 
