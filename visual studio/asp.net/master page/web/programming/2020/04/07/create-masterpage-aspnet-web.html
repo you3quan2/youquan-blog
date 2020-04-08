@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -133,6 +133,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#create-a-master-page-with-aspnet">Create a Master Page with ASP.NET</a></li>
 <li class="toc-entry toc-h2"><a href="#code-the-master-page-with-bootstrap">Code the Master Page with Bootstrap</a></li>
 <li class="toc-entry toc-h2"><a href="#add-content-to-other-pages">Add Content to Other Pages</a></li>
+<li class="toc-entry toc-h2"><a href="#set-the-start-page-and-run-our-project">Set the Start Page and Run Our Project</a></li>
+<li class="toc-entry toc-h2"><a href="#takeaways">Takeaways</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -200,7 +202,7 @@ window.onload = wrap_img;
 
 <h2 id="create-a-master-page-with-aspnet">
 <a class="anchor" href="#create-a-master-page-with-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Master Page with ASP.NET</h2>
-<p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we have created in the previous tutorial.</p>
+<p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we have created in the previous tutorial. Keep the <strong>Login</strong> page for now.</p>
 
 <ol>
   <li>
@@ -307,14 +309,11 @@ Note that these web page have a few lines of codes readily available as follow:<
 
          <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-     <span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
+
+    <p>You can learn more about Bootstrap navigation bar by following this <a href="https://getbootstrap.com/docs/4.0/components/navbar/">link</a>.</p>
   </li>
-</ol>
-
-<p>You can learn more about Bootstrap navigation bar by following this <a href="https://getbootstrap.com/docs/4.0/components/navbar/">link</a>.</p>
-
-<ol>
   <li>
     <p>Finally, add the following line within the <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag.</p>
 
@@ -322,14 +321,45 @@ Note that these web page have a few lines of codes readily available as follow:<
 <div class="highlight"><pre class="highlight"><code> <span class="n">ASP</span><span class="o">.</span><span class="n">NET</span> <span class="n">Tutorial</span> <span class="n">by</span> <span class="o">@</span><span class="n">youquan</span> <span class="ow">in</span> <span class="mf">2020.</span>
 </code></pre></div>    </div>
 
-    <p>Of course you can put your own information within the <code class="highlighter-rouge">&lt;footer&gt;</code>. Now, view <code class="highlighter-rouge">Site1.Master</code> in <strong>Split</strong> or <strong>Design</strong> mode to check on the design of our Master page.</p>
+    <p>Of course you can put your own information within the <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag. Now, view <code class="highlighter-rouge">Site1.Master</code> in <strong>Split</strong> or <strong>Design</strong> mode to check on the design of our Master page.</p>
   </li>
 </ol>
 
 <h2 id="add-content-to-other-pages">
 <a class="anchor" href="#add-content-to-other-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add Content to Other Pages</h2>
-<p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we…</p>
+<p>We are now going to add unique content into each pages within the web site (except the Master page). Go to <code class="highlighter-rouge">Home.aspx</code> and add a heading within the <strong>Content</strong> control:</p>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+    <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Repeat this for other pages, but change the content of the heading accordingly (e.g. This is my PROFILE page.).</p>
+
+<h2 id="set-the-start-page-and-run-our-project">
+<a class="anchor" href="#set-the-start-page-and-run-our-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set the Start Page and Run Our Project</h2>
+<p>Commonly, a web site always start with the <strong>Home</strong> page. Hence, whenever we test our web project, we would like to firs start with this page. To do this, right click on the Home page file - <code class="highlighter-rouge">Home.aspx</code> and select <strong>Set As Start Page</strong>. Now, run the project and test the navigation bar, which should lead you to different pages.</p>
+
+<p><img src="/youquan-blog/images/blog3_allpages.png" alt=""></p>
+
+<h2 id="takeaways">
+<a class="anchor" href="#takeaways" aria-hidden="true"><span class="octicon octicon-link"></span></a>Takeaways</h2>
+<p>I hope by now:</p>
+<ul>
+  <li>You can explain what is a web page layout and what is a sitemap.</li>
+  <li>You are confident to create a Master page for a multiple pages web site in ASP.NET.</li>
+  <li>You know how to create a navigation bar using Bootstrap.</li>
+</ul>
+
+<p>Coming up next, we will learn:</p>
+<ul>
+  <li>How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).</li>
+</ul>
+
+<p>I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below. :smiley:</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
