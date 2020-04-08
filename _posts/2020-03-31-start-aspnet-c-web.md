@@ -142,8 +142,6 @@ I hope by now:
 - You are confident to create a single ASP.NET web page with Visual Studio (e.g. a login page, a form).
 
 Coming up next, we will learn:
-- How to create a Master page to standardise the design across multiple webpages.
-- How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
+- How to create a Master page for a multiple pages web site in ASP.NET.
 
-I hope you found this tutorial helpful!  
-Have more questions about creating this? Let me know by commenting below!
+I hope you found this tutorial helpful! If you have more questions about this tutorial, please let me know by commenting below. :smiley:
