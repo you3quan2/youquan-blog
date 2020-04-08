@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -128,19 +128,17 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
 <li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
-<li class="toc-entry toc-h2"><a href="#introduction-to-web-page-layout-and-the-sitemap">Introduction to Web page Layout and the Sitemap</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#web-page-layout">Web page Layout</a></li>
-<li class="toc-entry toc-h3"><a href="#sitemap">Sitemap</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#a-web-page-layout">A Web page Layout</a></li>
+<li class="toc-entry toc-h2"><a href="#the-sitemap">The Sitemap</a></li>
+<li class="toc-entry toc-h2"><a href="#create-a-masterpage-with-aspnet">Create a Masterpage with ASP.NET</a></li>
 <li class="toc-entry toc-h2"><a href="#create-the-masterpage-using-bootstrap">Create the Masterpage using Bootstrap</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
 <ul>
-  <li>Learn how to create a Master page for a multiple pages web project in ASP.NET.</li>
-  <li>Expose to basic web page design using Bootstrap, with focus on navigation menu.</li>
+  <li>Learn what is a web page layout and a sitemap.</li>
+  <li>Learn how to create a Master page for a multiple pages web site in ASP.NET.</li>
+  <li>Learn how to use Bootstrap to design the Master page, with focus on the navigation bar.</li>
 </ul>
 
 <h2 id="prerequisite">
@@ -149,12 +147,12 @@ window.onload = wrap_img;
 
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
-<p>I believe you have know learn how to create a single ASP.NET web page. However, in real life, a web application is made up from multiple web pages. Take Twitter as example:
+<p>I believe you have know learn how to create a single ASP.NET web page. However, in real life, a web site is made up from multiple web pages. Take Twitter as example:
 <img src="/youquan-blog/images/blog3_twitterpages.png" alt=""></p>
 
-<p>If we visit our Twitter page, we can see links to multiple pages (e.g. Home, Explore, Notification, Messages etc.) on the left hand side of the page. We call it as navigation bar, which helps us to navigate from one page to another. When we browse from the <strong>Home</strong> page to the <strong>Explore</strong> page, the navigation bar remain the same, and only a specific portion of the web page changed.</p>
+<p>If we login to our Twitter account, we can see a menu on the left hand side of the page. We call it as navigation bar, which helps us to navigate throughout the web site (e.g. from <strong>Home</strong> page to the <strong>Explore</strong> page). Everytime we browse from one page to another, the navigation bar remain the same, and only a specific portion of the web page changed.</p>
 
-<p>Hence, it is impractical if we are going to write the codes for the navigation bar in every single web pages within our web application. ASP.NET offers us a solution - the Master Page. By using the Master page, we will only need to code the standard layout in the <code class="highlighter-rouge">Site.Master</code>, and this will be implemented into the rest of the pages within our web application.</p>
+<p>Hence, it is impractical if we write the codes for the navigation bar in every single web pages within our web site, and change each pages manually everytime we change the design of our web site. ASP.NET offers us a solution - the <strong>Master Page</strong>. By using the Master page, we will only need to code the standard layout in the <code class="highlighter-rouge">Site.Master</code>, and this will be implemented to the rest of the pages within our web site.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -163,10 +161,8 @@ window.onload = wrap_img;
   <li>Bootstrap package</li>
 </ol>
 
-<h2 id="introduction-to-web-page-layout-and-the-sitemap">
-<a class="anchor" href="#introduction-to-web-page-layout-and-the-sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction to Web page Layout and the Sitemap</h2>
-<h3 id="web-page-layout">
-<a class="anchor" href="#web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web page Layout</h3>
+<h2 id="a-web-page-layout">
+<a class="anchor" href="#a-web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Web page Layout</h2>
 <p>Let’s start by understanding the basic concept of the layout of a web page. The sample below shows a web page which has five regions: <strong>Header</strong>, <strong>Content</strong>, <strong>Advertisement</strong>, <strong>Recommended Book</strong> and <strong>Footer</strong>.
 <img src="/youquan-blog/images/blog3_webpagelayout.png" alt=""></p>
 
@@ -174,17 +170,37 @@ window.onload = wrap_img;
 
 <p>Hence, we will define the <strong>Header</strong> and <strong>Footer</strong> region in our ASP.NET Master page and create the unique content in the rest of the web pages within the same web application.</p>
 
-<h3 id="sitemap">
-<a class="anchor" href="#sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sitemap</h3>
-<p>We need a simple example to work with.</p>
+<h2 id="the-sitemap">
+<a class="anchor" href="#the-sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Sitemap</h2>
+<p>Before we start to develop our web site, we need to first have a <a href="https://en.wikipedia.org/wiki/Site_map">sitemap</a> , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like Home page, Explorer page, Profile page, now we are going to create a sitemap for our own web site.</p>
 
-<p>he middle-left, where the unique content for each individual web page is located.</p>
+<p>Our web site, which I known as <strong>ASP.NET Tutorial</strong> website has the following web pages:</p>
+<ul>
+  <li>Home page</li>
+  <li>Profile page</li>
+  <li>Contact
+-Web Chat page
+-Online Enquiry page</li>
+</ul>
 
-<p>But, these pages have unique content.</p>
+<p>The sitemap above shows that we have four web pages: <strong>Home</strong>, <strong>Profile</strong>, <strong>Web Chat</strong> and <strong>Online Enquiry</strong> page. Note that in this example, we do not have a page for <strong>Contact</strong>. The users can directly access the <strong>Web Chat</strong> page and <strong>Online Enquiry</strong> page, which are categorised under <strong>Contact</strong>.</p>
+
+<p>By now, we can have a rough idea that our website is going to look something like the one below:
+<img src="/youquan-blog/images/blog3_webpagelayout.png" alt=""></p>
+
+<p>-Header region (with a navigation bar, which created based on our sitemap)
+-Content region (a simple text which indicates what page it is)
+-Footer region (website’s info, copyright etc.)</p>
+
+<h2 id="create-a-masterpage-with-aspnet">
+<a class="anchor" href="#create-a-masterpage-with-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Masterpage with ASP.NET</h2>
+<p><em>Note</em>: We can still use the <strong>ASP.NetTutorial</strong> project which we have created in the previous tutorial.</p>
 
 <ol>
   <li>
-    <p>To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project’s name (mine is <strong>ASPNetTutorial</strong>), then click <strong>Add</strong> → <strong>Web Form</strong>. Name the item as <strong>Login</strong> because we are going to create a simple Login interface. Now, we are supposed to have a <code class="highlighter-rouge">Login.aspx</code> file. This file contains basic HTML codes with <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code>, <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code>.</p>
+    <p>Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Forms Master Page</strong>. We can specifiy the name for the Master page. I maintain its default name - <code class="highlighter-rouge">Site1</code>.
+<img src="/youquan-blog/images/blog3_masterpage.png" alt=""><br>
+A <code class="highlighter-rouge">Site1.Master</code> page will be created automatically with the codes as follow:</p>
 
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;%@</span> <span class="n">Master</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Site1.master.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Site1"</span> <span class="o">%&gt;</span>
@@ -208,7 +224,22 @@ window.onload = wrap_img;
  <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
   </li>
+  <li>
+    <p>Next, we create the rest of the pages in our web site. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page which we have created earlier.
+<img src="/youquan-blog/images/blog3_selectmasterpage.png" alt=""></p>
+  </li>
 </ol>
+
+<p>Note that the web page which we have created only a few lines of codes as follow:<br>
+    <code class="highlighter-rouge">python
+    &lt;%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %&gt;
+    &lt;asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"&gt;
+    &lt;/asp:Content&gt;
+    &lt;asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"&gt;
+    &lt;/asp:Content&gt;
+   </code></p>
+
+<p>To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project’s name (mine is <strong>ASPNetTutorial</strong>), then click <strong>Add</strong> → <strong>Web Form</strong>. Name the item as <strong>Login</strong> because we are going to create a simple Login interface. Now, we are supposed to have a <code class="highlighter-rouge">Login.aspx</code> file. This file contains basic HTML codes with <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code>, <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code>.</p>
 
 <h2 id="create-the-masterpage-using-bootstrap">
 <a class="anchor" href="#create-the-masterpage-using-bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the Masterpage using Bootstrap</h2>
