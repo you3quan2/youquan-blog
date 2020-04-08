@@ -56,7 +56,7 @@ By now, we can have a rough idea that our website is going to look something lik
 - Content region (a simple text which indicates what page it is)
 - Footer region (website's info, copyright etc.)
 
-## Create a Masterpage with ASP.NET
+## Create a Master Page with ASP.NET
 *Note*: We can still use the **ASP.NetTutorial** project which we have created in the previous tutorial.
 
 1. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Forms Master Page**. We can specifiy the name for the Master page. I maintain its default name - `Site1`.
@@ -85,9 +85,9 @@ A `Site1.Master` page will be created automatically with the codes as follow:
     </html>
     ```
     
-1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages we created. In this case, we need to select `Site1.Master`, which is the Master page which we have created earlier.  
+1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select `Site1.Master`, which is the Master page for these pages.  
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
-Note that the web page which we have created only have a few lines of codes as follow:  
+Note that these web page have a few lines of codes readily available as follow:  
 
     ```python
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
@@ -96,6 +96,77 @@ Note that the web page which we have created only have a few lines of codes as f
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     </asp:Content>
     ```
+    
+We can see a **ContentPlaceHolder** control with ID `ContentPlaceHolder1` in `Site1.Master`. This is the place where other pages have their own unique content. The common design for all pages within a web site (e.g. Header, Footer etc.) is placed outside this **ContentPlaceHolder**.
 
-1. Next line ....
+In other pages (e.g. `Home.aspx`, `Profile.aspx`), the Master page of these pages are defined in the `<%@ Page %>` directive (`MasterPageFile="~/Site1.Master`). These pages also have a **Content** control, which allow us to place unique content for every single page.
+
+## Code the Master Page with Bootstrap
+As mentioned earlier, our Master page consists of three regions: **Header**, **Content** and **Footer**, and we know that there is a **ContentPlaceHolder** within **Content** region. 
+
+1. Create the **Header** region by adding a `<header></header>` tag within the `<body>...</body>` but **BEFORE** the **ContentPlaceHolder** control.
+
+1. Then, add the **Footer** region by adding a `<footer></footer>` tag within the `<body>...</body>` but **AFTER** the **ContentPlaceHolder** control. 
+
+    ```python
+    <html>
+      <head runat="server">
+      <title></title>
+      ...other codes...
+      </head>
+      <body>
+        <header></header>
+        ...other codes...
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        ...other codes...
+        <footer></footer>
+      <body>
+    </html>
+    ```
+
+1. Next, add the Bootstrap navigation bar codes into `<header></header>` tag.  
+
+    ```python
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">ASP.NET Tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="Home.aspx">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Profile.aspx">Profile</a>
+            </li>
+
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="WebChat.aspx">Web Chat</a>
+                <a class="dropdown-item" href="EnquiryForm.aspx">Enquiry Form</a>
+            </div>
+            </li>
+
+            </ul>
+        </div>
+        </nav>
+    ```  
+    
+You can learn more about Bootstrap navigation bar by following this [link](https://getbootstrap.com/docs/4.0/components/navbar/).  
+
+1. Finally, add the following line within the `<footer></footer>` tag.  
+
+    ```python
+    ASP.NET Tutorial by @youquan in 2020.
+    ```  
+    
+    Of course you can put your own information within the `<footer>`. Now, view `Site1.Master` in **Split** or **Design** mode to check on the design of our Master page.
+
+## Add Content to Other Pages
+*Note*: We can still use the **ASP.NetTutorial** project which we...
 
