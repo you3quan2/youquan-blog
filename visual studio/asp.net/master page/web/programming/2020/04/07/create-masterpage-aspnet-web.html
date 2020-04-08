@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      4 min read
     
 </span></p>
 
@@ -131,7 +131,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#a-web-page-layout">A Web page Layout</a></li>
 <li class="toc-entry toc-h2"><a href="#the-sitemap">The Sitemap</a></li>
 <li class="toc-entry toc-h2"><a href="#create-a-masterpage-with-aspnet">Create a Masterpage with ASP.NET</a></li>
-<li class="toc-entry toc-h2"><a href="#create-the-masterpage-using-bootstrap">Create the Masterpage using Bootstrap</a></li>
 </ul><h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
 <p>In this tutorial, we will:</p>
@@ -172,15 +171,18 @@ window.onload = wrap_img;
 
 <h2 id="the-sitemap">
 <a class="anchor" href="#the-sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Sitemap</h2>
-<p>Before we start to develop our web site, we need to first have a <a href="https://en.wikipedia.org/wiki/Site_map">sitemap</a> , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like Home page, Explorer page, Profile page, now we are going to create a sitemap for our own web site.</p>
+<p>Before we start to develop our web site, we need to first have a <a href="https://en.wikipedia.org/wiki/Site_map">sitemap</a> , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like <strong>Home</strong> page, <strong>Explorer</strong> page, <strong>Profile</strong> page, now we are going to create a sitemap for our own web site.</p>
 
 <p>Our web site, which I known as <strong>ASP.NET Tutorial</strong> website has the following web pages:</p>
 <ul>
   <li>Home page</li>
   <li>Profile page</li>
   <li>Contact
--Web Chat page
--Online Enquiry page</li>
+    <ul>
+      <li>Web Chat page</li>
+      <li>Online Enquiry page</li>
+    </ul>
+  </li>
 </ul>
 
 <p>The sitemap above shows that we have four web pages: <strong>Home</strong>, <strong>Profile</strong>, <strong>Web Chat</strong> and <strong>Online Enquiry</strong> page. Note that in this example, we do not have a page for <strong>Contact</strong>. The users can directly access the <strong>Web Chat</strong> page and <strong>Online Enquiry</strong> page, which are categorised under <strong>Contact</strong>.</p>
@@ -188,9 +190,11 @@ window.onload = wrap_img;
 <p>By now, we can have a rough idea that our website is going to look something like the one below:
 <img src="/youquan-blog/images/blog3_webpagelayout.png" alt=""></p>
 
-<p>-Header region (with a navigation bar, which created based on our sitemap)
--Content region (a simple text which indicates what page it is)
--Footer region (website’s info, copyright etc.)</p>
+<ul>
+  <li>Header region (with a navigation bar, which created based on our sitemap)</li>
+  <li>Content region (a simple text which indicates what page it is)</li>
+  <li>Footer region (website’s info, copyright etc.)</li>
+</ul>
 
 <h2 id="create-a-masterpage-with-aspnet">
 <a class="anchor" href="#create-a-masterpage-with-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Masterpage with ASP.NET</h2>
@@ -230,28 +234,17 @@ A <code class="highlighter-rouge">Site1.Master</code> page will be created autom
   </li>
 </ol>
 
-<p>Note that the web page which we have created only a few lines of codes as follow:<br>
-    <code class="highlighter-rouge">python
-    &lt;%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %&gt;
-    &lt;asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"&gt;
-    &lt;/asp:Content&gt;
-    &lt;asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"&gt;
-    &lt;/asp:Content&gt;
-   </code></p>
+<p>Note that the web page which we have created only a few lines of codes as follow:</p>
 
-<p>To introduce the functionalities of other components, we need to first create an empty web form. Right click on the project’s name (mine is <strong>ASPNetTutorial</strong>), then click <strong>Add</strong> → <strong>Web Form</strong>. Name the item as <strong>Login</strong> because we are going to create a simple Login interface. Now, we are supposed to have a <code class="highlighter-rouge">Login.aspx</code> file. This file contains basic HTML codes with <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code>, <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code>.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```python
+&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %&gt;
+&lt;asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"&gt;
+&lt;/asp:Content&gt;
+&lt;asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"&gt;
+&lt;/asp:Content&gt;
+```
+</code></pre></div></div>
 
-<h2 id="create-the-masterpage-using-bootstrap">
-<a class="anchor" href="#create-the-masterpage-using-bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the Masterpage using Bootstrap</h2>
-<p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its defacto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
-
-<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
-
-<p>https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs</p>
-
-<ol>
-  <li>Bel</li>
-</ol>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
