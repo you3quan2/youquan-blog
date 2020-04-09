@@ -12,35 +12,35 @@ title: 'Creating a Master Page in ASP.NET'
 In this tutorial, we will:
 - Learn what is a web page layout and a sitemap.
 - Learn how to create a Master page for a multiple pages web site in ASP.NET.
-- Learn how to use Bootstrap to design the Master page, with focus on the navigation bar.
+- Learn how to use Bootstrap to design the Master page, with a focus on the navigation bar.
 
 ## Prerequisite
-If you are new to ASP.NET, I suggest you to look into this [tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html) to learn how to create a ASP.NET web project with Microsoft Visual Studio.
+If you are new to ASP.NET, I suggest you to look into this [tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html) to learn how to create an ASP.NET web project with Microsoft Visual Studio.
 
 ## Why we need to learn this?
-I believe you have know learn how to create a single ASP.NET web page. However, in real life, a web site is made up from multiple web pages. Take Twitter as example:
+I believe you should have known how to create a single ASP.NET web page by now. However, in real life, a web site is made up of multiple web pages. Take Twitter as an example:
 ![]({{ site.baseurl }}/images/blog3_twitterpages.png)  
 
-If we login to our Twitter account, we can see a menu on the left hand side of the page. We call it as navigation bar, which helps us to navigate throughout the web site (e.g. from **Home** page to the **Explore** page). Everytime we browse from one page to another, the navigation bar remain the same, and only a specific portion of the web page changed.
+If we login to our Twitter account, we can see a menu on the left-hand side of the page. We call it as a navigation bar, which helps us to navigate throughout the web site (e.g. from **Home** page to the **Explore** page). Every time we browse from one page to another, the navigation bar remains the same, and only a specific portion of the web page changed.
 
-Hence, it is impractical if we write the codes for the navigation bar in every single web pages within our web site, and change each pages manually everytime we change the design of our web site. ASP.NET offers us a solution - the **Master Page**. By using the Master page, we will only need to code the standard layout in the `Site.Master`, and this will be implemented to the rest of the pages within our web site.
+Hence, it is impractical if we write the codes for the navigation bar in every single web pages within our web site, and change each page manually every time we change the design of our web site. ASP.NET offers us a solution - the **Master Page**. By using the Master page, we will only need to code the standard layout in the `Site.Master`, and this will be implemented to the rest of the pages within our web site.
 
 ## Requirements
 1. Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019) on how to download and install.
-1. Bootstrap package
+1. Bootstrap. See [here](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/bootstrap/web/programming/2020/04/08/add-bootstrap-aspnet-web.html) on how to add the Boostrap package in ASP.NET.
 
 ## A Web page Layout
 Let's start by understanding the basic concept of the layout of a web page. The sample below shows a web page which has five regions: **Header**, **Content**, **Advertisement**, **Recommended Book** and **Footer**.
-![]({{ site.baseurl }}/images/blog3_webpagelayout.png)  
+![]({{ site.baseurl }}/images/blog3_webpagelayout.png "An example of a Web page Layout")[^1]  
 
-For the sake of simplicity, we will focus only on three regions: **Header**, **Content** and **Footer**. Recall the example of the Twitter page discussed above, a web application usually has the same **Header** and **Footer** across all pages. The **Content** is the region where the unique content for each individual web page is located.
+For the sake of simplicity, we will focus only on three regions: **Header**, **Content** and **Footer**. Recall the example of the Twitter page discussed above, a web application usually has the same **Header** and **Footer** across all pages. The **Content** is the region where the unique content for each web page is located.
 
 Hence, we will define the **Header** and **Footer** region in our ASP.NET Master page and create the unique content in the rest of the web pages within the same web application.
 
 ## The Sitemap
-Before we start to develop our web site, we need to first have a [sitemap](https://en.wikipedia.org/wiki/Site_map) , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like **Home** page, **Explorer** page, **Profile** page, now we are going to create a sitemap for our own web site.
+Before we start to develop our web site, we need to first have a [sitemap](https://en.wikipedia.org/wiki/Site_map) , which lists all the web pages within the web site and how these pages are interrelated. Just like the Twitter web site above which has pages like **Home** page, **Explorer** page, **Profile** page, now we are going to create a sitemap for our web site.
 
-Our web site, which I known as **ASP.NET Tutorial** website has the following web pages:
+Our web site, which I call it as **ASP.NET Tutorial** website has the following web pages:
 - Home page
 - Profile page
 - Contact
@@ -59,7 +59,7 @@ By now, we can have a rough idea that our website is going to look something lik
 ## Create a Master Page with ASP.NET
 *Note*: We can still use the **ASP.NetTutorial** project which we have created in the previous tutorial. Keep the **Login** page for now.
 
-1. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Forms Master Page**. We can specifiy the name for the Master page. I maintain its default name - `Site1`.
+1. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Forms Master Page**. We can specify the name for the Master page. I maintain its default name - `Site1`.
 ![]({{ site.baseurl }}/images/blog3_masterpage.png)  
 A `Site1.Master` page will be created automatically with the codes as follow:  
 
@@ -85,9 +85,9 @@ A `Site1.Master` page will be created automatically with the codes as follow:
     </html>
     ```
     
-1. Next, we create the rest of the pages in our web site. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select `Site1.Master`, which is the Master page for these pages.  
+1. Next, we create the rest of the web pages. Right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Web**, select **Web Forms** and then click on **Web Form with Master Page**. Name these web pages as `Home.aspx`, `Profile.aspx`, `WebChat.aspx` and `EnquiryForm.aspx` respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select `Site1.Master`, which is the Master page for these pages.  
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
-Note that these web page have a few lines of codes readily available as follow:  
+Note that these web pages have a few lines of codes readily available as follow:  
 
     ```python
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
@@ -102,9 +102,9 @@ We can see a **ContentPlaceHolder** control with ID `ContentPlaceHolder1` in `Si
 In other pages (e.g. `Home.aspx`, `Profile.aspx`), the Master page of these pages are defined in the `<%@ Page %>` directive (`MasterPageFile="~/Site1.Master`). These pages also have a **Content** control, which allow us to place unique content for every single page.
 
 ## Code the Master Page with Bootstrap
-As mentioned earlier, our Master page consists of three regions: **Header**, **Content** and **Footer**, and we know that there is a **ContentPlaceHolder** within **Content** region. 
+As mentioned earlier, our Master page consists of three regions: **Header**, **Content** and **Footer**. The **Content** region is readily available in our Master page, where we can find the **ContentPlaceHolder** control.
 
-1. Create the **Header** region by adding a `<header></header>` tag within the `<body>...</body>` but **BEFORE** the **ContentPlaceHolder** control.
+1. Now, create the **Header** region by adding a `<header></header>` tag within the `<body>...</body>` but **BEFORE** the **ContentPlaceHolder** control.
 
 1. Then, add the **Footer** region by adding a `<footer></footer>` tag within the `<body>...</body>` but **AFTER** the **ContentPlaceHolder** control. 
 
@@ -165,10 +165,10 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
     ASP.NET Tutorial by @youquan in 2020.
     ```  
     
-    Of course you can put your own information within the `<footer></footer>` tag. Now, view `Site1.Master` in **Split** or **Design** mode to check on the design of our Master page.
+    Of course, you can put your own information within the `<footer></footer>` tag. Now, view `Site1.Master` in **Split** or **Design** mode to check on the design of our Master page.
 
 ## Add Content to Other Pages
-We are now going to add unique content into each pages within the web site (except the Master page). Go to `Home.aspx` and add a heading within the **Content** control:
+We are now going to add unique content into each page within the web site (except the Master page). Go to `Home.aspx` and add a heading within the **Content** control:
 
 ```python
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
@@ -182,7 +182,7 @@ We are now going to add unique content into each pages within the web site (exce
 Repeat this for other pages, but change the content of the heading accordingly (e.g. This is my PROFILE page.).
 
 ## Set the Start Page and Run Our Project
-Commonly, a web site always start with the **Home** page. Hence, whenever we test our web project, we would like to firs start with this page. To do this, right click on the Home page file - `Home.aspx` and select **Set As Start Page**. Now, run the project and test the navigation bar, which should lead you to different pages.
+Commonly, a web site always start with the **Home** page. Hence, whenever we test our web project, we would like to first start with this page. To do this, right click on the Home page file - `Home.aspx` and select **Set As Start Page**. Now, run the project and test the navigation bar, which should lead you to different pages.
 
 ![]({{ site.baseurl }}/images/blog3_allpages.png)  
 
@@ -195,4 +195,6 @@ I hope by now:
 Coming up next, we will learn:
 - How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
 
-I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below. :smiley:
+I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below.
+
+[^1] Test
