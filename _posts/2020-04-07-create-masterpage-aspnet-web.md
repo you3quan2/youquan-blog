@@ -30,10 +30,10 @@ Hence, it is impractical if we write the codes for the navigation bar in every s
 1. Bootstrap. See [here](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/bootstrap/web/programming/2020/04/08/add-bootstrap-aspnet-web.html) on how to add the Boostrap package in ASP.NET.
 
 ## A Web page Layout
-Let's start by understanding the basic concept of the layout of a web page. The example[^1] below shows a web page which has five regions: **Header**, **Content**, **Advertisement**, **Recommended Book** and **Footer**.
+Let's start by understanding the basic concept of the layout of a web page. The example below shows a web page which has five regions: **Header**, **Content**, **Advertisement**, **Recommended Book** and **Footer**.
 ![]({{ site.baseurl }}/images/blog3_webpagelayout.png "An example of a Web page Layout")  
 
-[^1]: Creating a Site-Wide Layout Using Master Pages (C#) [(link)](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs)
+*Note*: Image source [(link)](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs)
 
 For the sake of simplicity, we will focus only on three regions: **Header**, **Content** and **Footer**. Recall the example of the Twitter page discussed above, a web application usually has the same **Header** and **Footer** across all pages. The **Content** is the region where the unique content for each web page is located.
 
