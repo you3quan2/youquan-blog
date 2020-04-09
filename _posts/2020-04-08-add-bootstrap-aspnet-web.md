@@ -8,7 +8,7 @@ categories: [visual studio, asp.net, Bootstrap, web, programming]
 title: 'How To Add Bootstrap In ASP.NET'
 ---
 
-If you have learn basic web design, then you must know about [Cascading Style Sheets](https://www.w3schools.com/css/) (CSS). Commonly, your web project will have a `.css` file, which defines the design of your web pages. For example, if we want to have a button with green background like this: ![]({{ site.baseurl }}/images/blog4_successbtn.png?display=inline-block), we need to have a `.css` file which defines the style of the button[^1]:
+If you have learned basic web design, then you must know about [Cascading Style Sheets](https://www.w3schools.com/css/) (CSS). Commonly, your web project will have a `.css` file, which defines the design of your web pages. For example, if we want to have a button with a green background, we need to have a `.css` file which defines the style of the button:
 ```css
 .button {
   background-color: #4CAF50;
@@ -24,6 +24,10 @@ If you have learn basic web design, then you must know about [Cascading Style Sh
 }
 ```
 
+*Note:* This CSS code is from the [w3school CSS tutorial](https://www.w3schools.com/css/css3_buttons.asp).
+
+![]({{ site.baseurl }}/images/blog4_successbtn.png "An simple green button")
+
 However, the task of creating a button like this can be simplified with the use of [Bootstrap](https://getbootstrap.com/). **Bootstrap** is a free and open-source CSS framework which contains CSS-based and [JavaScript](https://www.w3schools.com/js/)-based design templates for various interface components, including the button which we want to create. For example, with Bootstrap, we just need to define the class (e.g. `btn-success`) of the button in our `.html` page (or `.aspx` for **ASP.NET**):
 
 ```html
@@ -36,7 +40,7 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
 1. In the **Solution Explorer**, right click on the project (e.g. **ASPNetTutorial) and select **Manage NuGet Packages**.  
 ![]({{ site.baseurl }}/images/blog4_managenuget.png)  
 
-1. Under the **NuGet** window, click on **Browse** and search for *Bootstrap* using the **Search**. Once we get the **Bootstrap** package , click on **&darr**; to add the package to our web project.  
+1. Under the **NuGet** window, click on **Browse** and search for *Bootstrap* using the **Search**. Once we get the **Bootstrap** package, click on **&darr**; to add the package to our web project.  
 ![]({{ site.baseurl }}/images/blog4_installbs.png)  
 
 1. We will be asked to confirm the installation, where the following files will be added into our web project:  
@@ -45,7 +49,7 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
    - bootstrap.4.4.1  
   ![]({{ site.baseurl }}/images/blog4_preview.png)  
 
-1. If the installation is successful, we will see multiple files (`.css`, `.map`, `.js`) aaded to the **Content** and **Scripts** folder under our web project.  
+1. If the installation is successful, we will see multiple files (`.css`, `.map`, `.js`) added to the **Content** and **Scripts** folder under our web project.  
 ![]({{ site.baseurl }}/images/blog4_newfiles.png)  
 
 1. Drag and drop these three specific files from the **Content** and **Scripts** into the `<head></head>` section of the web page where we want to code with **Bootstrap** (I have added it to the `Login.apsx` which we have created in the very first [tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html).
@@ -69,7 +73,7 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
     </html>
     ``` 
 
-1. To check if we have added the **Bootstrap** correctly, run the web project and we should be able to spot the differences in the Login page:  
+1. To check if we have added the **Bootstrap** correctly, run the web project and we should be able to spot the differences in the** Login** page:  
 ![]({{ site.baseurl }}/images/blog4_comparebs.png)  
 
 1. If the differences (e.g. *font* and *size*) are not obvious for you, let's add a **Boostrap** class to the **Login** button:
@@ -77,9 +81,9 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
     ```python
     <asp:Button ID="login_button" class="btn btn-outline-danger" runat="server" Text="LOGIN" />
     ```  
-    Now, run the project again and hopefully you can notice how the design of the **Login** button had changed:  
+    Now, run the project again and hopefully, you can notice how the design of the **Login** button had changed:  
     ![]({{ site.baseurl }}/images/blog4_dangerbtn.png) 
 
-If you want to explore more about ASP.NET, I will recommend you to refer to [this tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html), which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.
+If you want to explore more about web programming with **ASP.NET**, I will recommend you to refer to [this tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html), which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.
 
 I hope you found this quick guide helpful! If you have more questions about this tutorial, please let me know by commenting below.
