@@ -37,10 +37,10 @@ However, the task of creating a button like this can be simplified with the use 
 The [Bootstrap documentation](https://getbootstrap.com/docs/4.4/getting-started/introduction/) provides a comprehensive guide for us to create almost all the design which we can think of.
 
 To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can add **Bootstrap package** to our **ASP.NET** web project by following these steps:
-1. In the **Solution Explorer**, right click on the project (e.g. **ASPNetTutorial) and select **Manage NuGet Packages**.  
+1. In the **Solution Explorer**, right click on the project (e.g. **ASPNetTutorial**) and select **Manage NuGet Packages**.  
 ![]({{ site.baseurl }}/images/blog4_managenuget.png)  
 
-1. Under the **NuGet** window, click on **Browse** and search for *Bootstrap* using the **Search**. Once we get the **Bootstrap** package, click on **&darr**; to add the package to our web project.  
+1. Under the **NuGet** window, click on **Browse** and search for *Bootstrap* using the **Search**. Once we get the **Bootstrap** package, click on **&darr;** to add the package to our web project.  
 ![]({{ site.baseurl }}/images/blog4_installbs.png)  
 
 1. We will be asked to confirm the installation, where the following files will be added into our web project:  
@@ -52,7 +52,7 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
 1. If the installation is successful, we will see multiple files (`.css`, `.map`, `.js`) added to the **Content** and **Scripts** folder under our web project.  
 ![]({{ site.baseurl }}/images/blog4_newfiles.png)  
 
-1. Drag and drop these three specific files from the **Content** and **Scripts** into the `<head></head>` section of the web page where we want to code with **Bootstrap** (I have added it to the `Login.apsx` which we have created in the very first [tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html).
+1. Drag-and-drop these three specific files from the **Content** and **Scripts** into the `<head></head>` section of the web page where we want to code with **Bootstrap** (I have added it to the `Login.apsx` which we have created in the very first [tutorial](https://bit.ly/2x6DLTQ)).
    - bootstrap.min.css
    - jquery-3.0.0.min.js
    - bootstrap.min.js
@@ -73,7 +73,7 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
     </html>
     ``` 
 
-1. To check if we have added the **Bootstrap** correctly, run the web project and we should be able to spot the differences in the** Login** page:  
+1. To check if we have added the **Bootstrap** correctly, run the web project and we should be able to spot the differences in the **Login** page:  
 ![]({{ site.baseurl }}/images/blog4_comparebs.png)  
 
 1. If the differences (e.g. *font* and *size*) are not obvious for you, let's add a **Boostrap** class to the **Login** button:
@@ -84,6 +84,6 @@ To unleash the power of **Bootstrap** in our **ASP.NET** web application, we can
     Now, run the project again and hopefully, you can notice how the design of the **Login** button had changed:  
     ![]({{ site.baseurl }}/images/blog4_dangerbtn.png) 
 
-If you want to explore more about web programming with **ASP.NET**, I will recommend you to refer to [this tutorial](https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html), which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.
+If you want to explore more about web programming with **ASP.NET**, I will recommend you to refer to [this tutorial](https://bit.ly/2x6DLTQ), which shows you how to create a **Master page** in **ASP.NET** and develop a navigation bar for the Master page using **Bootstrap**.
 
 I hope you found this quick guide helpful! If you have more questions about this tutorial, please let me know by commenting below.
