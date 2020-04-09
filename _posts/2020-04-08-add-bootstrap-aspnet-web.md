@@ -8,9 +8,8 @@ categories: [visual studio, asp.net, Bootstrap, web, programming]
 title: 'How To Add Bootstrap In ASP.NET'
 ---
 
-If you have learn basic web design, then you must know about Cascading Style Sheets (CSS). Commonly, your web project will have a .css file, which defines the design of your web pages. For example, if you want to have a green button 
-
-
+If you have learn basic web design, then you must know about Cascading Style Sheets (CSS). Commonly, your web project will have a `.css` file, which defines the design of your web pages. For example, if we want to have a button with green background like this: ![]({{ site.baseurl }}/images/blog4_successbtn.png), we need have a `.css` file which defined the style of the button:
+```css
 .button {
   background-color: #4CAF50;
   border: none;
@@ -23,10 +22,11 @@ If you have learn basic web design, then you must know about Cascading Style She
   margin: 4px 2px;
   cursor: pointer;
 }
+```
 
-
+```html
 <button type="button" class="btn btn-success">Success</button>
-
+```
 
 https://www.w3schools.com/css/css3_buttons.asp
 
