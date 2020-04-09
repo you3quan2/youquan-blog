@@ -65,7 +65,7 @@ By now, we can have a rough idea that our website is going to look something lik
 ![]({{ site.baseurl }}/images/blog3_masterpage.png)  
 A `Site1.Master` page will be created automatically with the codes as follow:  
 
-    ```python
+    ```html
     <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ASPNetTutorial.Site1" %>
 
     <!DOCTYPE html>
@@ -91,7 +91,7 @@ A `Site1.Master` page will be created automatically with the codes as follow:
 ![]({{ site.baseurl }}/images/blog3_selectmasterpage.png)  
 Note that these web pages have a few lines of codes readily available as follow:  
 
-    ```python
+    ```html
     <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     </asp:Content>
@@ -110,7 +110,7 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
 
 1. Then, add the **Footer** region by adding a `<footer></footer>` tag within the `<body>...</body>` but **AFTER** the **ContentPlaceHolder** control. 
 
-    ```python
+    ```html
     <html>
       <head runat="server">
       <title></title>
@@ -128,7 +128,7 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
 
 1. Next, add the Bootstrap navigation bar codes into `<header></header>` tag.  
 
-    ```python
+    ```html
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">ASP.NET Tutorial</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -172,7 +172,7 @@ As mentioned earlier, our Master page consists of three regions: **Header**, **C
 ## Add Content to Other Pages
 We are now going to add unique content into each page within the web site (except the Master page). Go to `Home.aspx` and add a heading within the **Content** control:
 
-```python
+```html
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
