@@ -141,43 +141,43 @@ window.onload = wrap_img;
 <ul>
   <li>Learn what is a web page layout and a sitemap.</li>
   <li>Learn how to create a Master page for a multiple pages web site in ASP.NET.</li>
-  <li>Learn how to use Bootstrap to design the Master page, with focus on the navigation bar.</li>
+  <li>Learn how to use Bootstrap to design the Master page, with a focus on the navigation bar.</li>
 </ul>
 
 <h2 id="prerequisite">
 <a class="anchor" href="#prerequisite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisite</h2>
-<p>If you are new to ASP.NET, I suggest you to look into this <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">tutorial</a> to learn how to create a ASP.NET web project with Microsoft Visual Studio.</p>
+<p>If you are new to ASP.NET, I suggest you to look into this <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">tutorial</a> to learn how to create an ASP.NET web project with Microsoft Visual Studio.</p>
 
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
-<p>I believe you have know learn how to create a single ASP.NET web page. However, in real life, a web site is made up from multiple web pages. Take Twitter as example:
+<p>I believe you should have known how to create a single ASP.NET web page by now. However, in real life, a web site is made up of multiple web pages. Take Twitter as an example:
 <img src="/youquan-blog/images/blog3_twitterpages.png" alt=""></p>
 
-<p>If we login to our Twitter account, we can see a menu on the left hand side of the page. We call it as navigation bar, which helps us to navigate throughout the web site (e.g. from <strong>Home</strong> page to the <strong>Explore</strong> page). Everytime we browse from one page to another, the navigation bar remain the same, and only a specific portion of the web page changed.</p>
+<p>If we login to our Twitter account, we can see a menu on the left-hand side of the page. We call it as a navigation bar, which helps us to navigate throughout the web site (e.g. from <strong>Home</strong> page to the <strong>Explore</strong> page). Every time we browse from one page to another, the navigation bar remains the same, and only a specific portion of the web page changed.</p>
 
-<p>Hence, it is impractical if we write the codes for the navigation bar in every single web pages within our web site, and change each pages manually everytime we change the design of our web site. ASP.NET offers us a solution - the <strong>Master Page</strong>. By using the Master page, we will only need to code the standard layout in the <code class="highlighter-rouge">Site.Master</code>, and this will be implemented to the rest of the pages within our web site.</p>
+<p>Hence, it is impractical if we write the codes for the navigation bar in every single web pages within our web site, and change each page manually every time we change the design of our web site. ASP.NET offers us a solution - the <strong>Master Page</strong>. By using the Master page, we will only need to code the standard layout in the <code class="highlighter-rouge">Site.Master</code>, and this will be implemented to the rest of the pages within our web site.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 <ol>
   <li>Microsoft Visual Studio (I am using the 2019 version). See <a href="https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019">here</a> on how to download and install.</li>
-  <li>Bootstrap package</li>
+  <li>Bootstrap. See <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/bootstrap/web/programming/2020/04/08/add-bootstrap-aspnet-web.html">here</a> on how to add the Boostrap package in ASP.NET.</li>
 </ol>
 
 <h2 id="a-web-page-layout">
 <a class="anchor" href="#a-web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Web page Layout</h2>
 <p>Let’s start by understanding the basic concept of the layout of a web page. The sample below shows a web page which has five regions: <strong>Header</strong>, <strong>Content</strong>, <strong>Advertisement</strong>, <strong>Recommended Book</strong> and <strong>Footer</strong>.
-<img src="/youquan-blog/images/blog3_webpagelayout.png" alt=""></p>
+<img src="/youquan-blog/images/blog3_webpagelayout.png" alt="" title="An example of a Web page Layout">[^1]</p>
 
-<p>For the sake of simplicity, we will focus only on three regions: <strong>Header</strong>, <strong>Content</strong> and <strong>Footer</strong>. Recall the example of the Twitter page discussed above, a web application usually has the same <strong>Header</strong> and <strong>Footer</strong> across all pages. The <strong>Content</strong> is the region where the unique content for each individual web page is located.</p>
+<p>For the sake of simplicity, we will focus only on three regions: <strong>Header</strong>, <strong>Content</strong> and <strong>Footer</strong>. Recall the example of the Twitter page discussed above, a web application usually has the same <strong>Header</strong> and <strong>Footer</strong> across all pages. The <strong>Content</strong> is the region where the unique content for each web page is located.</p>
 
 <p>Hence, we will define the <strong>Header</strong> and <strong>Footer</strong> region in our ASP.NET Master page and create the unique content in the rest of the web pages within the same web application.</p>
 
 <h2 id="the-sitemap">
 <a class="anchor" href="#the-sitemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Sitemap</h2>
-<p>Before we start to develop our web site, we need to first have a <a href="https://en.wikipedia.org/wiki/Site_map">sitemap</a> , which lists all the web pages in the web site and how these pages are interrelate. Just like the Twitter web site above which has pages like <strong>Home</strong> page, <strong>Explorer</strong> page, <strong>Profile</strong> page, now we are going to create a sitemap for our own web site.</p>
+<p>Before we start to develop our web site, we need to first have a <a href="https://en.wikipedia.org/wiki/Site_map">sitemap</a> , which lists all the web pages within the web site and how these pages are interrelated. Just like the Twitter web site above which has pages like <strong>Home</strong> page, <strong>Explorer</strong> page, <strong>Profile</strong> page, now we are going to create a sitemap for our web site.</p>
 
-<p>Our web site, which I known as <strong>ASP.NET Tutorial</strong> website has the following web pages:</p>
+<p>Our web site, which I call it as <strong>ASP.NET Tutorial</strong> website has the following web pages:</p>
 <ul>
   <li>Home page</li>
   <li>Profile page</li>
@@ -206,7 +206,7 @@ window.onload = wrap_img;
 
 <ol>
   <li>
-    <p>Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Forms Master Page</strong>. We can specifiy the name for the Master page. I maintain its default name - <code class="highlighter-rouge">Site1</code>.
+    <p>Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Forms Master Page</strong>. We can specify the name for the Master page. I maintain its default name - <code class="highlighter-rouge">Site1</code>.
 <img src="/youquan-blog/images/blog3_masterpage.png" alt=""><br>
 A <code class="highlighter-rouge">Site1.Master</code> page will be created automatically with the codes as follow:</p>
 
@@ -233,9 +233,9 @@ A <code class="highlighter-rouge">Site1.Master</code> page will be created autom
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Next, we create the rest of the pages in our web site. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page for these pages.<br>
+    <p>Next, we create the rest of the web pages. Right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Web</strong>, select <strong>Web Forms</strong> and then click on <strong>Web Form with Master Page</strong>. Name these web pages as <code class="highlighter-rouge">Home.aspx</code>, <code class="highlighter-rouge">Profile.aspx</code>, <code class="highlighter-rouge">WebChat.aspx</code> and <code class="highlighter-rouge">EnquiryForm.aspx</code> respectively. We will be asked to select the Master page for each of the web pages. In this case, we need to select <code class="highlighter-rouge">Site1.Master</code>, which is the Master page for these pages.<br>
 <img src="/youquan-blog/images/blog3_selectmasterpage.png" alt=""><br>
-Note that these web page have a few lines of codes readily available as follow:</p>
+Note that these web pages have a few lines of codes readily available as follow:</p>
 
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
@@ -253,11 +253,11 @@ Note that these web page have a few lines of codes readily available as follow:<
 
 <h2 id="code-the-master-page-with-bootstrap">
 <a class="anchor" href="#code-the-master-page-with-bootstrap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code the Master Page with Bootstrap</h2>
-<p>As mentioned earlier, our Master page consists of three regions: <strong>Header</strong>, <strong>Content</strong> and <strong>Footer</strong>, and we know that there is a <strong>ContentPlaceHolder</strong> within <strong>Content</strong> region.</p>
+<p>As mentioned earlier, our Master page consists of three regions: <strong>Header</strong>, <strong>Content</strong> and <strong>Footer</strong>. The <strong>Content</strong> region is readily available in our Master page, where we can find the <strong>ContentPlaceHolder</strong> control.</p>
 
 <ol>
   <li>
-    <p>Create the <strong>Header</strong> region by adding a <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> tag within the <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> but <strong>BEFORE</strong> the <strong>ContentPlaceHolder</strong> control.</p>
+    <p>Now, create the <strong>Header</strong> region by adding a <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> tag within the <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> but <strong>BEFORE</strong> the <strong>ContentPlaceHolder</strong> control.</p>
   </li>
   <li>
     <p>Then, add the <strong>Footer</strong> region by adding a <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag within the <code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> but <strong>AFTER</strong> the <strong>ContentPlaceHolder</strong> control.</p>
@@ -321,13 +321,13 @@ Note that these web page have a few lines of codes readily available as follow:<
 <div class="highlight"><pre class="highlight"><code> <span class="n">ASP</span><span class="o">.</span><span class="n">NET</span> <span class="n">Tutorial</span> <span class="n">by</span> <span class="o">@</span><span class="n">youquan</span> <span class="ow">in</span> <span class="mf">2020.</span>
 </code></pre></div>    </div>
 
-    <p>Of course you can put your own information within the <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag. Now, view <code class="highlighter-rouge">Site1.Master</code> in <strong>Split</strong> or <strong>Design</strong> mode to check on the design of our Master page.</p>
+    <p>Of course, you can put your own information within the <code class="highlighter-rouge">&lt;footer&gt;&lt;/footer&gt;</code> tag. Now, view <code class="highlighter-rouge">Site1.Master</code> in <strong>Split</strong> or <strong>Design</strong> mode to check on the design of our Master page.</p>
   </li>
 </ol>
 
 <h2 id="add-content-to-other-pages">
 <a class="anchor" href="#add-content-to-other-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add Content to Other Pages</h2>
-<p>We are now going to add unique content into each pages within the web site (except the Master page). Go to <code class="highlighter-rouge">Home.aspx</code> and add a heading within the <strong>Content</strong> control:</p>
+<p>We are now going to add unique content into each page within the web site (except the Master page). Go to <code class="highlighter-rouge">Home.aspx</code> and add a heading within the <strong>Content</strong> control:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
@@ -341,7 +341,7 @@ Note that these web page have a few lines of codes readily available as follow:<
 
 <h2 id="set-the-start-page-and-run-our-project">
 <a class="anchor" href="#set-the-start-page-and-run-our-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set the Start Page and Run Our Project</h2>
-<p>Commonly, a web site always start with the <strong>Home</strong> page. Hence, whenever we test our web project, we would like to firs start with this page. To do this, right click on the Home page file - <code class="highlighter-rouge">Home.aspx</code> and select <strong>Set As Start Page</strong>. Now, run the project and test the navigation bar, which should lead you to different pages.</p>
+<p>Commonly, a web site always start with the <strong>Home</strong> page. Hence, whenever we test our web project, we would like to first start with this page. To do this, right click on the Home page file - <code class="highlighter-rouge">Home.aspx</code> and select <strong>Set As Start Page</strong>. Now, run the project and test the navigation bar, which should lead you to different pages.</p>
 
 <p><img src="/youquan-blog/images/blog3_allpages.png" alt=""></p>
 
@@ -359,7 +359,9 @@ Note that these web page have a few lines of codes readily available as follow:<
   <li>How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).</li>
 </ul>
 
-<p>I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below. :smiley:</p>
+<p>I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below.</p>
+
+<p>[^1] Test</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
