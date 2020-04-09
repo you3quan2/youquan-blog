@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -124,7 +124,28 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-</ul><p>Follow the steps below to add Bootstrap to our ASP.NET web project:</p>
+</ul><p>If you have learn basic web design, then you must know about Cascading Style Sheets (CSS). Commonly, your web project will have a .css file, which defines the design of your web pages. For example, if you want to have a green button</p>
+
+<p>.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}</p>
+
+<p><button type="button" class="btn btn-success">Success</button></p>
+
+<p>https://www.w3schools.com/css/css3_buttons.asp</p>
+
+<p>Bootstrap is a free and open-source CSS framework dire</p>
+
+<p>Follow the steps below to add Bootstrap to our ASP.NET web project:</p>
 <ol>
   <li>
     <p>In the Solution Explorer, right click on the project (e.g. <strong>ASPNetTutorial) and select **Manage NuGet Packages</strong>.<br>
@@ -147,7 +168,7 @@ window.onload = wrap_img;
     <p>If the installation is successful, we will see multiple files (.css, map, .js) aaded to the <strong>Content</strong> and <strong>Scripts</strong> folder under our web project.<br>
 <img src="/youquan-blog/images/blog4_newfiles.png" alt=""></p>
   </li>
-  <li>Drag and drop these three specific files from the <strong>Content</strong> and <strong>Scripts</strong> into the <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section of the web page where we want to code with Bootstrap.
+  <li>Drag and drop these three specific files from the <strong>Content</strong> and <strong>Scripts</strong> into the <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section of the web page where we want to code with Bootstrap (I have added it to the Login.apsx which we have created in the very first <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">tutorial</a>.
     <ul>
       <li>bootstrap.min.css</li>
       <li>jquery-3.0.0.min.js</li>
@@ -165,12 +186,31 @@ window.onload = wrap_img;
     
  <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-    <span class="o">...</span><span class="n">other</span> <span class="n">codes</span><span class="o">...</span>
+     <span class="o">...</span><span class="n">other</span> <span class="n">codes</span><span class="o">...</span>
  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
  <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
   </li>
+  <li>
+    <p>To check if we have added the Bootstrap correctly, run the web project and we should be able to spot the differences in the Login page:<br>
+<img src="/youquan-blog/images/blog4_comparebs.png" alt=""></p>
+  </li>
+  <li>
+    <p>If the differences (e.g. font and size) are not obvious for you, let’s add a Boostrap class to the Login button:</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Button</span> <span class="n">ID</span><span class="o">=</span><span class="s">"login_button"</span> <span class="n">class</span><span class="o">=</span><span class="s">"btn btn-outline-danger"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"LOGIN"</span> <span class="o">/&gt;</span>
+</code></pre></div>    </div>
+    <p>Now, run the project again and hopefully you can notice how the design of the Login button had changed:<br>
+ <img src="/youquan-blog/images/blog4_dangerbtn.png" alt=""></p>
+  </li>
 </ol>
+
+<p>You can always explore the power of Bootstrap by following this <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">link</a>.</p>
+
+<p>If you want to explore more about ASP.NET, I will recommend you to refer to <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html">this tutorial</a>, which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.</p>
+
+<p>I hope you found this quick guide helpful! If you have more questions about this tutorial, please let me know by commenting below. :smiley:</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
