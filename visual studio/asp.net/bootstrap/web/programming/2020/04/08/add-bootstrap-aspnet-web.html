@@ -124,7 +124,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-</ul><p>If you have learn basic web design, then you must know about <a href="https://www.w3schools.com/css/">Cascading Style Sheets</a> (CSS). Commonly, your web project will have a <code class="highlighter-rouge">.css</code> file, which defines the design of your web pages. For example, if we want to have a button with green background like this: <img src="/youquan-blog/images/blog4_successbtn.png?display=inline-block" alt="">, we need to have a <code class="highlighter-rouge">.css</code> file which defines the style of the button[^1]:</p>
+</ul><p>If you have learned basic web design, then you must know about <a href="https://www.w3schools.com/css/">Cascading Style Sheets</a> (CSS). Commonly, your web project will have a <code class="highlighter-rouge">.css</code> file, which defines the design of your web pages. For example, if we want to have a button with a green background, we need to have a <code class="highlighter-rouge">.css</code> file which defines the style of the button:</p>
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.button</span> <span class="p">{</span>
   <span class="nl">background-color</span><span class="p">:</span> <span class="m">#4CAF50</span><span class="p">;</span>
   <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
@@ -138,6 +138,10 @@ window.onload = wrap_img;
   <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p><em>Note:</em> This CSS code is from the <a href="https://www.w3schools.com/css/css3_buttons.asp">w3school CSS tutorial</a>.</p>
+
+<p><img src="/youquan-blog/images/blog4_successbtn.png" alt="" title="An simple green button"></p>
 
 <p>However, the task of creating a button like this can be simplified with the use of <a href="https://getbootstrap.com/">Bootstrap</a>. <strong>Bootstrap</strong> is a free and open-source CSS framework which contains CSS-based and <a href="https://www.w3schools.com/js/">JavaScript</a>-based design templates for various interface components, including the button which we want to create. For example, with Bootstrap, we just need to define the class (e.g. <code class="highlighter-rouge">btn-success</code>) of the button in our <code class="highlighter-rouge">.html</code> page (or <code class="highlighter-rouge">.aspx</code> for <strong>ASP.NET</strong>):</p>
 
@@ -153,7 +157,7 @@ window.onload = wrap_img;
 <img src="/youquan-blog/images/blog4_managenuget.png" alt=""></p>
   </li>
   <li>
-    <p>Under the <strong>NuGet</strong> window, click on <strong>Browse</strong> and search for <em>Bootstrap</em> using the <strong>Search</strong>. Once we get the <strong>Bootstrap</strong> package , click on <strong>&amp;darr</strong>; to add the package to our web project.<br>
+    <p>Under the <strong>NuGet</strong> window, click on <strong>Browse</strong> and search for <em>Bootstrap</em> using the <strong>Search</strong>. Once we get the <strong>Bootstrap</strong> package, click on <strong>&amp;darr</strong>; to add the package to our web project.<br>
 <img src="/youquan-blog/images/blog4_installbs.png" alt=""></p>
   </li>
   <li>We will be asked to confirm the installation, where the following files will be added into our web project:
@@ -166,7 +170,7 @@ window.onload = wrap_img;
     </ul>
   </li>
   <li>
-    <p>If the installation is successful, we will see multiple files (<code class="highlighter-rouge">.css</code>, <code class="highlighter-rouge">.map</code>, <code class="highlighter-rouge">.js</code>) aaded to the <strong>Content</strong> and <strong>Scripts</strong> folder under our web project.<br>
+    <p>If the installation is successful, we will see multiple files (<code class="highlighter-rouge">.css</code>, <code class="highlighter-rouge">.map</code>, <code class="highlighter-rouge">.js</code>) added to the <strong>Content</strong> and <strong>Scripts</strong> folder under our web project.<br>
 <img src="/youquan-blog/images/blog4_newfiles.png" alt=""></p>
   </li>
   <li>Drag and drop these three specific files from the <strong>Content</strong> and <strong>Scripts</strong> into the <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section of the web page where we want to code with <strong>Bootstrap</strong> (I have added it to the <code class="highlighter-rouge">Login.apsx</code> which we have created in the very first <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/c%23/web/programming/2020/03/31/start-aspnet-c-web.html">tutorial</a>.
@@ -193,7 +197,7 @@ window.onload = wrap_img;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To check if we have added the <strong>Bootstrap</strong> correctly, run the web project and we should be able to spot the differences in the Login page:<br>
+    <p>To check if we have added the <strong>Bootstrap</strong> correctly, run the web project and we should be able to spot the differences in the** Login** page:<br>
 <img src="/youquan-blog/images/blog4_comparebs.png" alt=""></p>
   </li>
   <li>
@@ -202,12 +206,12 @@ window.onload = wrap_img;
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Button</span> <span class="n">ID</span><span class="o">=</span><span class="s">"login_button"</span> <span class="n">class</span><span class="o">=</span><span class="s">"btn btn-outline-danger"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"LOGIN"</span> <span class="o">/&gt;</span>
 </code></pre></div>    </div>
-    <p>Now, run the project again and hopefully you can notice how the design of the <strong>Login</strong> button had changed:<br>
+    <p>Now, run the project again and hopefully, you can notice how the design of the <strong>Login</strong> button had changed:<br>
  <img src="/youquan-blog/images/blog4_dangerbtn.png" alt=""></p>
   </li>
 </ol>
 
-<p>If you want to explore more about ASP.NET, I will recommend you to refer to <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html">this tutorial</a>, which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.</p>
+<p>If you want to explore more about web programming with <strong>ASP.NET</strong>, I will recommend you to refer to <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html">this tutorial</a>, which shows you how to create a Master page in ASP.NET and develop a navigation bar for the Master page using Bootstrap.</p>
 
 <p>I hope you found this quick guide helpful! If you have more questions about this tutorial, please let me know by commenting below.</p>
 
