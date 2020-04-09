@@ -142,9 +142,9 @@ window.onload = wrap_img;
 
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
-<p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its defacto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
+<p>I believe you are here because you want/have to learn <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET Web Programming</a>. To learn ASP.NET, we need to use its de facto IDE - <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>.</p>
 
-<p>My experience tells me that it is always better to start by having a brief tour on the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
+<p>My experience tells me that it is always better to start by having a brief tour of the tool which we are going to use in developing a project. By mastering the tools, it is going to save a huge amount of time throughout the learning process.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -154,12 +154,12 @@ window.onload = wrap_img;
 <a class="anchor" href="#create-the-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the Project</h2>
 <ol>
   <li>
-    <p>Open our Visual Studio IDE and click on:<br>
+    <p>Open our <strong>Visual Studio IDE</strong> and click on:<br>
   <img src="/youquan-blog/images/blog2_createproject.png" alt=""><br>
   Alternatively, click on <strong>FILE</strong> → <strong>New Project</strong>.</p>
   </li>
   <li>
-    <p>Choose the ASP.NET Web Application (.NET Framework). Make sure it is the C# template.<br>
+    <p>Choose the <strong>ASP.NET Web Application (.NET Framework)</strong>. Make sure it is the <strong>C#</strong> template.<br>
   <img src="/youquan-blog/images/blog2_createprojectnetframework.png" alt=""></p>
   </li>
   <li>
@@ -216,7 +216,7 @@ However, if you cannot see your <strong>Solution Explorer</strong>, go to the to
 
 <h2 id="our-first-aspnet-web-page">
 <a class="anchor" href="#our-first-aspnet-web-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Our First ASP.NET Web Page</h2>
-<p>Now, we are going to familiarise with the components in Visual Studio by creating a simple Login interface. This Login interface will have an username textbox, an username textbox and a login button. The textboxes and the button will be placed in a 3 (rows) x 2 (columns) table:</p>
+<p>Now, we are going to familiarise with the components in <strong>Visual Studio</strong> by creating a simple <strong>Login</strong> interface. This <strong>Login</strong> interface will have a <em>username text box</em>, a <em>password textbox</em> and a <em>login button</em>. The text boxes and the button will be placed in a <strong>3 (rows) x 2 (columns)</strong> table:</p>
 
 <table>
   <thead>
@@ -237,15 +237,15 @@ However, if you cannot see your <strong>Solution Explorer</strong>, go to the to
   </tbody>
 </table>
 
-<p>If you have learnt HTML, then you must know the we can manually code the layout presented above using HTML syntax such as <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code>, <code class="highlighter-rouge">&lt;table&gt;&lt;/table&gt;</code>, <code class="highlighter-rouge">&lt;tr&gt;&lt;/tr&gt;</code>, <code class="highlighter-rouge">&lt;td&gt;&lt;/td&gt;</code>, <code class="highlighter-rouge">&lt;input type="text"&gt;</code> and <code class="highlighter-rouge">&lt;input type="submit"&gt;</code>.</p>
+<p>If you have learnt <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>, then you must know the we can manually code the layout presented above using HTML syntax such as <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code>, <code class="highlighter-rouge">&lt;table&gt;&lt;/table&gt;</code>, <code class="highlighter-rouge">&lt;tr&gt;&lt;/tr&gt;</code>, <code class="highlighter-rouge">&lt;td&gt;&lt;/td&gt;</code>, <code class="highlighter-rouge">&lt;input type="text"&gt;</code> and <code class="highlighter-rouge">&lt;input type="submit"&gt;</code>.</p>
 
-<p>However, with Visual Studio, this layout can be developed with very little manual coding or no manual coding at all.</p>
+<p>However, with <strong>Visual Studio</strong>, this layout can be developed with very little manual coding or no manual coding at all.</p>
 
 <ol>
   <li>
-    <p>Let’s start by adding a 3 (rows) x 2 (columns) table inside the <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> tag. Move our mouse cursor inside the <code class="highlighter-rouge">&lt;div&gt;</code> box:<br>
+    <p>Let’s start by adding a <strong>3 (rows) x 2 (columns)</strong> table inside the <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> tag. Move our mouse cursor inside the <code class="highlighter-rouge">&lt;div&gt;</code> box:<br>
 <img src="/youquan-blog/images/blog2_div.png" alt=""><br>
-Go to the top of the Visual Studio and click on <strong>Table</strong> → <strong>Insert Table</strong>. Create a 3 (rows) x 2 (columns) table.</p>
+Go to the top of the <strong>Visual Studio</strong> and click on <strong>Table</strong> → <strong>Insert Table</strong>. Create a 3 (rows) x 2 (columns) table.</p>
   </li>
   <li>
     <p>Type the text <code class="highlighter-rouge">Username</code> and <code class="highlighter-rouge">Password</code> into the designated table cells.</p>
@@ -258,10 +258,10 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
 <img src="/youquan-blog/images/blog2_loginv1.png" alt=""></p>
   </li>
   <li>
-    <p>Note that the text inside the Login button is <code class="highlighter-rouge">Button</code>. To change the text to <code class="highlighter-rouge">Login</code>, click on the Login button. The <strong>Properties</strong> window of the Login button will be shown right below the <strong>Solution Explorer</strong>. Change the <code class="highlighter-rouge">Text</code> of the button to <code class="highlighter-rouge">LOGIN</code>.<br>
+    <p>Note that the text inside the <strong>Login</strong> button is <code class="highlighter-rouge">Button</code>. To change the text to <code class="highlighter-rouge">Login</code>, click on the <strong>Login</strong> button. The <strong>Properties</strong> window of the <strong>Login</strong> button will be shown right below the <strong>Solution Explorer</strong>. Change the <code class="highlighter-rouge">Text</code> of the button to <code class="highlighter-rouge">LOGIN</code>.<br>
 <img src="/youquan-blog/images/blog2_buttonproperties.png" alt=""></p>
   </li>
-  <li>We can always make changes on this Login page by adding or modifying the HTML codes, without using the <strong>Toolbox</strong>. Let say if I want to add a title to this page, I can add the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> directly to the existing HTML codes:
+  <li>We can always make changes on this <strong>Login</strong> page by adding or modifying the HTML codes, without using the <strong>Toolbox</strong>. Let say if I want to add a title to this page, I can add the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> directly to the existing HTML codes:
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
      <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
@@ -276,10 +276,10 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
  <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
 
-    <p>Everytime we make changes to the code, a warning message <em>Design view is out of sync with Source view. Click here to synchronize views will be displayed</em>. Click on the message and we will see the changes we made reflected in the <strong>Design view</strong>.</p>
+    <p>Every time we make changes to the code, a warning message <em>Design view is out of sync with Source view. Click here to synchronize views will be displayed</em>. Click on the message and we will see the changes we made reflected in the <strong>Design view</strong>.</p>
   </li>
   <li>
-    <p>Now, let’s try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the downarrow and select Google Chrome (if you have Google Chrome installed). 
+    <p>Now, let’s try to run the project and check if everything is working as intended. By default, we will see a green arrow and IIS Express (Microsoft Edge) on top of our Microsoft Visual Studio. Personally, I prefer to run everything in Google Chrome. To change the default setting, click on the down arrow and select Google Chrome (if you have Google Chrome installed). 
 <img src="/youquan-blog/images/blog2_runproject.png" alt=""></p>
   </li>
   <li>Click on <code class="highlighter-rouge">IIS Express (Google Chrome)</code>. Google Chrome will open shortly with our very first Login page developed using ASP.NET:<br>
@@ -289,7 +289,7 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
 
 <h2 id="best-practices">
 <a class="anchor" href="#best-practices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Best Practices</h2>
-<p>There are many best coding practices (which you can read <a href="https://en.wikipedia.org/wiki/Best_coding_practices">here</a>). But, I just want to focus on one of these practices in this tutorial - <strong>Naming conventions</strong>. Using meaningless naming can cause confusion to reduce the readibility of our codes. Take our Login page for example, if we browse through these HTML codes, we will notice some meaningless naming as follow:</p>
+<p>There are many best coding practices (which you can read <a href="https://en.wikipedia.org/wiki/Best_coding_practices">here</a>). But, I just want to focus on one of these practices in this tutorial - <strong>Naming conventions</strong>. Using meaningless naming can cause confusion to reduce the readability of our codes. Take our Login page for example, if we browse through these HTML codes, we will notice some meaningless naming as follow:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"form1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"TextBox1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
@@ -315,10 +315,10 @@ Go to the top of the Visual Studio and click on <strong>Table</strong> → <stro
 
 <p>Coming up next, we will learn:</p>
 <ul>
-  <li>How to create a Master page for a multiple pages web site in ASP.NET.</li>
+  <li>How to create a Master page for a multiple pages web site in ASP.NET. (Click <a href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/07/create-masterpage-aspnet-web.html">here</a> for the tutorial)</li>
 </ul>
 
-<p>I hope you found this tutorial helpful! If you have more questions about this tutorial, please let me know by commenting below. :smiley:</p>
+<p>I hope you found this tutorial helpful! If you have more questions about this tutorial, please let me know by commenting below.</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
