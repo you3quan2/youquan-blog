@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -124,7 +124,118 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#requirements">Requirements</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-a-gitlab-project">Creating a Gitlab Project</a></li>
+<li class="toc-entry toc-h2"><a href="#setting-up-gitlab-in-microsoft-visual-studio">Setting Up Gitlab in Microsoft Visual Studio</a></li>
+<li class="toc-entry toc-h2"><a href="#push-our-project-from-visual-studio-to-gitlab">Push our project from Visual Studio to Gitlab</a></li>
+<li class="toc-entry toc-h2"><a href="#update-changes-in-visual-studio-to-gitlab">Update changes in Visual Studio to Gitlab</a></li>
+<li class="toc-entry toc-h2"><a href="#takeaways">Takeaways</a></li>
 </ul><p>Under Construction!!!</p>
+
+<p>I have explained in one of my <a href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html#why-we-need-to-learn-this">blog posts</a> on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, Gitlab can also be used as your own personal project repositiory, where you can keep track on your programming coursework, and as the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with Microsoft Visual Studio, where we will synchronise a ASP.NET web project between our personal workstation and Gitlab.</p>
+
+<h2 id="requirements">
+<a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<ul>
+  <li>Microsoft Visual Studio (I am using the 2019 version). See <a href="https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019">here</a> on how to download and install.</li>
+  <li>Gitlab. Create an account <a href="https://about.gitlab.com/">here</a>.</li>
+</ul>
+
+<h2 id="creating-a-gitlab-project">
+<a class="anchor" href="#creating-a-gitlab-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Gitlab Project</h2>
+<ol>
+  <li>Login to our Gitlab and clik the <code class="highlighter-rouge">New Project</code> button in the upper right corner of the page.</li>
+  <li>
+    <p>Give a name to our project (e.g. <code class="highlighter-rouge">ASPNetTutorial</code>) and click on <code class="highlighter-rouge">Create Project</code>. We can give a description to the project but it is optional.
+<img src="/youquan-blog/images/blog5_createproject.png" alt=""></p>
+  </li>
+  <li>We will be redirected to the project page. This project should be empty. Click on the down arrow in the <code class="highlighter-rouge">Clone</code> button and copy the URL under <code class="highlighter-rouge">Clone with HTTPS</code> and paster it somewhere else (e.g. a text file). We will need this URL later.<br>
+<img src="/youquan-blog/images/blog5_giturl.png" alt="">
+</li>
+</ol>
+
+<h2 id="setting-up-gitlab-in-microsoft-visual-studio">
+<a class="anchor" href="#setting-up-gitlab-in-microsoft-visual-studio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting Up Gitlab in Microsoft Visual Studio</h2>
+<ol>
+  <li>
+    <p>Open/Create a project using Microsoft Visual Studio. If you are not sure how to do this, then please refer to this <a href="bit.ly/2x6DLTQ">link</a>.</p>
+  </li>
+  <li>
+    <p>Once the project is ready, go to the top of the Visual Studio and click on <strong>File</strong> → <strong>Add to Source Control</strong>.</p>
+  </li>
+  <li>
+    <p>If we do not have the <strong>Team Explorer</strong> opened, then click on <strong>View</strong> → <strong>Team Explorer</strong>. Within the <strong>Team Explorer</strong>, we are supposed to see our project is now under the <strong>Local Git Repositories</strong>.<br>
+<img src="/youquan-blog/images/blog5_localgit.png" alt=""></p>
+  </li>
+</ol>
+
+<h2 id="push-our-project-from-visual-studio-to-gitlab">
+<a class="anchor" href="#push-our-project-from-visual-studio-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push our project from Visual Studio to Gitlab</h2>
+<ol>
+  <li>
+    <p>Double click on our project under the <strong>Local Git Repositories</strong> and we will get to the <strong>Team Explorer - Home</strong>:<br>
+<img src="/youquan-blog/images/blog5_tehome.png" alt=""></p>
+  </li>
+  <li>
+    <p>Click on <strong>Settings</strong> and set up our <em>User Name</em> and <em>Email Address</em>. This information is used to identify us as the author of the project.<br>
+<img src="/youquan-blog/images/blog5_repositorysettings.png" alt=""></p>
+  </li>
+  <li>
+    <p>Go back to <strong>Team Explorer - Home</strong> by clicking on the <strong>Home icon</strong> button. Now, click on <strong>Sync</strong> and go to <strong>Push to Remote Repository</strong>. Key in the URL which we have copied from our Gitlab account earlier (e.g. <code class="highlighter-rouge">https://gitlab.com/you3quan2/aspnettutorial.git</code>) and click on <strong>Publish</strong>.
+<img src="/youquan-blog/images/blog5_enterurl.png" alt=""></p>
+  </li>
+  <li>
+    <p>We will be asked to enter the <em>User name</em> and <em>Password</em> for our Gitlab’s account.<br>
+<img src="/youquan-blog/images/blog5_pwd.png" alt=""></p>
+  </li>
+  <li>
+    <p>Visit our Gitlab account again and check on the empty project which we have created earlier. We are supposed to see the ASP.NET project which we have created in this Gitlab project’s repository.</p>
+  </li>
+</ol>
+
+<h2 id="update-changes-in-visual-studio-to-gitlab">
+<a class="anchor" href="#update-changes-in-visual-studio-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update changes in Visual Studio to Gitlab</h2>
+<p>Now, we have the exact same project in our Visual Studio and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in Visual Studio. I will show you an example how we can do this.</p>
+
+<p>In my <code class="highlighter-rouge">ASPNetTutorial</code> project, there is a <code class="highlighter-rouge">Home.aspx</code> file which contains the following codes:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>I updated my <code class="highlighter-rouge">Home.aspx</code> file and adding <code class="highlighter-rouge">(GitLab Test)</code> to <code class="highlighter-rouge">&lt;h2&gt;&lt;/h2&gt;</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span> <span class="p">(</span><span class="n">GitLab</span> <span class="n">Test</span><span class="p">)</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<p><em>Note:</em> You can make changes in any files you like within your project.</p>
+
+<p>To update these changes, I perform the following steps:</p>
+<ol>
+  <li>
+    <p>Go to <strong>Team Explorer - Home</strong> and click on <strong>Changes</strong>. If we have made changes to our project, we will see a list of files which are affected by the changes we made under <strong>Changes</strong>. Under <strong>Branch: master</strong>, key in a commit message (e.g. <code class="highlighter-rouge">Changes made to ome.aspx for Gitlab testing</code>). Click on <strong>Commit All</strong>.<br>
+<img src="/youquan-blog/images/blog5_changecomment.png" alt=""></p>
+  </li>
+  <li>
+    <p>We will see a message as follow. Click on <strong>Sync</strong> so that the changes we have made will be reflected in our Gitlab’s project repository.<br>
+<img src="/youquan-blog/images/blog5_sync.png" alt=""></p>
+  </li>
+</ol>
+
+<p>Go to the Gitlab account and check on the specific file which we have modified. We are supposed to see the changes which we have made. If we click on the <code class="highlighter-rouge">History</code> button, we will see our commit changes:<br>
+<img src="/youquan-blog/images/blog5_gitlabhistory.png" alt=""></p>
+
+<h2 id="takeaways">
+<a class="anchor" href="#takeaways" aria-hidden="true"><span class="octicon octicon-link"></span></a>Takeaways</h2>
+<p>By now, you should know how to setup your Visual Studio and Gitlab in order to push your project from your workstation to Gitlab.</p>
+
+<p>I hope you found this tutorial helpful. Have more questions about this? Let me know by commenting below!</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
