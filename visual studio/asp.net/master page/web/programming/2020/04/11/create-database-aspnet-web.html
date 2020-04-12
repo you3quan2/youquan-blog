@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -149,11 +149,11 @@ window.onload = wrap_img;
 
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
-<p>Almost all web sites involve a database. If you have just signed up a new Twitter account, where is the information about your account will be stored? Yes, the database! Hence, if we want to learn how to develop a web application, then we must also learn about the database.</p>
+<p>Almost all web sites involve a database. If you have just signed up a new <a href="https://twitter.com/Twitter">Twitter</a> account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.</p>
 
 <h2 id="basic-concepts-of-database">
 <a class="anchor" href="#basic-concepts-of-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Concepts of Database</h2>
-<p>In simple words, database is made up from one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which have multiple registered users, and each user has their own username, password and role (e.g. admin, normal user). Then, we can have the user information stored in a table as follow:</p>
+<p>In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. <em>admin</em>, <em>normal user</em>). Then, we can have the user information stored in a table as follow:</p>
 
 <table>
   <thead>
@@ -176,10 +176,19 @@ window.onload = wrap_img;
 
 <h3 id="data-types">
 <a class="anchor" href="#data-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Types</h3>
-<p>When creating this table, we also need to specific the type of data which can be stored in each columns. For example, we can assign the data type for nchar(10) for the username column, which indicates the username column can only store a fixed maximum length of 10 characters. There are a few other data type which we commonly used, such as datetime to store data and time; int to store an integer; decimal to store decimal digits. You can refer to <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings">this link</a> to retrieve a comprehensive list of data types available.</p>
+<p>When creating this table, we also need to specify the type of data which can be stored in each column. For example, we can assign the data type <code class="highlighter-rouge">nchar(10)</code> for the <strong>username</strong> column, which indicates the <strong>username</strong> column can only store a fixed maximum length of 10 characters. There are a few other data types which we commonly used, such as <code class="highlighter-rouge">datetime</code> to store data and time; <code class="highlighter-rouge">int</code> to store an integer; <code class="highlighter-rouge">decimal</code> to store decimal digits. You can refer to <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings">this link</a> to access a comprehensive list of data types.</p>
 
 <h3 id="primary-key-and-foreign-key">
 <a class="anchor" href="#primary-key-and-foreign-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Primary Key and Foreign Key</h3>
+<p>In the table presented above, we define the <code class="highlighter-rouge">user_id</code> as our primary key. In database, a primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table. In our example above, the <code class="highlighter-rouge">user_id</code> <strong>YQ01</strong> is exclusive for that specific role, and no other rows within the same table should have this same <code class="highlighter-rouge">user_id</code>.</p>
+
+<p>https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/</p>
+
+<p>The primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table.  You can think of them as an address.  If the rows in a table were mailboxes, then the primary key would be the listing of street addresses.</p>
+
+<p>When a primary key is composed of multiple columns, the data from each column is used to determine whether a row is unique.</p>
+
+<p>In order to be a primary key, several co</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
