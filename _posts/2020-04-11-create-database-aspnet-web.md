@@ -29,7 +29,9 @@ In simple words, a database is made up of one or more tables, and a table consis
 When creating this table, we also need to specify the type of data which can be stored in each column. For example, we can assign the data type `nchar(10)` for the **username** column, which indicates the **username** column can only store a fixed maximum length of 10 characters. There are a few other data types which we commonly used, such as `datetime` to store data and time; `int` to store an integer; `decimal` to store decimal digits. You can refer to [this link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings) to access a comprehensive list of data types.
 
 ### Primary Key and Foreign Key
-In the table presented above, we define the `user_id` as our primary key. In database, a primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table. In our example above, the `user_id` **YQ01** is exclusive for that specific role, and no other rows within the same table should have this same `user_id`.
+A **primary key (PK)** is one or more columns which can uniquely represent each row in a table. In our example above, the `user_id` **YQ01** is exclusive for that specific row, and no other rows within the same table have this same `user_id`. It is very similar to your *Student ID* or *Staff ID*, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).
+
+
 
 
 https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/
