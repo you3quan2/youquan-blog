@@ -54,6 +54,8 @@ Let's start to create our first database in ASP.NET using Microsoft Visual Studi
 1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appeared under **Data Connection**.  
 ![]({{ site.baseurl }}/images/blog6_serverexplorer.png)  
 
+{% include info.html text="Remember to reflect the changes by right-click on <b>Data Connection</b> and click <b>Refresh</b>" %}
+
 ## Creating Tables in the Database
 Now, we are going to add tables into the database. We will stick with the example above by having two tables: the *User* table and the *Role* table.
 
@@ -64,27 +66,50 @@ Now, we are going to add tables into the database. We will stick with the exampl
    - role_id (*int*)  
   ![]({{ site.baseurl }}/images/blog6_usertable.png)  
   
+  Once we have create these columns, click on **Update** to update the changes we made.
+  
 1. By following the guidance provided above, create the *Role* table which has the following columns:  
    - role_id (*int*)
    - role_name (*nchar(10)*)  
   ![]({{ site.baseurl }}/images/blog6_roletable.png)  
 
 ## Setting the Keys for Tables
-There are two primary keys () and one foreign key in the User and Role table. 
+There are two primary keys (*user_id*, *role_id*) and one foreign key (*role_id*) in the *User* table and *Role* table. By default, the first column will be set as primary key. We can always manually set a specific column as primary key by right click on the column and select **Set Primary Key**. A **key** icon indicated that the specified column is a primary key.
 
-CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
+Now, we are going to set the *role_id* in the *User* table as a foreign key to the *Role* table.
 
+1. In **Server Explorer**, go to the **Table** folder under `aspnettutorial.mdf`. Expand the folder and right click on the *User* table and select **Open Table Definition**. Right click on **Foreign Keys** and select **Add New Foreign Key**:  
+![]({{ site.baseurl }}/images/blog6_addfk.png)  
 
-CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
+1. We are supposed to see a new line under the **T-SQL** tab:
+    ```python
+    CONSTRAINT [FK_User_ToTable] FOREIGN KEY ([Column]) REFERENCES [ToTable]([ToTableColumn])
+    ```
+    
+    Change this line to:
+    ```python
+    CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
+    ```
+    
+    This indicate that we are creating a foreigh key known as `[FK_User_Role]` where the *role_id* in the *User* table is pointing to the *role_id* in the *Role* table (`[Role]([role_id])`). Don't forget to click **Update** to update the changes we made. 
 
+## Populating the Database
+Our database is now all set. In order to work on this database later on, we need to populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let's opt for an easier method by manually add some sample data into the *User* table and the *Role* table.
 
-```python
-   <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2> This is my HOME page (GitLab Test). </h2>
-</asp:Content>
-```
+To add data into a specific table, we need to first open the **Server Explorer**. Go to the **Table** folder under `aspnettutorial.mdf`. Expand the folder and right click on the specific table and select **Show Table Data**. Add the following data into these tables and click on **Update**.
 
-1. 
+![]({{ site.baseurl }}/images/blog6_usertabledata.png)  
+
+![]({{ site.baseurl }}/images/blog6_roletabledata.png)  
+
+## Takeaways
+I hope by now:
+- You can explain what is a database and its basic concepts: data type, primary key and foreign key.
+- You are confident to create a database in ASP.NET.
+- You know how to set primary key and foreign key.
+- You know how to populate a database. 
+
+Coming up next, we will learn:
+- How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
+
+I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below.
