@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -136,7 +136,8 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#creating-a-database-in-aspnet">Creating a Database in ASP.NET</a></li>
-<li class="toc-entry toc-h2"><a href="#creating-the-tables-for-the-database">Creating the Tables for the Database</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-tables-in-the-database">Creating Tables in the Database</a></li>
+<li class="toc-entry toc-h2"><a href="#setting-the-keys-for-tables">Setting the Keys for Tables</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
@@ -216,17 +217,50 @@ window.onload = wrap_img;
   </li>
 </ol>
 
-<h2 id="creating-the-tables-for-the-database">
-<a class="anchor" href="#creating-the-tables-for-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating the Tables for the Database</h2>
-<p>Now, we are going to add tables into the database. We will stick with the example above by adding two tables: the <em>User</em> table and the <em>Role</em> table.</p>
+<h2 id="creating-tables-in-the-database">
+<a class="anchor" href="#creating-tables-in-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Tables in the Database</h2>
+<p>Now, we are going to add tables into the database. We will stick with the example above by having two tables: the <em>User</em> table and the <em>Role</em> table.</p>
+
+<ol>
+  <li>In <strong>Server Explorer</strong>, go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Right click on the folder and select <strong>Add New Table</strong>. A design surface for the table will be shown. Rename the table by updating the following line <code class="highlighter-rouge">CREATE TABLE [dbo].[User]</code> under the <strong>T-SQL</strong> tab. Next, add the following columns into the table, and make sure we get the right data types for these columns:
+    <ul>
+      <li>user_id (<em>nchar(10)</em>)</li>
+      <li>username (<em>nchar(10)</em>)</li>
+      <li>password (<em>nvarchar(MAX)</em>)</li>
+      <li>role_id (<em>int</em>)<br>
+<img src="/youquan-blog/images/blog6_usertable.png" alt="">
+</li>
+    </ul>
+  </li>
+  <li>By following the guidance provided above, create the <em>Role</em> table which has the following columns:
+    <ul>
+      <li>role_id (<em>int</em>)</li>
+      <li>role_name (<em>nchar(10)</em>)<br>
+<img src="/youquan-blog/images/blog6_roletable.png" alt="">
+</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="setting-the-keys-for-tables">
+<a class="anchor" href="#setting-the-keys-for-tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the Keys for Tables</h2>
+<p>There are two primary keys () and one foreign key in the User and Role table.</p>
+
+<p>CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES <a href="%5Brole_id%5D">Role</a></p>
+
+<p>CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES <a href="%5Brole_id%5D">Role</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span> <span class="p">(</span><span class="n">GitLab</span> <span class="n">Test</span><span class="p">)</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <ol>
   <li>
-    <p>In <strong>Server Explorer</strong>, go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Right click on the folder and select <strong>Add New Table</strong>.</p>
-  </li>
-  <li>
 </ol>
-
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
