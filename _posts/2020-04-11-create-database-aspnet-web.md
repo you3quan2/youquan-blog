@@ -54,9 +54,37 @@ Let's start to create our first database in ASP.NET using Microsoft Visual Studi
 1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appeared under **Data Connection**.  
 ![]({{ site.baseurl }}/images/blog6_serverexplorer.png)  
 
-## Creating the Tables for the Database
-Now, we are going to add tables into the database. We will stick with the example above by adding two tables: the *User* table and the *Role* table.
+## Creating Tables in the Database
+Now, we are going to add tables into the database. We will stick with the example above by having two tables: the *User* table and the *Role* table.
 
-1. In **Server Explorer**, go to the **Table** folder under `aspnettutorial.mdf`. Right click on the folder and select **Add New Table**.
+1. In **Server Explorer**, go to the **Table** folder under `aspnettutorial.mdf`. Right click on the folder and select **Add New Table**. A design surface for the table will be shown. Rename the table by updating the following line `CREATE TABLE [dbo].[User]` under the **T-SQL** tab. Next, add the following columns into the table, and make sure we get the right data types for these columns:  
+   - user_id (*nchar(10)*)
+   - username (*nchar(10)*)
+   - password (*nvarchar(MAX)*)  
+   - role_id (*int*)  
+  ![]({{ site.baseurl }}/images/blog6_usertable.png)  
+  
+1. By following the guidance provided above, create the *Role* table which has the following columns:  
+   - role_id (*int*)
+   - role_name (*nchar(10)*)  
+  ![]({{ site.baseurl }}/images/blog6_roletable.png)  
+
+## Setting the Keys for Tables
+There are two primary keys () and one foreign key in the User and Role table. 
+
+CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
+
+
+CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
+
+
+```python
+   <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ASPNetTutorial.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h2> This is my HOME page (GitLab Test). </h2>
+</asp:Content>
+```
 
 1. 
