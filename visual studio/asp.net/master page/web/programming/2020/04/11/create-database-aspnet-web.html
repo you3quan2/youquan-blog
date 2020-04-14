@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -127,6 +127,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#this-page-is-still-under-construction">This page is still under construction!</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
+<li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
 <li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#basic-concepts-of-database">Basic Concepts of Database</a>
 <ul>
@@ -134,6 +135,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#primary-key-and-foreign-key">Primary Key and Foreign Key</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#creating-a-database-in-aspnet">Creating a Database in ASP.NET</a></li>
+<li class="toc-entry toc-h2"><a href="#creating-the-tables-for-the-database">Creating the Tables for the Database</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
@@ -147,13 +150,17 @@ window.onload = wrap_img;
   <li>Learn how to create a database for an ASP.NET project using Microsoft Visual Studio.</li>
 </ul>
 
+<h2 id="prerequisite">
+<a class="anchor" href="#prerequisite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisite</h2>
+<p>If you are new to ASP.NET, I suggest you to look into this <a href="bit.ly/2x6DLTQ">tutorial</a> to learn how to create an ASP.NET web project with Microsoft Visual Studio.</p>
+
 <h2 id="why-we-need-to-learn-this">
 <a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
 <p>Almost all web sites involve a database. If you have just signed up a new <a href="https://twitter.com/Twitter">Twitter</a> account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.</p>
 
 <h2 id="basic-concepts-of-database">
 <a class="anchor" href="#basic-concepts-of-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Concepts of Database</h2>
-<p>In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. <em>admin</em>, <em>normal user</em>). Then, we can have the user information stored in a table as follow:</p>
+<p>In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. <em>admin</em>, <em>normal user</em>). Then, we can have the user information stored in a <em>User</em> table as follow:</p>
 
 <table>
   <thead>
@@ -182,13 +189,43 @@ window.onload = wrap_img;
 <a class="anchor" href="#primary-key-and-foreign-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Primary Key and Foreign Key</h3>
 <p>A <strong>primary key (PK)</strong> is one or more columns which can uniquely represent each row in a table. In our example above, the <code class="highlighter-rouge">user_id</code> <strong>YQ01</strong> is exclusive for that specific row, and no other rows within the same table have this same <code class="highlighter-rouge">user_id</code>. It is very similar to your <em>Student ID</em> or <em>Staff ID</em>, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).</p>
 
-<p>https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/</p>
+<p>A <strong>foreign key (FK)</strong> is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (<em>User</em> and <em>Role</em>):
+<img src="/youquan-blog/images/blog6_pkfk.png" alt=""></p>
 
-<p>The primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table.  You can think of them as an address.  If the rows in a table were mailboxes, then the primary key would be the listing of street addresses.</p>
+<p><em>role_id</em> is primary key in the <em>Role</em> table. The same key acts as a <em>foreign_key</em> in the <em>User</em> table which established a link between the <em>User</em> table and the <em>Role</em> table. You may question why it is necessary to split the <em>User</em> table into two.</p>
 
-<p>When a primary key is composed of multiple columns, the data from each column is used to determine whether a row is unique.</p>
+<p>Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one <em>User</em> table can be updated? Note that we cannot insert a new role without the user record into this <em>User</em> table because <em>user_id</em> is the primary key of this table and cannot be left null. If we have a <em>Role</em> table, then the role updating task becomes easier as we only need to update the <em>Role</em> table whenever the admin adds or deletes a role.</p>
 
-<p>In order to be a primary key, several co</p>
+<p>You can refer to this <a href="https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database">link</a> to read the discussions about <em>Why should I use foreign keys in database?</em>.</p>
+
+<h2 id="creating-a-database-in-aspnet">
+<a class="anchor" href="#creating-a-database-in-aspnet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Database in ASP.NET</h2>
+<p>Let’s start to create our first database in ASP.NET using Microsoft Visual Studio.</p>
+<ol>
+  <li>
+    <p>In the <strong>Solution Explorer</strong>, right click on the project (e.g. <strong>ASP.NetTutorial</strong>) and select <strong>Add</strong> → <strong>New Item</strong>. Under <strong>Visual C#</strong>, click on <strong>Data</strong> and select <strong>SQL Server Database</strong>. Change the name of the database to <code class="highlighter-rouge">aspnettutorial.mdf</code> and click <strong>Add</strong>. <code class="highlighter-rouge">.mdf</code> stand for <strong>M</strong>aster <strong>D</strong>atabase <strong>F</strong>ile and it is the primary database file of Microsoft SQL Server.<br>
+<img src="/youquan-blog/images/blog6_createdb.png" alt=""></p>
+  </li>
+  <li>
+    <p>We are supposed to get a confirmation message as follow. Click <strong>Yes</strong>.<br>
+<img src="/youquan-blog/images/blog6_confirmmsg.png" alt=""></p>
+  </li>
+  <li>
+    <p>Go to the top of Visual Studio and click <strong>View</strong> → <strong>Server Explorer</strong>. The <code class="highlighter-rouge">aspnettutorial.mdf</code> will appeared under <strong>Data Connection</strong>.<br>
+<img src="/youquan-blog/images/blog6_serverexplorer.png" alt=""></p>
+  </li>
+</ol>
+
+<h2 id="creating-the-tables-for-the-database">
+<a class="anchor" href="#creating-the-tables-for-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating the Tables for the Database</h2>
+<p>Now, we are going to add tables into the database. We will stick with the example above by adding two tables: the <em>User</em> table and the <em>Role</em> table.</p>
+
+<ol>
+  <li>
+    <p>In <strong>Server Explorer</strong>, go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Right click on the folder and select <strong>Add New Table</strong>.</p>
+  </li>
+  <li>
+</ol>
 
 
   </div><!-- from https://github.com/utterance/utterances -->

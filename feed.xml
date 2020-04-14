@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-13T10:46:52-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Creating a Simple Database in ASP.NET</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html" rel="alternate" type="text/html" title="Creating a Simple Database in ASP.NET" /><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-11T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html">&lt;h1 id=&quot;this-page-is-still-under-construction&quot;&gt;This page is still under construction!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-14T08:14:54-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Creating a Simple Database in ASP.NET</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html" rel="alternate" type="text/html" title="Creating a Simple Database in ASP.NET" /><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-11T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html">&lt;h1 id=&quot;this-page-is-still-under-construction&quot;&gt;This page is still under construction!&lt;/h1&gt;
 
 &lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 &lt;p&gt;In this tutorial, we will:&lt;/p&gt;
@@ -7,11 +7,14 @@
   &lt;li&gt;Learn how to create a database for an ASP.NET project using Microsoft Visual Studio.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h2&gt;
+&lt;p&gt;If you are new to ASP.NET, I suggest you to look into this &lt;a href=&quot;bit.ly/2x6DLTQ&quot;&gt;tutorial&lt;/a&gt; to learn how to create an ASP.NET web project with Microsoft Visual Studio.&lt;/p&gt;
+
 &lt;h2 id=&quot;why-we-need-to-learn-this&quot;&gt;Why we need to learn this?&lt;/h2&gt;
 &lt;p&gt;Almost all web sites involve a database. If you have just signed up a new &lt;a href=&quot;https://twitter.com/Twitter&quot;&gt;Twitter&lt;/a&gt; account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-concepts-of-database&quot;&gt;Basic Concepts of Database&lt;/h2&gt;
-&lt;p&gt;In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. &lt;em&gt;admin&lt;/em&gt;, &lt;em&gt;normal user&lt;/em&gt;). Then, we can have the user information stored in a table as follow:&lt;/p&gt;
+&lt;p&gt;In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. &lt;em&gt;admin&lt;/em&gt;, &lt;em&gt;normal user&lt;/em&gt;). Then, we can have the user information stored in a &lt;em&gt;User&lt;/em&gt; table as follow:&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -38,13 +41,41 @@
 &lt;h3 id=&quot;primary-key-and-foreign-key&quot;&gt;Primary Key and Foreign Key&lt;/h3&gt;
 &lt;p&gt;A &lt;strong&gt;primary key (PK)&lt;/strong&gt; is one or more columns which can uniquely represent each row in a table. In our example above, the &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt; &lt;strong&gt;YQ01&lt;/strong&gt; is exclusive for that specific row, and no other rows within the same table have this same &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt;. It is very similar to your &lt;em&gt;Student ID&lt;/em&gt; or &lt;em&gt;Staff ID&lt;/em&gt;, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).&lt;/p&gt;
 
-&lt;p&gt;https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;foreign key (FK)&lt;/strong&gt; is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (&lt;em&gt;User&lt;/em&gt; and &lt;em&gt;Role&lt;/em&gt;):
+&lt;img src=&quot;/youquan-blog/images/blog6_pkfk.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table.  You can think of them as an address.  If the rows in a table were mailboxes, then the primary key would be the listing of street addresses.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;role_id&lt;/em&gt; is primary key in the &lt;em&gt;Role&lt;/em&gt; table. The same key acts as a &lt;em&gt;foreign_key&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table which established a link between the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table. You may question why it is necessary to split the &lt;em&gt;User&lt;/em&gt; table into two.&lt;/p&gt;
 
-&lt;p&gt;When a primary key is composed of multiple columns, the data from each column is used to determine whether a row is unique.&lt;/p&gt;
+&lt;p&gt;Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one &lt;em&gt;User&lt;/em&gt; table can be updated? Note that we cannot insert a new role without the user record into this &lt;em&gt;User&lt;/em&gt; table because &lt;em&gt;user_id&lt;/em&gt; is the primary key of this table and cannot be left null. If we have a &lt;em&gt;Role&lt;/em&gt; table, then the role updating task becomes easier as we only need to update the &lt;em&gt;Role&lt;/em&gt; table whenever the admin adds or deletes a role.&lt;/p&gt;
 
-&lt;p&gt;In order to be a primary key, several co&lt;/p&gt;</content><author><name>You Quan</name></author><summary type="html">This page is still under construction!</summary></entry><entry><title type="html">How To Integrate Gitlab with Microsoft Visual Studio</title><link href="https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web.html" rel="alternate" type="text/html" title="How To Integrate Gitlab with Microsoft Visual Studio" /><published>2020-04-10T00:00:00-05:00</published><updated>2020-04-10T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web.html">&lt;p&gt;Under Construction!!!&lt;/p&gt;
+&lt;p&gt;You can refer to this &lt;a href=&quot;https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database&quot;&gt;link&lt;/a&gt; to read the discussions about &lt;em&gt;Why should I use foreign keys in database?&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-database-in-aspnet&quot;&gt;Creating a Database in ASP.NET&lt;/h2&gt;
+&lt;p&gt;Let’s start to create our first database in ASP.NET using Microsoft Visual Studio.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the &lt;strong&gt;Solution Explorer&lt;/strong&gt;, right click on the project (e.g. &lt;strong&gt;ASP.NetTutorial&lt;/strong&gt;) and select &lt;strong&gt;Add&lt;/strong&gt; → &lt;strong&gt;New Item&lt;/strong&gt;. Under &lt;strong&gt;Visual C#&lt;/strong&gt;, click on &lt;strong&gt;Data&lt;/strong&gt; and select &lt;strong&gt;SQL Server Database&lt;/strong&gt;. Change the name of the database to &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt; and click &lt;strong&gt;Add&lt;/strong&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;.mdf&lt;/code&gt; stand for &lt;strong&gt;M&lt;/strong&gt;aster &lt;strong&gt;D&lt;/strong&gt;atabase &lt;strong&gt;F&lt;/strong&gt;ile and it is the primary database file of Microsoft SQL Server.&lt;br /&gt;
+&lt;img src=&quot;/youquan-blog/images/blog6_createdb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We are supposed to get a confirmation message as follow. Click &lt;strong&gt;Yes&lt;/strong&gt;.&lt;br /&gt;
+&lt;img src=&quot;/youquan-blog/images/blog6_confirmmsg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the top of Visual Studio and click &lt;strong&gt;View&lt;/strong&gt; → &lt;strong&gt;Server Explorer&lt;/strong&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt; will appeared under &lt;strong&gt;Data Connection&lt;/strong&gt;.&lt;br /&gt;
+&lt;img src=&quot;/youquan-blog/images/blog6_serverexplorer.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;creating-the-tables-for-the-database&quot;&gt;Creating the Tables for the Database&lt;/h2&gt;
+&lt;p&gt;Now, we are going to add tables into the database. We will stick with the example above by adding two tables: the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In &lt;strong&gt;Server Explorer&lt;/strong&gt;, go to the &lt;strong&gt;Table&lt;/strong&gt; folder under &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt;. Right click on the folder and select &lt;strong&gt;Add New Table&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>You Quan</name></author><summary type="html">This page is still under construction!</summary></entry><entry><title type="html">How To Integrate Gitlab with Microsoft Visual Studio</title><link href="https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web.html" rel="alternate" type="text/html" title="How To Integrate Gitlab with Microsoft Visual Studio" /><published>2020-04-10T00:00:00-05:00</published><updated>2020-04-10T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/gitlab/visual%20studio/asp.net/web/programming/2020/04/10/integrate-gitlab-visualstudio-web.html">&lt;p&gt;Under Construction!!!&lt;/p&gt;
 
 &lt;p&gt;I have explained in one of my &lt;a href=&quot;https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html#why-we-need-to-learn-this&quot;&gt;blog posts&lt;/a&gt; on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, Gitlab can also be used as your own personal project repositiory, where you can keep track on your programming coursework, and as the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with Microsoft Visual Studio, where we will synchronise a ASP.NET web project between our personal workstation and Gitlab.&lt;/p&gt;
 
