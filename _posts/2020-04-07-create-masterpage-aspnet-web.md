@@ -195,6 +195,6 @@ I hope by now:
 - You know how to create a navigation bar using Bootstrap.
 
 Coming up next, we will learn:
-- How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).
+- How to use create a database in ASP.NET.
 
 I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below.
