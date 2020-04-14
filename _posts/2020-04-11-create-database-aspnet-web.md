@@ -15,11 +15,14 @@ In this tutorial, we will:
 - Learn what is a database along with some simple concepts such as data type, primary key and foreign key.
 - Learn how to create a database for an ASP.NET project using Microsoft Visual Studio.
 
+## Prerequisite
+If you are new to ASP.NET, I suggest you to look into this [tutorial](bit.ly/2x6DLTQ) to learn how to create an ASP.NET web project with Microsoft Visual Studio.
+
 ## Why we need to learn this?
 Almost all web sites involve a database. If you have just signed up a new [Twitter](https://twitter.com/Twitter) account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database. 
 
 ## Basic Concepts of Database
-In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. *admin*, *normal user*). Then, we can have the user information stored in a table as follow:
+In simple words, a database is made up of one or more tables, and a table consists of one or more rows and columns. Assume that we have a web site which has multiple registered users, and each user has their username, password and role (e.g. *admin*, *normal user*). Then, we can have the user information stored in a *User* table as follow:
 
 |user_id |username |password |role  |
 |:-----: |:-------:|:-------:|:----:|
@@ -31,16 +34,29 @@ When creating this table, we also need to specify the type of data which can be 
 ### Primary Key and Foreign Key
 A **primary key (PK)** is one or more columns which can uniquely represent each row in a table. In our example above, the `user_id` **YQ01** is exclusive for that specific row, and no other rows within the same table have this same `user_id`. It is very similar to your *Student ID* or *Staff ID*, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).
 
+A **foreign key (FK)** is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (*User* and *Role*):
+![]({{ site.baseurl }}/images/blog6_pkfk.png)  
 
+*role_id* is primary key in the *Role* table. The same key acts as a *foreign_key* in the *User* table which established a link between the *User* table and the *Role* table. You may question why it is necessary to split the *User* table into two. 
 
+Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one *User* table can be updated? Note that we cannot insert a new role without the user record into this *User* table because *user_id* is the primary key of this table and cannot be left null. If we have a *Role* table, then the role updating task becomes easier as we only need to update the *Role* table whenever the admin adds or deletes a role.
 
-https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/
+You can refer to this [link](https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database) to read the discussions about *Why should I use foreign keys in database?*.
 
-The primary key consists of one or more columns whose data contained within is used to uniquely identify each row in the table.  You can think of them as an address.  If the rows in a table were mailboxes, then the primary key would be the listing of street addresses.
+## Creating a Database in ASP.NET
+Let's start to create our first database in ASP.NET using Microsoft Visual Studio.
+1. In the **Solution Explorer**, right click on the project (e.g. **ASP.NetTutorial**) and select **Add** &rarr; **New Item**. Under **Visual C#**, click on **Data** and select **SQL Server Database**. Change the name of the database to `aspnettutorial.mdf` and click **Add**. `.mdf` stand for **M**aster **D**atabase **F**ile and it is the primary database file of Microsoft SQL Server.  
+![]({{ site.baseurl }}/images/blog6_createdb.png)  
 
-When a primary key is composed of multiple columns, the data from each column is used to determine whether a row is unique.
+1. We are supposed to get a confirmation message as follow. Click **Yes**.  
+![]({{ site.baseurl }}/images/blog6_confirmmsg.png)  
 
-In order to be a primary key, several co
+1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appeared under **Data Connection**.  
+![]({{ site.baseurl }}/images/blog6_serverexplorer.png)  
 
+## Creating the Tables for the Database
+Now, we are going to add tables into the database. We will stick with the example above by adding two tables: the *User* table and the *Role* table.
 
+1. In **Server Explorer**, go to the **Table** folder under `aspnettutorial.mdf`. Right click on the folder and select **Add New Table**.
 
+1. 
