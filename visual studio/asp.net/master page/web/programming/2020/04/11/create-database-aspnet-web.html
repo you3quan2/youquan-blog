@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -124,7 +124,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#this-page-is-still-under-construction">This page is still under construction!</a>
+<li class="toc-entry toc-h1"><a href="#this-page-is-still-under-construction">This page is still under construction!!!</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
 <li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
@@ -138,10 +138,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#creating-a-database-in-aspnet">Creating a Database in ASP.NET</a></li>
 <li class="toc-entry toc-h2"><a href="#creating-tables-in-the-database">Creating Tables in the Database</a></li>
 <li class="toc-entry toc-h2"><a href="#setting-the-keys-for-tables">Setting the Keys for Tables</a></li>
+<li class="toc-entry toc-h2"><a href="#populating-the-database">Populating the Database</a></li>
+<li class="toc-entry toc-h2"><a href="#takeaways">Takeaways</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
-<a class="anchor" href="#this-page-is-still-under-construction" aria-hidden="true"><span class="octicon octicon-link"></span></a>This page is still under construction!</h1>
+<a class="anchor" href="#this-page-is-still-under-construction" aria-hidden="true"><span class="octicon octicon-link"></span></a>This page is still under construction!!!</h1>
 
 <h2 id="learning-outcomes">
 <a class="anchor" href="#learning-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Outcomes</h2>
@@ -217,6 +219,11 @@ window.onload = wrap_img;
   </li>
 </ol>
 
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>
+   <span class="Toast-content">Remember to reflect the changes by right-click on <b>Data Connection</b> and click <b>Refresh</b></span>
+</div>
+
 <h2 id="creating-tables-in-the-database">
 <a class="anchor" href="#creating-tables-in-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Tables in the Database</h2>
 <p>Now, we are going to add tables into the database. We will stick with the example above by having two tables: the <em>User</em> table and the <em>Role</em> table.</p>
@@ -232,6 +239,11 @@ window.onload = wrap_img;
 </li>
     </ul>
   </li>
+</ol>
+
+<p>Once we have create these columns, click on <strong>Update</strong> to update the changes we made.</p>
+
+<ol>
   <li>By following the guidance provided above, create the <em>Role</em> table which has the following columns:
     <ul>
       <li>role_id (<em>int</em>)</li>
@@ -244,23 +256,56 @@ window.onload = wrap_img;
 
 <h2 id="setting-the-keys-for-tables">
 <a class="anchor" href="#setting-the-keys-for-tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the Keys for Tables</h2>
-<p>There are two primary keys () and one foreign key in the User and Role table.</p>
+<p>There are two primary keys (<em>user_id</em>, <em>role_id</em>) and one foreign key (<em>role_id</em>) in the <em>User</em> table and <em>Role</em> table. By default, the first column will be set as primary key. We can always manually set a specific column as primary key by right click on the column and select <strong>Set Primary Key</strong>. A <strong>key</strong> icon indicated that the specified column is a primary key.</p>
 
-<p>CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES <a href="%5Brole_id%5D">Role</a></p>
-
-<p>CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES <a href="%5Brole_id%5D">Role</a></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
-<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span> <span class="p">(</span><span class="n">GitLab</span> <span class="n">Test</span><span class="p">)</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
-</code></pre></div></div>
+<p>Now, we are going to set the <em>role_id</em> in the <em>User</em> table as a foreign key to the <em>Role</em> table.</p>
 
 <ol>
   <li>
+    <p>In <strong>Server Explorer</strong>, go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Expand the folder and right click on the <em>User</em> table and select <strong>Open Table Definition</strong>. Right click on <strong>Foreign Keys</strong> and select <strong>Add New Foreign Key</strong>:<br>
+<img src="/youquan-blog/images/blog6_addfk.png" alt=""></p>
+  </li>
+  <li>
+    <p>We are supposed to see a new line under the <strong>T-SQL</strong> tab:</p>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="n">CONSTRAINT</span> <span class="p">[</span><span class="n">FK_User_ToTable</span><span class="p">]</span> <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">([</span><span class="n">Column</span><span class="p">])</span> <span class="n">REFERENCES</span> <span class="p">[</span><span class="n">ToTable</span><span class="p">]([</span><span class="n">ToTableColumn</span><span class="p">])</span>
+</code></pre></div>    </div>
+
+    <p>Change this line to:</p>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="n">CONSTRAINT</span> <span class="p">[</span><span class="n">FK_User_Role</span><span class="p">]</span> <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">([</span><span class="n">role_id</span><span class="p">])</span> <span class="n">REFERENCES</span> <span class="p">[</span><span class="n">Role</span><span class="p">]([</span><span class="n">role_id</span><span class="p">])</span> 
+</code></pre></div>    </div>
+
+    <p>This indicate that we are creating a foreigh key known as <code class="highlighter-rouge">[FK_User_Role]</code> where the <em>role_id</em> in the <em>User</em> table is pointing to the <em>role_id</em> in the <em>Role</em> table (<code class="highlighter-rouge">[Role]([role_id])</code>). Don’t forget to click <strong>Update</strong> to update the changes we made.</p>
+  </li>
 </ol>
+
+<h2 id="populating-the-database">
+<a class="anchor" href="#populating-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Populating the Database</h2>
+<p>Our database is now all set. In order to work on this database later on, we need to populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let’s opt for an easier method by manually add some sample data into the <em>User</em> table and the <em>Role</em> table.</p>
+
+<p>To add data into a specific table, we need to first open the <strong>Server Explorer</strong>. Go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Expand the folder and right click on the specific table and select <strong>Show Table Data</strong>. Add the following data into these tables and click on <strong>Update</strong>.</p>
+
+<p><img src="/youquan-blog/images/blog6_usertabledata.png" alt=""></p>
+
+<p><img src="/youquan-blog/images/blog6_roletabledata.png" alt=""></p>
+
+<h2 id="takeaways">
+<a class="anchor" href="#takeaways" aria-hidden="true"><span class="octicon octicon-link"></span></a>Takeaways</h2>
+<p>I hope by now:</p>
+<ul>
+  <li>You can explain what is a database and its basic concepts: data type, primary key and foreign key.</li>
+  <li>You are confident to create a database in ASP.NET.</li>
+  <li>You know how to set primary key and foreign key.</li>
+  <li>You know how to populate a database.</li>
+</ul>
+
+<p>Coming up next, we will learn:</p>
+<ul>
+  <li>How to use C# to add functionalities to the elements in your webpage (e.g. the Login button).</li>
+</ul>
+
+<p>I hope you found this tutorial helpful! If you have more questions, please let me know by commenting below.</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
