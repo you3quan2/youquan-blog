@@ -52,7 +52,7 @@ Let's start to create our first database in ASP.NET using Microsoft Visual Studi
 1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appear under **Data Connection**.  
 ![]({{ site.baseurl }}/images/blog6_serverexplorer.png)  
 
-{% include info.html text="If you can see the newly created database, right-click on <b>Data Connection</b> and click <b>Refresh</b>. Always do this to reflect the changes you made." %}
+{% include info.html text="If you can't see the newly created database, right-click on <b>Data Connection</b> and click <b>Refresh</b>. Always do this to reflect the changes you made." %}
 
 ## Creating Tables in the Database
 Now, we are going to add tables into the database. We will stick with the example above by having two tables: the *User* table and the *Role* table.
