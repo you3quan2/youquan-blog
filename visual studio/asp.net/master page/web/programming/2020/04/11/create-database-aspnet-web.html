@@ -128,7 +128,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
 <li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
-<li class="toc-entry toc-h2"><a href="#why-we-need-to-learn-this">Why we need to learn this?</a></li>
+<li class="toc-entry toc-h2"><a href="#why-do-we-need-to-learn-this">Why do we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#basic-concepts-of-database">Basic Concepts of Database</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#data-types">Data Types</a></li>
@@ -157,8 +157,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#prerequisite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisite</h2>
 <p>If you are new to ASP.NET, I suggest you to look into this <a href="bit.ly/2x6DLTQ">tutorial</a> to learn how to create an ASP.NET web project with Microsoft Visual Studio.</p>
 
-<h2 id="why-we-need-to-learn-this">
-<a class="anchor" href="#why-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why we need to learn this?</h2>
+<h2 id="why-do-we-need-to-learn-this">
+<a class="anchor" href="#why-do-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why do we need to learn this?</h2>
 <p>Almost all web sites involve a database. If you have just signed up a new <a href="https://twitter.com/Twitter">Twitter</a> account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.</p>
 
 <h2 id="basic-concepts-of-database">
@@ -190,14 +190,14 @@ window.onload = wrap_img;
 
 <h3 id="primary-key-and-foreign-key">
 <a class="anchor" href="#primary-key-and-foreign-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Primary Key and Foreign Key</h3>
-<p>A <strong>primary key (PK)</strong> is one or more columns which can uniquely represent each row in a table. In our example above, the <code class="highlighter-rouge">user_id</code> <strong>YQ01</strong> is exclusive for that specific row, and no other rows within the same table have this same <code class="highlighter-rouge">user_id</code>. It is very similar to your <em>Student ID</em> or <em>Staff ID</em>, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).</p>
+<p>A <strong>primary key (PK)</strong> is one or more columns which can uniquely represent each row in a table. In our example above, the <code class="highlighter-rouge">user_id</code> <strong>YQ01</strong> is exclusive for that specific row, and no other rows within the same table have this same <code class="highlighter-rouge">user_id</code>. It is very similar to your <em>Student ID</em> or <em>Staff ID</em>, where no one has the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).</p>
 
 <p>A <strong>foreign key (FK)</strong> is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (<em>User</em> and <em>Role</em>):
 <img src="/youquan-blog/images/blog6_pkfk.png" alt=""></p>
 
-<p><em>role_id</em> is primary key in the <em>Role</em> table. The same key acts as a <em>foreign_key</em> in the <em>User</em> table which established a link between the <em>User</em> table and the <em>Role</em> table. You may question why it is necessary to split the <em>User</em> table into two.</p>
+<p><em>role_id</em> is a primary key in the <em>Role</em> table. The same key acts as a <em>foreign_key</em> in the <em>User</em> table which established a link between the <em>User</em> table and the <em>Role</em> table. You may question why it is necessary to split the <em>User</em> table into two.</p>
 
-<p>Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one <em>User</em> table can be updated? Note that we cannot insert a new role without the user record into this <em>User</em> table because <em>user_id</em> is the primary key of this table and cannot be left null. If we have a <em>Role</em> table, then the role updating task becomes easier as we only need to update the <em>Role</em> table whenever the admin adds or deletes a role.</p>
+<p>Now, imagine our web site has an interface which allows the web admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one <em>User</em> table can be updated? We cannot insert a new role into this <em>User</em> table without a <em>user_id</em> because <em>user_id</em> is the primary key of this table and cannot be left null. If we have a <em>Role</em> table, then we can easily add or delete a role by updating only the <em>Role</em> table.</p>
 
 <p>You can refer to this <a href="https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database">link</a> to read the discussions about <em>Why should I use foreign keys in database?</em>.</p>
 
@@ -214,14 +214,14 @@ window.onload = wrap_img;
 <img src="/youquan-blog/images/blog6_confirmmsg.png" alt=""></p>
   </li>
   <li>
-    <p>Go to the top of Visual Studio and click <strong>View</strong> → <strong>Server Explorer</strong>. The <code class="highlighter-rouge">aspnettutorial.mdf</code> will appeared under <strong>Data Connection</strong>.<br>
+    <p>Go to the top of Visual Studio and click <strong>View</strong> → <strong>Server Explorer</strong>. The <code class="highlighter-rouge">aspnettutorial.mdf</code> will appear under <strong>Data Connection</strong>.<br>
 <img src="/youquan-blog/images/blog6_serverexplorer.png" alt=""></p>
   </li>
 </ol>
 
 <div class="Toast">
    <span class="Toast-icon"><svg class="octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>
-   <span class="Toast-content">Remember to reflect the changes by right-click on <b>Data Connection</b> and click <b>Refresh</b></span>
+   <span class="Toast-content">If you can see the newly created database, right-click on <b>Data Connection</b> and click <b>Refresh</b>. Always do this to reflect the changes you made.</span>
 </div>
 
 <h2 id="creating-tables-in-the-database">
@@ -235,15 +235,10 @@ window.onload = wrap_img;
       <li>username (<em>nchar(10)</em>)</li>
       <li>password (<em>nvarchar(MAX)</em>)</li>
       <li>role_id (<em>int</em>)<br>
-<img src="/youquan-blog/images/blog6_usertable.png" alt="">
-</li>
+<img src="/youquan-blog/images/blog6_usertable.png" alt=""><br>
+Once we have created these columns, click on <strong>Update</strong> to update the changes we made.</li>
     </ul>
   </li>
-</ol>
-
-<p>Once we have create these columns, click on <strong>Update</strong> to update the changes we made.</p>
-
-<ol>
   <li>By following the guidance provided above, create the <em>Role</em> table which has the following columns:
     <ul>
       <li>role_id (<em>int</em>)</li>
@@ -256,7 +251,7 @@ window.onload = wrap_img;
 
 <h2 id="setting-the-keys-for-tables">
 <a class="anchor" href="#setting-the-keys-for-tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting the Keys for Tables</h2>
-<p>There are two primary keys (<em>user_id</em>, <em>role_id</em>) and one foreign key (<em>role_id</em>) in the <em>User</em> table and <em>Role</em> table. By default, the first column will be set as primary key. We can always manually set a specific column as primary key by right click on the column and select <strong>Set Primary Key</strong>. A <strong>key</strong> icon indicated that the specified column is a primary key.</p>
+<p>There are two primary keys (<em>user_id</em>, <em>role_id</em>) and one foreign key (<em>role_id</em>) in the <em>User</em> table and the <em>Role</em> table. By default, the first column will be set as the primary key. We can always manually set a specific column as primary key by right click on the column and select <strong>Set Primary Key</strong>. A <strong>key</strong> icon indicates that the specified column is a primary key.</p>
 
 <p>Now, we are going to set the <em>role_id</em> in the <em>User</em> table as a foreign key to the <em>Role</em> table.</p>
 
@@ -276,13 +271,13 @@ window.onload = wrap_img;
 <div class="highlight"><pre class="highlight"><code> <span class="n">CONSTRAINT</span> <span class="p">[</span><span class="n">FK_User_Role</span><span class="p">]</span> <span class="n">FOREIGN</span> <span class="n">KEY</span> <span class="p">([</span><span class="n">role_id</span><span class="p">])</span> <span class="n">REFERENCES</span> <span class="p">[</span><span class="n">Role</span><span class="p">]([</span><span class="n">role_id</span><span class="p">])</span> 
 </code></pre></div>    </div>
 
-    <p>This indicate that we are creating a foreigh key known as <code class="highlighter-rouge">[FK_User_Role]</code> where the <em>role_id</em> in the <em>User</em> table is pointing to the <em>role_id</em> in the <em>Role</em> table (<code class="highlighter-rouge">[Role]([role_id])</code>). Don’t forget to click <strong>Update</strong> to update the changes we made.</p>
+    <p>This indicates that we are creating a foreign key known as <code class="highlighter-rouge">[FK_User_Role]</code> where the <em>role_id</em> in the <em>User</em> table is pointing to the <em>role_id</em> in the <em>Role</em> table (<code class="highlighter-rouge">[Role]([role_id])</code>). Don’t forget to click <strong>Update</strong> to update the changes we made.</p>
   </li>
 </ol>
 
 <h2 id="populating-the-database">
 <a class="anchor" href="#populating-the-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Populating the Database</h2>
-<p>Our database is now all set. In order to work on this database later on, we need to populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let’s opt for an easier method by manually add some sample data into the <em>User</em> table and the <em>Role</em> table.</p>
+<p>Finally, we will populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let’s opt for an easier method by manually add some sample data into the <em>User</em> table and the <em>Role</em> table.</p>
 
 <p>To add data into a specific table, we need to first open the <strong>Server Explorer</strong>. Go to the <strong>Table</strong> folder under <code class="highlighter-rouge">aspnettutorial.mdf</code>. Expand the folder and right click on the specific table and select <strong>Show Table Data</strong>. Add the following data into these tables and click on <strong>Update</strong>.</p>
 

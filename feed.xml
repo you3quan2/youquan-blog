@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-14T15:14:17-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Creating a Simple Database in ASP.NET</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html" rel="alternate" type="text/html" title="Creating a Simple Database in ASP.NET" /><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-11T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html">&lt;h1 id=&quot;this-page-is-still-under-construction&quot;&gt;This page is still under construction!!!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://you3quan2.github.io/youquan-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://you3quan2.github.io/youquan-blog/" rel="alternate" type="text/html" /><updated>2020-04-15T04:30:29-05:00</updated><id>https://you3quan2.github.io/youquan-blog/feed.xml</id><title type="html">Computing &amp;amp; Technology 101</title><subtitle>A place for you to learn about computing &amp; technology.</subtitle><entry><title type="html">Creating a Simple Database in ASP.NET</title><link href="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html" rel="alternate" type="text/html" title="Creating a Simple Database in ASP.NET" /><published>2020-04-11T00:00:00-05:00</published><updated>2020-04-11T00:00:00-05:00</updated><id>https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web</id><content type="html" xml:base="https://you3quan2.github.io/youquan-blog/visual%20studio/asp.net/master%20page/web/programming/2020/04/11/create-database-aspnet-web.html">&lt;h1 id=&quot;this-page-is-still-under-construction&quot;&gt;This page is still under construction!!!&lt;/h1&gt;
 
 &lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
 &lt;p&gt;In this tutorial, we will:&lt;/p&gt;
@@ -10,7 +10,7 @@
 &lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h2&gt;
 &lt;p&gt;If you are new to ASP.NET, I suggest you to look into this &lt;a href=&quot;bit.ly/2x6DLTQ&quot;&gt;tutorial&lt;/a&gt; to learn how to create an ASP.NET web project with Microsoft Visual Studio.&lt;/p&gt;
 
-&lt;h2 id=&quot;why-we-need-to-learn-this&quot;&gt;Why we need to learn this?&lt;/h2&gt;
+&lt;h2 id=&quot;why-do-we-need-to-learn-this&quot;&gt;Why do we need to learn this?&lt;/h2&gt;
 &lt;p&gt;Almost all web sites involve a database. If you have just signed up a new &lt;a href=&quot;https://twitter.com/Twitter&quot;&gt;Twitter&lt;/a&gt; account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-concepts-of-database&quot;&gt;Basic Concepts of Database&lt;/h2&gt;
@@ -39,14 +39,14 @@
 &lt;p&gt;When creating this table, we also need to specify the type of data which can be stored in each column. For example, we can assign the data type &lt;code class=&quot;highlighter-rouge&quot;&gt;nchar(10)&lt;/code&gt; for the &lt;strong&gt;username&lt;/strong&gt; column, which indicates the &lt;strong&gt;username&lt;/strong&gt; column can only store a fixed maximum length of 10 characters. There are a few other data types which we commonly used, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;datetime&lt;/code&gt; to store data and time; &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; to store an integer; &lt;code class=&quot;highlighter-rouge&quot;&gt;decimal&lt;/code&gt; to store decimal digits. You can refer to &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings&quot;&gt;this link&lt;/a&gt; to access a comprehensive list of data types.&lt;/p&gt;
 
 &lt;h3 id=&quot;primary-key-and-foreign-key&quot;&gt;Primary Key and Foreign Key&lt;/h3&gt;
-&lt;p&gt;A &lt;strong&gt;primary key (PK)&lt;/strong&gt; is one or more columns which can uniquely represent each row in a table. In our example above, the &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt; &lt;strong&gt;YQ01&lt;/strong&gt; is exclusive for that specific row, and no other rows within the same table have this same &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt;. It is very similar to your &lt;em&gt;Student ID&lt;/em&gt; or &lt;em&gt;Staff ID&lt;/em&gt;, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;primary key (PK)&lt;/strong&gt; is one or more columns which can uniquely represent each row in a table. In our example above, the &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt; &lt;strong&gt;YQ01&lt;/strong&gt; is exclusive for that specific row, and no other rows within the same table have this same &lt;code class=&quot;highlighter-rouge&quot;&gt;user_id&lt;/code&gt;. It is very similar to your &lt;em&gt;Student ID&lt;/em&gt; or &lt;em&gt;Staff ID&lt;/em&gt;, where no one has the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).&lt;/p&gt;
 
 &lt;p&gt;A &lt;strong&gt;foreign key (FK)&lt;/strong&gt; is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (&lt;em&gt;User&lt;/em&gt; and &lt;em&gt;Role&lt;/em&gt;):
 &lt;img src=&quot;/youquan-blog/images/blog6_pkfk.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;role_id&lt;/em&gt; is primary key in the &lt;em&gt;Role&lt;/em&gt; table. The same key acts as a &lt;em&gt;foreign_key&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table which established a link between the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table. You may question why it is necessary to split the &lt;em&gt;User&lt;/em&gt; table into two.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;role_id&lt;/em&gt; is a primary key in the &lt;em&gt;Role&lt;/em&gt; table. The same key acts as a &lt;em&gt;foreign_key&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table which established a link between the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table. You may question why it is necessary to split the &lt;em&gt;User&lt;/em&gt; table into two.&lt;/p&gt;
 
-&lt;p&gt;Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one &lt;em&gt;User&lt;/em&gt; table can be updated? Note that we cannot insert a new role without the user record into this &lt;em&gt;User&lt;/em&gt; table because &lt;em&gt;user_id&lt;/em&gt; is the primary key of this table and cannot be left null. If we have a &lt;em&gt;Role&lt;/em&gt; table, then the role updating task becomes easier as we only need to update the &lt;em&gt;Role&lt;/em&gt; table whenever the admin adds or deletes a role.&lt;/p&gt;
+&lt;p&gt;Now, imagine our web site has an interface which allows the web admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one &lt;em&gt;User&lt;/em&gt; table can be updated? We cannot insert a new role into this &lt;em&gt;User&lt;/em&gt; table without a &lt;em&gt;user_id&lt;/em&gt; because &lt;em&gt;user_id&lt;/em&gt; is the primary key of this table and cannot be left null. If we have a &lt;em&gt;Role&lt;/em&gt; table, then we can easily add or delete a role by updating only the &lt;em&gt;Role&lt;/em&gt; table.&lt;/p&gt;
 
 &lt;p&gt;You can refer to this &lt;a href=&quot;https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database&quot;&gt;link&lt;/a&gt; to read the discussions about &lt;em&gt;Why should I use foreign keys in database?&lt;/em&gt;.&lt;/p&gt;
 
@@ -62,14 +62,14 @@
 &lt;img src=&quot;/youquan-blog/images/blog6_confirmmsg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Go to the top of Visual Studio and click &lt;strong&gt;View&lt;/strong&gt; → &lt;strong&gt;Server Explorer&lt;/strong&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt; will appeared under &lt;strong&gt;Data Connection&lt;/strong&gt;.&lt;br /&gt;
+    &lt;p&gt;Go to the top of Visual Studio and click &lt;strong&gt;View&lt;/strong&gt; → &lt;strong&gt;Server Explorer&lt;/strong&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt; will appear under &lt;strong&gt;Data Connection&lt;/strong&gt;.&lt;br /&gt;
 &lt;img src=&quot;/youquan-blog/images/blog6_serverexplorer.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div class=&quot;Toast&quot;&gt;
    &lt;span class=&quot;Toast-icon&quot;&gt;&lt;svg class=&quot;octicon octicon-info&quot; viewBox=&quot;0 0 14 16&quot; version=&quot;1.1&quot; width=&quot;14&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;
-   &lt;span class=&quot;Toast-content&quot;&gt;Remember to reflect the changes by right-click on &lt;b&gt;Data Connection&lt;/b&gt; and click &lt;b&gt;Refresh&lt;/b&gt;&lt;/span&gt;
+   &lt;span class=&quot;Toast-content&quot;&gt;If you can see the newly created database, right-click on &lt;b&gt;Data Connection&lt;/b&gt; and click &lt;b&gt;Refresh&lt;/b&gt;. Always do this to reflect the changes you made.&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;creating-tables-in-the-database&quot;&gt;Creating Tables in the Database&lt;/h2&gt;
@@ -82,14 +82,10 @@
       &lt;li&gt;username (&lt;em&gt;nchar(10)&lt;/em&gt;)&lt;/li&gt;
       &lt;li&gt;password (&lt;em&gt;nvarchar(MAX)&lt;/em&gt;)&lt;/li&gt;
       &lt;li&gt;role_id (&lt;em&gt;int&lt;/em&gt;)&lt;br /&gt;
-&lt;img src=&quot;/youquan-blog/images/blog6_usertable.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/youquan-blog/images/blog6_usertable.png&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+Once we have created these columns, click on &lt;strong&gt;Update&lt;/strong&gt; to update the changes we made.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Once we have create these columns, click on &lt;strong&gt;Update&lt;/strong&gt; to update the changes we made.&lt;/p&gt;
-
-&lt;ol&gt;
   &lt;li&gt;By following the guidance provided above, create the &lt;em&gt;Role&lt;/em&gt; table which has the following columns:
     &lt;ul&gt;
       &lt;li&gt;role_id (&lt;em&gt;int&lt;/em&gt;)&lt;/li&gt;
@@ -100,7 +96,7 @@
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;setting-the-keys-for-tables&quot;&gt;Setting the Keys for Tables&lt;/h2&gt;
-&lt;p&gt;There are two primary keys (&lt;em&gt;user_id&lt;/em&gt;, &lt;em&gt;role_id&lt;/em&gt;) and one foreign key (&lt;em&gt;role_id&lt;/em&gt;) in the &lt;em&gt;User&lt;/em&gt; table and &lt;em&gt;Role&lt;/em&gt; table. By default, the first column will be set as primary key. We can always manually set a specific column as primary key by right click on the column and select &lt;strong&gt;Set Primary Key&lt;/strong&gt;. A &lt;strong&gt;key&lt;/strong&gt; icon indicated that the specified column is a primary key.&lt;/p&gt;
+&lt;p&gt;There are two primary keys (&lt;em&gt;user_id&lt;/em&gt;, &lt;em&gt;role_id&lt;/em&gt;) and one foreign key (&lt;em&gt;role_id&lt;/em&gt;) in the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table. By default, the first column will be set as the primary key. We can always manually set a specific column as primary key by right click on the column and select &lt;strong&gt;Set Primary Key&lt;/strong&gt;. A &lt;strong&gt;key&lt;/strong&gt; icon indicates that the specified column is a primary key.&lt;/p&gt;
 
 &lt;p&gt;Now, we are going to set the &lt;em&gt;role_id&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table as a foreign key to the &lt;em&gt;Role&lt;/em&gt; table.&lt;/p&gt;
 
@@ -118,12 +114,12 @@
     &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;CONSTRAINT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FK_User_Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FOREIGN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;role_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;REFERENCES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;role_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
-    &lt;p&gt;This indicate that we are creating a foreigh key known as &lt;code class=&quot;highlighter-rouge&quot;&gt;[FK_User_Role]&lt;/code&gt; where the &lt;em&gt;role_id&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table is pointing to the &lt;em&gt;role_id&lt;/em&gt; in the &lt;em&gt;Role&lt;/em&gt; table (&lt;code class=&quot;highlighter-rouge&quot;&gt;[Role]([role_id])&lt;/code&gt;). Don’t forget to click &lt;strong&gt;Update&lt;/strong&gt; to update the changes we made.&lt;/p&gt;
+    &lt;p&gt;This indicates that we are creating a foreign key known as &lt;code class=&quot;highlighter-rouge&quot;&gt;[FK_User_Role]&lt;/code&gt; where the &lt;em&gt;role_id&lt;/em&gt; in the &lt;em&gt;User&lt;/em&gt; table is pointing to the &lt;em&gt;role_id&lt;/em&gt; in the &lt;em&gt;Role&lt;/em&gt; table (&lt;code class=&quot;highlighter-rouge&quot;&gt;[Role]([role_id])&lt;/code&gt;). Don’t forget to click &lt;strong&gt;Update&lt;/strong&gt; to update the changes we made.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;populating-the-database&quot;&gt;Populating the Database&lt;/h2&gt;
-&lt;p&gt;Our database is now all set. In order to work on this database later on, we need to populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let’s opt for an easier method by manually add some sample data into the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table.&lt;/p&gt;
+&lt;p&gt;Finally, we will populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let’s opt for an easier method by manually add some sample data into the &lt;em&gt;User&lt;/em&gt; table and the &lt;em&gt;Role&lt;/em&gt; table.&lt;/p&gt;
 
 &lt;p&gt;To add data into a specific table, we need to first open the &lt;strong&gt;Server Explorer&lt;/strong&gt;. Go to the &lt;strong&gt;Table&lt;/strong&gt; folder under &lt;code class=&quot;highlighter-rouge&quot;&gt;aspnettutorial.mdf&lt;/code&gt;. Expand the folder and right click on the specific table and select &lt;strong&gt;Show Table Data&lt;/strong&gt;. Add the following data into these tables and click on &lt;strong&gt;Update&lt;/strong&gt;.&lt;/p&gt;
 
