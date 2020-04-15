@@ -18,7 +18,7 @@ In this tutorial, we will:
 ## Prerequisite
 If you are new to ASP.NET, I suggest you to look into this [tutorial](bit.ly/2x6DLTQ) to learn how to create an ASP.NET web project with Microsoft Visual Studio.
 
-## Why we need to learn this?
+## Why do we need to learn this?
 Almost all web sites involve a database. If you have just signed up a new [Twitter](https://twitter.com/Twitter) account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database. 
 
 ## Basic Concepts of Database
@@ -32,14 +32,14 @@ In simple words, a database is made up of one or more tables, and a table consis
 When creating this table, we also need to specify the type of data which can be stored in each column. For example, we can assign the data type `nchar(10)` for the **username** column, which indicates the **username** column can only store a fixed maximum length of 10 characters. There are a few other data types which we commonly used, such as `datetime` to store data and time; `int` to store an integer; `decimal` to store decimal digits. You can refer to [this link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings) to access a comprehensive list of data types.
 
 ### Primary Key and Foreign Key
-A **primary key (PK)** is one or more columns which can uniquely represent each row in a table. In our example above, the `user_id` **YQ01** is exclusive for that specific row, and no other rows within the same table have this same `user_id`. It is very similar to your *Student ID* or *Staff ID*, where no one have the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).
+A **primary key (PK)** is one or more columns which can uniquely represent each row in a table. In our example above, the `user_id` **YQ01** is exclusive for that specific row, and no other rows within the same table have this same `user_id`. It is very similar to your *Student ID* or *Staff ID*, where no one has the same ID as yours. Note that a table can contain only one primary key (which can be one or more columns) and these columns cannot be left null (a.k.a empty).
 
 A **foreign key (FK)** is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (*User* and *Role*):
 ![]({{ site.baseurl }}/images/blog6_pkfk.png)  
 
-*role_id* is primary key in the *Role* table. The same key acts as a *foreign_key* in the *User* table which established a link between the *User* table and the *Role* table. You may question why it is necessary to split the *User* table into two. 
+*role_id* is a primary key in the *Role* table. The same key acts as a *foreign_key* in the *User* table which established a link between the *User* table and the *Role* table. You may question why it is necessary to split the *User* table into two. 
 
-Now, imagine our web site has an interface which allows admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one *User* table can be updated? Note that we cannot insert a new role without the user record into this *User* table because *user_id* is the primary key of this table and cannot be left null. If we have a *Role* table, then the role updating task becomes easier as we only need to update the *Role* table whenever the admin adds or deletes a role.
+Now, imagine our web site has an interface which allows the web admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one *User* table can be updated? We cannot insert a new role into this *User* table without a *user_id* because *user_id* is the primary key of this table and cannot be left null. If we have a *Role* table, then we can easily add or delete a role by updating only the *Role* table.
 
 You can refer to this [link](https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database) to read the discussions about *Why should I use foreign keys in database?*.
 
@@ -51,10 +51,10 @@ Let's start to create our first database in ASP.NET using Microsoft Visual Studi
 1. We are supposed to get a confirmation message as follow. Click **Yes**.  
 ![]({{ site.baseurl }}/images/blog6_confirmmsg.png)  
 
-1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appeared under **Data Connection**.  
+1. Go to the top of Visual Studio and click **View** &rarr; **Server Explorer**. The `aspnettutorial.mdf` will appear under **Data Connection**.  
 ![]({{ site.baseurl }}/images/blog6_serverexplorer.png)  
 
-{% include info.html text="Remember to reflect the changes by right-click on <b>Data Connection</b> and click <b>Refresh</b>" %}
+{% include info.html text="If you can see the newly created database, right-click on <b>Data Connection</b> and click <b>Refresh</b>. Always do this to reflect the changes you made." %}
 
 ## Creating Tables in the Database
 Now, we are going to add tables into the database. We will stick with the example above by having two tables: the *User* table and the *Role* table.
@@ -65,8 +65,7 @@ Now, we are going to add tables into the database. We will stick with the exampl
    - password (*nvarchar(MAX)*)  
    - role_id (*int*)  
   ![]({{ site.baseurl }}/images/blog6_usertable.png)  
-  
-  Once we have create these columns, click on **Update** to update the changes we made.
+  Once we have created these columns, click on **Update** to update the changes we made.  
   
 1. By following the guidance provided above, create the *Role* table which has the following columns:  
    - role_id (*int*)
@@ -74,7 +73,7 @@ Now, we are going to add tables into the database. We will stick with the exampl
   ![]({{ site.baseurl }}/images/blog6_roletable.png)  
 
 ## Setting the Keys for Tables
-There are two primary keys (*user_id*, *role_id*) and one foreign key (*role_id*) in the *User* table and *Role* table. By default, the first column will be set as primary key. We can always manually set a specific column as primary key by right click on the column and select **Set Primary Key**. A **key** icon indicated that the specified column is a primary key.
+There are two primary keys (*user_id*, *role_id*) and one foreign key (*role_id*) in the *User* table and the *Role* table. By default, the first column will be set as the primary key. We can always manually set a specific column as primary key by right click on the column and select **Set Primary Key**. A **key** icon indicates that the specified column is a primary key.
 
 Now, we are going to set the *role_id* in the *User* table as a foreign key to the *Role* table.
 
@@ -91,10 +90,10 @@ Now, we are going to set the *role_id* in the *User* table as a foreign key to t
     CONSTRAINT [FK_User_Role] FOREIGN KEY ([role_id]) REFERENCES [Role]([role_id]) 
     ```
     
-    This indicate that we are creating a foreigh key known as `[FK_User_Role]` where the *role_id* in the *User* table is pointing to the *role_id* in the *Role* table (`[Role]([role_id])`). Don't forget to click **Update** to update the changes we made. 
+    This indicates that we are creating a foreign key known as `[FK_User_Role]` where the *role_id* in the *User* table is pointing to the *role_id* in the *Role* table (`[Role]([role_id])`). Don't forget to click **Update** to update the changes we made. 
 
 ## Populating the Database
-Our database is now all set. In order to work on this database later on, we need to populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let's opt for an easier method by manually add some sample data into the *User* table and the *Role* table.
+Finally, we will populate (add) data into this database. Of course, this operation can be done using ASP.NET and C#. But, for now, let's opt for an easier method by manually add some sample data into the *User* table and the *Role* table.
 
 To add data into a specific table, we need to first open the **Server Explorer**. Go to the **Table** folder under `aspnettutorial.mdf`. Expand the folder and right click on the specific table and select **Show Table Data**. Add the following data into these tables and click on **Update**.
 
