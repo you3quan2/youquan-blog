@@ -8,8 +8,6 @@ categories: [visual studio, asp.net, master page, web, programming]
 title: 'Creating a Simple Database in ASP.NET'
 ---
 
-# This page is still under construction!!!
-
 ## Learning Outcomes
 In this tutorial, we will:
 - Learn what is a database along with some simple concepts such as data type, primary key and foreign key.
