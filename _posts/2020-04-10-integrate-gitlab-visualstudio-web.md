@@ -8,7 +8,7 @@ categories: [gitlab, visual studio, asp.net, web, programming]
 title: 'How To Integrate Gitlab with Microsoft Visual Studio'
 ---
 
-I have explained in one of my [blog posts](bit.ly/2x6DLTQ) on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, [Gitlab](https://about.gitlab.com/) can also be used as your project repository, where you can keep track on your programming coursework, and as the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with [Microsoft Visual Studio](https://visualstudio.microsoft.com/), where we will synchronise an [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) web project between our workstation and Gitlab.
+I have explained in one of my [blog posts](bit.ly/2x6DLTQ) on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, [Gitlab](https://about.gitlab.com/) can also be used as your project repository, where you can keep track on your programming coursework, and at the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with [Microsoft Visual Studio](https://visualstudio.microsoft.com/), where we will synchronise an [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) web project between our workstation and Gitlab.
 
 ## Requirements
 - Microsoft Visual Studio (I am using the 2019 version). See [here](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019) on how to download and install.
