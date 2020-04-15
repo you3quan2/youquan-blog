@@ -130,9 +130,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#push-our-project-from-visual-studio-to-gitlab">Push our project from Visual Studio to Gitlab</a></li>
 <li class="toc-entry toc-h2"><a href="#update-changes-in-visual-studio-to-gitlab">Update changes in Visual Studio to Gitlab</a></li>
 <li class="toc-entry toc-h2"><a href="#takeaways">Takeaways</a></li>
-</ul><p>Under Construction!!!</p>
-
-<p>I have explained in one of my <a href="https://you3quan2.github.io/youquan-blog/git/gitlab/ubuntu/clion/c/programming/2020/03/26/setup-git-gitlab-clion-c.html#why-we-need-to-learn-this">blog posts</a> on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, Gitlab can also be used as your own personal project repositiory, where you can keep track on your programming coursework, and as the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with Microsoft Visual Studio, where we will synchronise a ASP.NET web project between our personal workstation and Gitlab.</p>
+</ul><p>I have explained in one of my <a href="bit.ly/2x6DLTQ">blog posts</a> on how Gitlab can be a useful tool for a team of software developers to manage a single software project from anywhere on the earth efficiently. However, if you are a student, <a href="https://about.gitlab.com/">Gitlab</a> can also be used as your project repository, where you can keep track on your programming coursework, and as the same time, use it as a backup. In this short tutorial, we will learn how to integrate Gitlab with <a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>, where we will synchronise an <a href="https://dotnet.microsoft.com/apps/aspnet">ASP.NET</a> web project between our workstation and Gitlab.</p>
 
 <h2 id="requirements">
 <a class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -144,12 +142,12 @@ window.onload = wrap_img;
 <h2 id="creating-a-gitlab-project">
 <a class="anchor" href="#creating-a-gitlab-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a Gitlab Project</h2>
 <ol>
-  <li>Login to our Gitlab and clik the <code class="highlighter-rouge">New Project</code> button in the upper right corner of the page.</li>
+  <li>Login to our Gitlab and click the <strong>New Project</strong> button in the upper right corner of the page.</li>
   <li>
-    <p>Give a name to our project (e.g. <code class="highlighter-rouge">ASPNetTutorial</code>) and click on <code class="highlighter-rouge">Create Project</code>. We can give a description to the project but it is optional.
+    <p>Give a name to our project (e.g. <code class="highlighter-rouge">ASPNetTutorial</code>) and click on <strong>Create Project</strong>. We can describe the project but it is optional.
 <img src="/youquan-blog/images/blog5_createproject.png" alt=""></p>
   </li>
-  <li>We will be redirected to the project page. This project should be empty. Click on the down arrow in the <code class="highlighter-rouge">Clone</code> button and copy the URL under <code class="highlighter-rouge">Clone with HTTPS</code> and paster it somewhere else (e.g. a text file). We will need this URL later.<br>
+  <li>We will be redirected to the project page. This project should be empty. Click on the down arrow in the <strong>Clone</strong> button and copy the URL under <strong>Clone with HTTPS</strong> and paste it somewhere else (e.g. a text file). We will need this URL later.<br>
 <img src="/youquan-blog/images/blog5_giturl.png" alt="">
 </li>
 </ol>
@@ -164,7 +162,7 @@ window.onload = wrap_img;
     <p>Once the project is ready, go to the top of the Visual Studio and click on <strong>File</strong> → <strong>Add to Source Control</strong>.</p>
   </li>
   <li>
-    <p>If we do not have the <strong>Team Explorer</strong> opened, then click on <strong>View</strong> → <strong>Team Explorer</strong>. Within the <strong>Team Explorer</strong>, we are supposed to see our project is now under the <strong>Local Git Repositories</strong>.<br>
+    <p>If we do not have the <strong>Team Explorer</strong> opened, then click on <strong>View</strong> → <strong>Team Explorer</strong>. Within the <strong>Team Explorer</strong>, we are supposed to see our project under the <strong>Local Git Repositories</strong>.<br>
 <img src="/youquan-blog/images/blog5_localgit.png" alt=""></p>
   </li>
 </ol>
@@ -195,10 +193,10 @@ window.onload = wrap_img;
 
 <h2 id="update-changes-in-visual-studio-to-gitlab">
 <a class="anchor" href="#update-changes-in-visual-studio-to-gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update changes in Visual Studio to Gitlab</h2>
-<p>Now, we have the exact same project in our Visual Studio and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in Visual Studio. I will show you an example how we can do this.</p>
+<p>Now, we have the same project in our Visual Studio and Gitlab. But, we still need to update the Gitlab’s project every time we made changes on the project in Visual Studio. I will show you an example of how we can do this.</p>
 
 <p>In my <code class="highlighter-rouge">ASPNetTutorial</code> project, there is a <code class="highlighter-rouge">Home.aspx</code> file which contains the following codes:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
@@ -206,20 +204,24 @@ window.onload = wrap_img;
 <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
-<p>I updated my <code class="highlighter-rouge">Home.aspx</code> file and adding <code class="highlighter-rouge">(GitLab Test)</code> to <code class="highlighter-rouge">&lt;h2&gt;&lt;/h2&gt;</code>:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
+<p>I updated my <code class="highlighter-rouge">Home.aspx</code> file and added <code class="highlighter-rouge">(GitLab Test)</code> to <code class="highlighter-rouge">&lt;h2&gt;&lt;/h2&gt;</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;%@</span> <span class="n">Page</span> <span class="n">Title</span><span class="o">=</span><span class="s">""</span> <span class="n">Language</span><span class="o">=</span><span class="s">"C#"</span> <span class="n">MasterPageFile</span><span class="o">=</span><span class="s">"~/Site1.Master"</span> <span class="n">AutoEventWireup</span><span class="o">=</span><span class="s">"true"</span> <span class="n">CodeBehind</span><span class="o">=</span><span class="s">"Home.aspx.cs"</span> <span class="n">Inherits</span><span class="o">=</span><span class="s">"ASPNetTutorial.Home"</span> <span class="o">%&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content1"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"head"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Content2"</span> <span class="n">ContentPlaceHolderID</span><span class="o">=</span><span class="s">"ContentPlaceHolder1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">HOME</span> <span class="n">page</span> <span class="p">(</span><span class="n">GitLab</span> <span class="n">Test</span><span class="p">)</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Content</span><span class="o">&gt;</span>
 </code></pre></div></div>
-<p><em>Note:</em> You can make changes in any files you like within your project.</p>
+
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>
+   <span class="Toast-content">You can make changes in any files you like within your project.</span>
+</div>
 
 <p>To update these changes, I perform the following steps:</p>
 <ol>
   <li>
-    <p>Go to <strong>Team Explorer - Home</strong> and click on <strong>Changes</strong>. If we have made changes to our project, we will see a list of files which are affected by the changes we made under <strong>Changes</strong>. Under <strong>Branch: master</strong>, key in a commit message (e.g. <code class="highlighter-rouge">Changes made to ome.aspx for Gitlab testing</code>). Click on <strong>Commit All</strong>.<br>
+    <p>Go to <strong>Team Explorer - Home</strong> and click on <strong>Changes</strong>. If we have made changes to our project, we will see a list of files which are affected by the changes we made under <strong>Changes</strong>. Under <strong>Branch: master</strong>, key in a commit message (e.g. <code class="highlighter-rouge">Changes made to home.aspx for Gitlab testing</code>). Click on <strong>Commit All</strong>.<br>
 <img src="/youquan-blog/images/blog5_changecomment.png" alt=""></p>
   </li>
   <li>
@@ -233,7 +235,7 @@ window.onload = wrap_img;
 
 <h2 id="takeaways">
 <a class="anchor" href="#takeaways" aria-hidden="true"><span class="octicon octicon-link"></span></a>Takeaways</h2>
-<p>By now, you should know how to setup your Visual Studio and Gitlab in order to push your project from your workstation to Gitlab.</p>
+<p>By now, you should know how to setup your Visual Studio and Gitlab to push your project from your workstation to Gitlab.</p>
 
 <p>I hope you found this tutorial helpful. Have more questions about this? Let me know by commenting below!</p>
 
