@@ -47,8 +47,20 @@ I see **Control** as a useful feature in ASP.NET which helps us to speed up our 
     <asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     ```  
+1. Now, we are going to modify the properties for label which is beside the *Username* textbox. There are two ways we can do this. First, modify the codes above directy or change the Label's properties through the Properties window. For the first method, we can update the codes as follow:  
+    ```python
+    <asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
+    <asp:Label ID="username_msg" Visible="false" runat="server" Text=""></asp:Label>
+    ```  
     
-    Now, we are going to modify the properties for both labels.  
+    For the second method, we just need to click on the Label in Design model and update the properties through the Properties window:  
+    ![]({{ site.baseurl }}/images/blog7/blog7_llbprop.png) 
+    
+    The three properties which we have udpated are:  
+    - Text: The text to be shown for the label (We change it to "" as no error message is required when user first visit the Login page)
+    - Visible: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the Login page)
+    - ID: Programmatic name of the label (We change it to username_msg for the Username's label for better readability of the codes)
 
-
+1. Repeat the step above for the 
+    
 
