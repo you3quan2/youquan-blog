@@ -34,9 +34,9 @@ By working on this simple Login page, we will learn how to connect and retrieve 
 
 ## Adding ASP.NET Controls in the Login page
 I see **Control** as a useful feature in ASP.NET which helps us to speed up our web development process. Of course, it also provides a more structured programming model for the web site. We are going to add three controls (two **Label** controls and one **SQL Data Source** control) in our Login page:  
-![]({{ site.baseurl }}/images/blog7_dslbl.png)  
+![]({{ site.baseurl }}/images/blog7/blog7_dslbl.png)  
 
-{% include info.html text="Make sure you are in <b>Split</b> mode so that you can see both your design and codes" %}
+{% include info.html text="Make sure you are in the <b>Split</b> mode so that you can see both your design and codes." %}
 
 1. To add a Control, first open the **Toolbox** by selecting **Add** &rarr; **Toolbox**. Under **Data**, select **SqlDataSource**. Drag-and-drop it to the area under the **LOGIN** button. This control represents a connection to a database, which we will define later. 
 
