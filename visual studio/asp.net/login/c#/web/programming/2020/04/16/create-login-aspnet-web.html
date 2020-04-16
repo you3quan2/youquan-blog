@@ -144,6 +144,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#learning-outcomes">Learning Outcomes</a></li>
 <li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
 <li class="toc-entry toc-h2"><a href="#why-do-we-need-to-learn-this">Why do we need to learn this?</a></li>
+<li class="toc-entry toc-h2"><a href="#adding-aspnet-controls-in-the-login-page">Adding ASP.NET Controls in the Login page</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
@@ -170,18 +171,42 @@ window.onload = wrap_img;
 
 <h2 id="why-do-we-need-to-learn-this">
 <a class="anchor" href="#why-do-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why do we need to learn this?</h2>
-<p>The Login page is an essential part for a web site.</p>
+<p>The Login page is an essential part for a web site. It helps to ensure that only the authenticated users will have access to our web site. In this tutorial, we are going to adopt a traditional approach in developing a functional Login page, where we will create almost everything from scratch.</p>
 
-<p>Almost all web sites involve a database. If you have just signed up a new <a href="https://twitter.com/Twitter">Twitter</a> account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database.</p>
+<p>I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available <a href="https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8">Login class</a> or the <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset">ASP.NET MVC framework</a>. In fact, using the Login class and ASP.NET results in a more secure web application.</p>
 
-<p>A <strong>foreign key (FK)</strong> is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (<em>User</em> and <em>Role</em>):
-<img src="/youquan-blog/images/blog6_pkfk.png" alt=""></p>
+<p>However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. Using the Login class or ASP.NET MVC framework might help us to accomplish the task quickly (which is best for a professional software developer). But, if we want to learn, then I believe we need to start from the basic to build a stronger foundation.</p>
 
-<p><em>role_id</em> is a primary key in the <em>Role</em> table. The same key acts as a <em>foreign_key</em> in the <em>User</em> table which established a link between the <em>User</em> table and the <em>Role</em> table. You may question why it is necessary to split the <em>User</em> table into two.</p>
+<p>By working on this simple Login page, we will learn how to connect and retrieve data from the database. We will also learn how to use C# to manipulate this data. Finally, this simple Login page provides us with some examples of the design and security flaws in a web site, and we will then learn how to fix these flaws in the upcoming tutorials.</p>
 
-<p>Now, imagine our web site has an interface which allows the web admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one <em>User</em> table can be updated? We cannot insert a new role into this <em>User</em> table without a <em>user_id</em> because <em>user_id</em> is the primary key of this table and cannot be left null. If we have a <em>Role</em> table, then we can easily add or delete a role by updating only the <em>Role</em> table.</p>
+<h2 id="adding-aspnet-controls-in-the-login-page">
+<a class="anchor" href="#adding-aspnet-controls-in-the-login-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding ASP.NET Controls in the Login page</h2>
+<p>I see <strong>Control</strong> as a useful feature in ASP.NET which helps us to speed up our web development process. Of course, it also provides a more structured programming model for the web site. We are going to add three controls (two <strong>Label</strong> controls and one <strong>SQL Data Source</strong> control) in our Login page:<br>
+<img src="/youquan-blog/images/blog7_dslbl.png" alt=""></p>
 
-<p>You can refer to this <a href="https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database">link</a> to read the discussions about <em>Why should I use foreign keys in database?</em>.</p>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>
+   <span class="Toast-content">Make sure you are in <b>Split</b> mode so that you can see both your design and codes</span>
+</div>
+
+<ol>
+  <li>
+    <p>To add a Control, first open the <strong>Toolbox</strong> by selecting <strong>Add</strong> → <strong>Toolbox</strong>. Under <strong>Data</strong>, select <strong>SqlDataSource</strong>. Drag-and-drop it to the area under the <strong>LOGIN</strong> button. This control represents a connection to a database, which we will define later.</p>
+  </li>
+  <li>
+    <p>Next, go to <strong>Standard</strong> and click on <strong>Label</strong>. Drag-and-drop it right to the <em>Username</em> textbox. Add another label for the <em>Password</em> textbox. We will use these labels to display the error message if an user enters the incorrect user name or password.</p>
+  </li>
+  <li>
+    <p>Once we have added the labels, we will notice that in our ASP.NET codes, a new line of code is added under each of the text box:</p>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Label1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"Label"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+
+    <p>Now, we are going to modify the properties for both labels.</p>
+  </li>
+</ol>
+
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
