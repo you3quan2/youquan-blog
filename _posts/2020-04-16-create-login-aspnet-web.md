@@ -24,6 +24,8 @@ This tutorial is based on the Login page and the database which we have created 
 I will suggest you to look into the tutorial on xxxx.
 
 ## Why do we need to learn this?
+The Login page is an essential part for a web site.
+
 Almost all web sites involve a database. If you have just signed up a new [Twitter](https://twitter.com/Twitter) account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database. 
 
 A **foreign key (FK)** is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (*User* and *Role*):
