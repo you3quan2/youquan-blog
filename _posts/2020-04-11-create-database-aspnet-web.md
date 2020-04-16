@@ -4,7 +4,7 @@ layout: post
 comments: true
 author: You Quan
 description: A tutorial to create a simple database in ASP.NET.
-categories: [visual studio, asp.net, master page, web, programming]
+categories: [visual studio, asp.net, database, web, programming]
 title: 'Creating a Simple Database in ASP.NET'
 ---
 
