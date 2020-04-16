@@ -24,15 +24,31 @@ This tutorial is based on the Login page and the database which we have created 
 I will suggest you to look into the tutorial on xxxx.
 
 ## Why do we need to learn this?
-The Login page is an essential part for a web site.
+The Login page is an essential part for a web site. It helps to ensure that only the authenticated users will have access to our web site. In this tutorial, we are going to adopt a traditional approach in developing a functional Login page, where we will create almost everything from scratch. 
 
-Almost all web sites involve a database. If you have just signed up a new [Twitter](https://twitter.com/Twitter) account, where is the information about your account will be stored? Yes, the database! Running a web site involves the operation of inserting, retrieving, updating and deleting data from the database. Hence, if we want to learn how to develop a web application, then we must also learn about the database. 
+I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available [Login class](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8) or the [ASP.NET MVC framework](https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset). In fact, using the Login class and ASP.NET results in a more secure web application.
 
-A **foreign key (FK)** is a key used to link two tables together. It is one or more columns in a table that refers to the primary key in another table. To better explain this, I split our table above into two tables (*User* and *Role*):
-![]({{ site.baseurl }}/images/blog6_pkfk.png)  
+However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. Using the Login class or ASP.NET MVC framework might help us to accomplish the task quickly (which is best for a professional software developer). But, if we want to learn, then I believe we need to start from the basic to build a stronger foundation.
 
-*role_id* is a primary key in the *Role* table. The same key acts as a *foreign_key* in the *User* table which established a link between the *User* table and the *Role* table. You may question why it is necessary to split the *User* table into two. 
+By working on this simple Login page, we will learn how to connect and retrieve data from the database. We will also learn how to use C# to manipulate this data. Finally, this simple Login page provides us with some examples of the design and security flaws in a web site, and we will then learn how to fix these flaws in the upcoming tutorials.
 
-Now, imagine our web site has an interface which allows the web admin to manage (e.g. update, delete) the role of the users. If the admin decides to add a new role (e.g. super admin), how the one *User* table can be updated? We cannot insert a new role into this *User* table without a *user_id* because *user_id* is the primary key of this table and cannot be left null. If we have a *Role* table, then we can easily add or delete a role by updating only the *Role* table.
+## Adding ASP.NET Controls in the Login page
+I see **Control** as a useful feature in ASP.NET which helps us to speed up our web development process. Of course, it also provides a more structured programming model for the web site. We are going to add three controls (two **Label** controls and one **SQL Data Source** control) in our Login page:  
+![]({{ site.baseurl }}/images/blog7_dslbl.png)  
 
-You can refer to this [link](https://softwareengineering.stackexchange.com/questions/375704/why-should-i-use-foreign-keys-in-database) to read the discussions about *Why should I use foreign keys in database?*.
+{% include info.html text="Make sure you are in <b>Split</b> mode so that you can see both your design and codes" %}
+
+1. To add a Control, first open the **Toolbox** by selecting **Add** &rarr; **Toolbox**. Under **Data**, select **SqlDataSource**. Drag-and-drop it to the area under the **LOGIN** button. This control represents a connection to a database, which we will define later. 
+
+1. Next, go to **Standard** and click on **Label**. Drag-and-drop it right to the *Username* textbox. Add another label for the *Password* textbox. We will use these labels to display the error message if an user enters the incorrect user name or password.
+
+1. Once we have added the labels, we will notice that in our ASP.NET codes, a new line of code is added under each of the text box:  
+    ```python
+    <asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    ```  
+    
+    Now, we are going to modify the properties for both labels.  
+
+
+
