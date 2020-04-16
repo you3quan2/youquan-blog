@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -196,15 +196,29 @@ window.onload = wrap_img;
   <li>
     <p>Next, go to <strong>Standard</strong> and click on <strong>Label</strong>. Drag-and-drop it right to the <em>Username</em> textbox. Add another label for the <em>Password</em> textbox. We will use these labels to display the error message if an user enters the incorrect user name or password.</p>
   </li>
-  <li>
-    <p>Once we have added the labels, we will notice that in our ASP.NET codes, a new line of code is added under each of the text box:</p>
+  <li>Once we have added the labels, we will notice that in our ASP.NET codes, a new line of code is added under each of the text box:
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
  <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Label1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"Label"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
-
-    <p>Now, we are going to modify the properties for both labels.</p>
   </li>
+  <li>Now, we are going to modify the properties for label which is beside the <em>Username</em> textbox. There are two ways we can do this. First, modify the codes above directy or change the Label’s properties through the Properties window. For the first method, we can update the codes as follow:
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_msg"</span> <span class="n">Visible</span><span class="o">=</span><span class="s">"false"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">""</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+
+    <p>For the second method, we just need to click on the Label in Design model and update the properties through the Properties window:<br>
+ <img src="/youquan-blog/images/blog7/blog7_llbprop.png" alt=""></p>
+
+    <p>The three properties which we have udpated are:</p>
+    <ul>
+      <li>Text: The text to be shown for the label (We change it to “” as no error message is required when user first visit the Login page)</li>
+      <li>Visible: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the Login page)</li>
+      <li>ID: Programmatic name of the label (We change it to username_msg for the Username’s label for better readability of the codes)</li>
+    </ul>
+  </li>
+  <li>Repeat the step above for the</li>
 </ol>
 
 
