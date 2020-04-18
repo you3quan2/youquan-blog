@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -145,6 +145,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#prerequisite">Prerequisite</a></li>
 <li class="toc-entry toc-h2"><a href="#why-do-we-need-to-learn-this">Why do we need to learn this?</a></li>
 <li class="toc-entry toc-h2"><a href="#adding-aspnet-controls-in-the-login-page">Adding ASP.NET Controls in the Login page</a></li>
+<li class="toc-entry toc-h2"><a href="#configuring-data-source">Configuring Data Source</a></li>
+<li class="toc-entry toc-h2"><a href="#create-a-method-for-the-login-button">Create a Method for the Login button</a></li>
+<li class="toc-entry toc-h2"><a href="#connect-and-query-the-database-using-c">Connect and Query the Database using C#</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
@@ -173,9 +176,9 @@ window.onload = wrap_img;
 <a class="anchor" href="#why-do-we-need-to-learn-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why do we need to learn this?</h2>
 <p>The Login page is an essential part for a web site. It helps to ensure that only the authenticated users will have access to our web site. In this tutorial, we are going to adopt a traditional approach in developing a functional Login page, where we will create almost everything from scratch.</p>
 
-<p>I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available <a href="https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8">Login class</a> or the <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset">ASP.NET MVC framework</a>. In fact, using the Login class and ASP.NET results in a more secure web application.</p>
+<p>I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available <a href="https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8">Login class</a> or the <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset">ASP.NET MVC framework</a>. In fact, using the Login class and ASP.NET MVC framework help us to accomplish the task quickly (which is best for a professional software developer), and results in a more secure web application.</p>
 
-<p>However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. Using the Login class or ASP.NET MVC framework might help us to accomplish the task quickly (which is best for a professional software developer). But, if we want to learn, then I believe we need to start from the basic to build a stronger foundation.</p>
+<p>However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. My learning philosophy is that we need to start from the basic to build a stronger foundation.</p>
 
 <p>By working on this simple Login page, we will learn how to connect and retrieve data from the database. We will also learn how to use C# to manipulate this data. Finally, this simple Login page provides us with some examples of the design and security flaws in a web site, and we will then learn how to fix these flaws in the upcoming tutorials.</p>
 
@@ -202,24 +205,70 @@ window.onload = wrap_img;
  <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span> <span class="n">ID</span><span class="o">=</span><span class="s">"Label1"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">"Label"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
   </li>
-  <li>Now, we are going to modify the properties for label which is beside the <em>Username</em> textbox. There are two ways we can do this. First, modify the codes above directy or change the Label’s properties through the Properties window. For the first method, we can update the codes as follow:
+  <li>Now, we are going to modify the properties for <strong>label</strong> which is beside the <em>Username</em> textbox. There are two ways we can do this. First, <em>modify the codes above directy</em> or <em>change the label’s properties through the <strong>Properties</strong> window</em>. For the first method, we can update the codes as follow:
     <div class="language-python highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_txtbox"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">TextBox</span><span class="o">&gt;</span>
  <span class="o">&lt;</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span> <span class="n">ID</span><span class="o">=</span><span class="s">"username_msg"</span> <span class="n">Visible</span><span class="o">=</span><span class="s">"false"</span> <span class="n">runat</span><span class="o">=</span><span class="s">"server"</span> <span class="n">Text</span><span class="o">=</span><span class="s">""</span><span class="o">&gt;&lt;/</span><span class="n">asp</span><span class="p">:</span><span class="n">Label</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
 
-    <p>For the second method, we just need to click on the Label in Design model and update the properties through the Properties window:<br>
+    <p>For the second method, we just need to click on the <strong>label</strong> in <strong>Design</strong> mode and update the properties through the <strong>Properties</strong> window:<br>
  <img src="/youquan-blog/images/blog7/blog7_llbprop.png" alt=""></p>
 
     <p>The three properties which we have udpated are:</p>
     <ul>
-      <li>Text: The text to be shown for the label (We change it to “” as no error message is required when user first visit the Login page)</li>
-      <li>Visible: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the Login page)</li>
-      <li>ID: Programmatic name of the label (We change it to username_msg for the Username’s label for better readability of the codes)</li>
+      <li>
+<strong>Text</strong>: The text to be shown for the label (We change it to “” as no error message is required when user first visit the <strong>Login</strong> page)</li>
+      <li>
+<strong>Visible</strong>: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the <strong>Login</strong> page)</li>
+      <li>
+<strong>ID</strong>: Programmatic name of the label (We change it to <code class="highlighter-rouge">username_msg</code> for the <strong>Username</strong> label for better readability of the codes)</li>
     </ul>
   </li>
-  <li>Repeat the step above for the</li>
+  <li>Repeat the step above for the <strong>label</strong> beside the <em>Password</em> textbox.</li>
 </ol>
+
+<h2 id="configuring-data-source">
+<a class="anchor" href="#configuring-data-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Data Source</h2>
+<p>Now, we are going to configure the newly created <strong>SQL Data Source</strong> to the database (<code class="highlighter-rouge">aspnettutorial.mdf</code>) which we have created in the <a href="https://bit.ly/2XBlDw9">previous tutorial</a>.</p>
+
+<ol>
+  <li>
+    <p>Click on the <strong>SQL Data Source</strong> control and click on the <strong>smart tag (&gt;)</strong>. Then, select <strong>Configure Data Source</strong>.<br>
+<img src="/youquan-blog/images/blog7/blog7_cds1.png" alt=""></p>
+  </li>
+  <li>
+    <p>From the drop-down list, select <code class="highlighter-rouge">aspnettutorial.mdf</code> as our data connection. Click <strong>Next</strong>.  If you do not have the option to choose <code class="highlighter-rouge">aspnettutorial.mdf</code>, then you will need to first complete <a href="https://bit.ly/2XBlDw9">this tutorial</a>.
+<img src="/youquan-blog/images/blog7/blog7_cds2.png" alt=""></p>
+  </li>
+  <li>
+    <p>Assign a name to this connection. In my case, I named it as <code class="highlighter-rouge">aspnettutorialdbcon</code>, where <code class="highlighter-rouge">dbcon</code> stands for database connection. Check the <strong>Yes, save this connection as:</strong> box and <strong>Next</strong>.<br>
+<img src="/youquan-blog/images/blog7/blog7_cds3.png" alt=""></p>
+  </li>
+  <li>
+    <p>Next, we are going to configure the table which we are going to retrieve our data. Since it is a Login page, and we will need to use the users’ data, so we will choose <strong>User</strong> as our table. Check the <strong>(*)</strong> box, which indicates that we are going to select/query all columns from the User table. Click <strong>Next</strong>.
+<img src="/youquan-blog/images/blog7/blog7_cds4.png" alt=""></p>
+  </li>
+  <li>
+    <p>Finally, lets test the query by clicking on the <strong>Test Query</strong> button. We are supposed the see all the data from our User table. Click <strong>Finish</strong>.<br>
+<img src="/youquan-blog/images/blog7/blog7_cds5.png" alt=""></p>
+  </li>
+  <li>
+    <p>Go to the Solution Explorer, and open <code class="highlighter-rouge">Web.config</code> under the <strong>ASPNetTutorial</strong> project. We are supposed to see a connection string created within the <code class="highlighter-rouge">&lt;configuration&gt;&lt;/configuration&gt;</code> tag:</p>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">connectionStrings</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">add</span> <span class="n">name</span><span class="o">=</span><span class="s">"aspnettutorialdbcon"</span> <span class="n">connectionString</span><span class="o">=</span><span class="s">"Data Source=(LocalDB)</span><span class="err">\</span><span class="s">MSSQLLocalDB;AttachDbFilename=|DataDirectory|</span><span class="se">\a</span><span class="s">spnettutorial.mdf;Integrated Security=True"</span> <span class="n">providerName</span><span class="o">=</span><span class="s">"System.Data.SqlClient"</span> <span class="o">/&gt;</span>
+ <span class="o">&lt;/</span><span class="n">connectionStrings</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="create-a-method-for-the-login-button">
+<a class="anchor" href="#create-a-method-for-the-login-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Method for the Login button</h2>
+<p>Now, w</p>
+
+<h2 id="connect-and-query-the-database-using-c">
+<a class="anchor" href="#connect-and-query-the-database-using-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect and Query the Database using C#</h2>
+<p>Now, w</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
