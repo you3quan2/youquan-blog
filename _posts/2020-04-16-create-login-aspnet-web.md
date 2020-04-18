@@ -26,9 +26,9 @@ I will suggest you to look into the tutorial on xxxx.
 ## Why do we need to learn this?
 The Login page is an essential part for a web site. It helps to ensure that only the authenticated users will have access to our web site. In this tutorial, we are going to adopt a traditional approach in developing a functional Login page, where we will create almost everything from scratch. 
 
-I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available [Login class](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8) or the [ASP.NET MVC framework](https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset). In fact, using the Login class and ASP.NET results in a more secure web application.
+I know many of you may question WHY we need to do this since we can easily create a Login page using a readily available [Login class](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.login?view=netframework-4.8) or the [ASP.NET MVC framework](https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset). In fact, using the Login class and ASP.NET MVC framework help us to accomplish the task quickly (which is best for a professional software developer), and results in a more secure web application.
 
-However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. Using the Login class or ASP.NET MVC framework might help us to accomplish the task quickly (which is best for a professional software developer). But, if we want to learn, then I believe we need to start from the basic to build a stronger foundation.
+However, I found that creating a simple Login page from scratch is a perfect working example for us to learn about ASP.NET web programming with C#. My learning philosophy is that we need to start from the basic to build a stronger foundation.
 
 By working on this simple Login page, we will learn how to connect and retrieve data from the database. We will also learn how to use C# to manipulate this data. Finally, this simple Login page provides us with some examples of the design and security flaws in a web site, and we will then learn how to fix these flaws in the upcoming tutorials.
 
@@ -47,20 +47,50 @@ I see **Control** as a useful feature in ASP.NET which helps us to speed up our 
     <asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     ```  
-1. Now, we are going to modify the properties for label which is beside the *Username* textbox. There are two ways we can do this. First, modify the codes above directy or change the Label's properties through the Properties window. For the first method, we can update the codes as follow:  
+1. Now, we are going to modify the properties for **label** which is beside the *Username* textbox. There are two ways we can do this. First, *modify the codes above directy* or *change the label's properties through the **Properties** window*. For the first method, we can update the codes as follow:  
     ```python
     <asp:TextBox ID="username_txtbox" runat="server"></asp:TextBox>
     <asp:Label ID="username_msg" Visible="false" runat="server" Text=""></asp:Label>
     ```  
     
-    For the second method, we just need to click on the Label in Design model and update the properties through the Properties window:  
+    For the second method, we just need to click on the **label** in **Design** mode and update the properties through the **Properties** window:  
     ![]({{ site.baseurl }}/images/blog7/blog7_llbprop.png) 
     
     The three properties which we have udpated are:  
-    - Text: The text to be shown for the label (We change it to "" as no error message is required when user first visit the Login page)
-    - Visible: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the Login page)
-    - ID: Programmatic name of the label (We change it to username_msg for the Username's label for better readability of the codes)
+    - **Text**: The text to be shown for the label (We change it to "" as no error message is required when user first visit the **Login** page)
+    - **Visible**: Indicates whether the label is visible (We set it to false so the label is not visible when user first visit the **Login** page)
+    - **ID**: Programmatic name of the label (We change it to `username_msg` for the **Username** label for better readability of the codes)
 
-1. Repeat the step above for the 
+1. Repeat the step above for the **label** beside the *Password* textbox.
+
+## Configuring Data Source
+Now, we are going to configure the newly created **SQL Data Source** to the database (`aspnettutorial.mdf`) which we have created in the [previous tutorial](https://bit.ly/2XBlDw9).
+
+1. Click on the **SQL Data Source** control and click on the **smart tag (>)**. Then, select **Configure Data Source**.  
+![]({{ site.baseurl }}/images/blog7/blog7_cds1.png) 
+
+1. From the drop-down list, select `aspnettutorial.mdf` as our data connection. Click **Next**.  If you do not have the option to choose `aspnettutorial.mdf`, then you will need to first complete [this tutorial](https://bit.ly/2XBlDw9).
+![]({{ site.baseurl }}/images/blog7/blog7_cds2.png) 
+
+1. Assign a name to this connection. In my case, I named it as `aspnettutorialdbcon`, where `dbcon` stands for database connection. Check the **Yes, save this connection as:** box and **Next**.  
+![]({{ site.baseurl }}/images/blog7/blog7_cds3.png) 
+
+1. Next, we are going to configure the table which we are going to retrieve our data. Since it is a Login page, and we will need to use the users' data, so we will choose **User** as our table. Check the **(\*)** box, which indicates that we are going to select/query all columns from the User table. Click **Next**.
+![]({{ site.baseurl }}/images/blog7/blog7_cds4.png) 
+
+1. Finally, lets test the query by clicking on the **Test Query** button. We are supposed the see all the data from our User table. Click **Finish**.  
+![]({{ site.baseurl }}/images/blog7/blog7_cds5.png)  
+
+1. Go to the Solution Explorer, and open `Web.config` under the **ASPNetTutorial** project. We are supposed to see a connection string created within the `<configuration></configuration>` tag:   
+    ```python
+    <connectionStrings>
+        <add name="aspnettutorialdbcon" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnettutorial.mdf;Integrated Security=True" providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    ```  
     
+## Create a Method for the Login button
+Now, w
+
+## Connect and Query the Database using C#
+Now, w
 
