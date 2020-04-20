@@ -94,34 +94,55 @@ A method (a.k.a function) is a block of code which only runs when it is called. 
 It is very easy to create an empty C# method with Visual Studio. In the Split/Design window, double click on the Login button. The Login.aspx.cs will be opened and we wil notice a C# method created automatically:  
 
 ```python
-   protected void Button1_Click(object sender, EventArgs e)
-   {
+protected void Button1_Click(object sender, EventArgs e)
+{
 
-   }
+}
 ``` 
 
 The method name is Button1_Click. The explanantion for the four elements associated with the method is as follow:
--Keyword: This method is only accessible within its class (in our case, it is the Login class) and by derived class instances.
--Void: This indicates that the method doesn't return a value.
--Object Sender: Sender is a parameter that contains a reference to the control/object (in our case, it is the Login button) that raised the event.
--EventArgs e: e is the parameter that contains the event data.
+- **Keyword**: This method is only accessible within its class (in our case, it is the `Login` class) and by derived class instances.
+- **Void**: This indicates that the method does not return a value.
+- **Object Sender**: `Sender` is a parameter that contains a reference to the control/object (in our case, it is the `Login` button) that raised the event.
+- **EventArgs e**: `e` is the parameter that contains the event data.
 
-
-## Create a Method for the Login button
-A method (a.k.a function) is a block of code which only runs when it is called. We can pass data, known as parameters, into a method. In our cas 
-
+To better explain the purpose of this method, we can rename the method to `protected void login_btn(object sender, EventArgs e)`. However, by changing the name of this method, we will also need to update the codes in `Login.aspx`:
+```python
+<td style="width: 118px">
+    <asp:Button ID="login_button" class="btn btn-outline-danger" runat="server" Text="LOGIN" OnClick="login_btn" />
+</td>
+``` 
+We update the code to `OnClick="login_btn"` which indicates that everytime a user hit on the **Login** button, the method `login_btn` will be invoked.
 
 ## Connect and Query the Database using C#
-Now, w
+The first thing which we want to do when the user clicks on the **Login** button is to establish a connection to the database and retrieve data from the **User** table. To create a connection to the database (in this case, `aspnettutorial.mdf`), we need to add the following codes into our `login_btn` method:
+```python
+SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["aspnettutorialdbcon"].ConnectionString);
+con.Open();
+``` 
+
+Note that `aspnettutorialdbcon` is the name given to our database connection when we first configured our data source. We can refer back to our `Web.config` to verify it.
+
+While we type in the codes above, we might see red lines under the `SqlConnection` and `ConfigurationManager`. This is because we do not import the libraries needed to access the classes. To import these libraries, we can add the lines on top of the `Login.aspx.cs` file:
+```python
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+``` 
+
+Next, we are going to query the **User** table with the following line of code:
+```python
+SqlCommand cmd = new SqlCommand("select * from [User] where username=@usrname and password=@pwd", con);
+``` 
+
+
 
 
 ## References
-[C# Methods from w3schools.com](https://www.w3schools.com/cs/cs_methods.asp)
+- C# Methods from w3schools.com [link](https://www.w3schools.com/cs/cs_methods.asp)
 
+- What is the use of "object sender" and "EventArgs e" parameters? [link](https://stackoverflow.com/questions/14479143/what-is-the-use-of-object-sender-and-eventargs-e-parameters)
 
-What is the use of “object sender” and “EventArgs e” parameters? https://stackoverflow.com/questions/14479143/what-is-the-use-of-object-sender-and-eventargs-e-parameters
+- void (C# reference) [link](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void)
 
-void (C# reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
-
-protected (C# Reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected
-
+- protected (C# Reference) [link](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected)
