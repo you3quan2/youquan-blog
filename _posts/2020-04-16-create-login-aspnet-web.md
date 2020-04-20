@@ -134,8 +134,14 @@ Next, we are going to query the **User** table with the following line of code:
 ```python
 SqlCommand cmd = new SqlCommand("select * from [User] where username=@usrname and password=@pwd", con);
 ``` 
+The explanation for the SQL statament used above is as follow:
+- select * from: * indicates all columns in the tables
+- \[User\]: this is the table which we want to query. Note that we use \[\] because **User** is a reserved word in SQL. In normal circumstance, \[\] is not needed.
+- where: Here, we impose a filter to the query
+- username=@usrname and password=@pwd: The filter indicates that only a record which matched the given @usrname AND @pwd will be returned. @usrname AND @pwd are both variables which I will explain in the next section.
 
-
+## Comparing User Inputs with Database Record
+In the previous section, we created a filter to query for records in the database where the username and password matched the @usrname and @pwd variables respectively.
 
 
 ## References
