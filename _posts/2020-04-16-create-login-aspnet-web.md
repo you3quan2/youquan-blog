@@ -89,8 +89,39 @@ Now, we are going to configure the newly created **SQL Data Source** to the data
     ```  
     
 ## Create a Method for the Login button
-Now, w
+A method (a.k.a function) is a block of code which only runs when it is called. We can pass data, known as parameters, into a method. In our case, we want to run a method using C# so that when a user hit the login button, a series of code will be executed to establish the database connection, retrieve username and password submmited by the user from the Login form, and compare the data with the one stored in the database and respond accordingly (e.g. login sucessfully or failed).
+
+It is very easy to create an empty C# method with Visual Studio. In the Split/Design window, double click on the Login button. The Login.aspx.cs will be opened and we wil notice a C# method created automatically:  
+
+```python
+   protected void Button1_Click(object sender, EventArgs e)
+   {
+
+   }
+``` 
+
+The method name is Button1_Click. The explanantion for the four elements associated with the method is as follow:
+-Keyword: This method is only accessible within its class (in our case, it is the Login class) and by derived class instances.
+-Void: This indicates that the method doesn't return a value.
+-Object Sender: Sender is a parameter that contains a reference to the control/object (in our case, it is the Login button) that raised the event.
+-EventArgs e: e is the parameter that contains the event data.
+
+
+## Create a Method for the Login button
+A method (a.k.a function) is a block of code which only runs when it is called. We can pass data, known as parameters, into a method. In our cas 
+
 
 ## Connect and Query the Database using C#
 Now, w
+
+
+## References
+[C# Methods from w3schools.com](https://www.w3schools.com/cs/cs_methods.asp)
+
+
+What is the use of “object sender” and “EventArgs e” parameters? https://stackoverflow.com/questions/14479143/what-is-the-use-of-object-sender-and-eventargs-e-parameters
+
+void (C# reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void
+
+protected (C# Reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected
 
