@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -148,6 +148,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#configuring-data-source">Configuring Data Source</a></li>
 <li class="toc-entry toc-h2"><a href="#create-a-method-for-the-login-button">Create a Method for the Login button</a></li>
 <li class="toc-entry toc-h2"><a href="#connect-and-query-the-database-using-c">Connect and Query the Database using C#</a></li>
+<li class="toc-entry toc-h2"><a href="#comparing-user-inputs-with-database-record">Comparing User Inputs with Database Record</a></li>
 <li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul>
 </li>
@@ -312,6 +313,17 @@ window.onload = wrap_img;
 <p>Next, we are going to query the <strong>User</strong> table with the following line of code:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SqlCommand</span> <span class="n">cmd</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="s">"select * from [User] where username=@usrname and password=@pwd"</span><span class="p">,</span> <span class="n">con</span><span class="p">);</span>
 </code></pre></div></div>
+<p>The explanation for the SQL statament used above is as follow:</p>
+<ul>
+  <li>select * from: * indicates all columns in the tables</li>
+  <li>[User]: this is the table which we want to query. Note that we use [] because <strong>User</strong> is a reserved word in SQL. In normal circumstance, [] is not needed.</li>
+  <li>where: Here, we impose a filter to the query</li>
+  <li>username=@usrname and password=@pwd: The filter indicates that only a record which matched the given @usrname AND @pwd will be returned. @usrname AND @pwd are both variables which I will explain in the next section.</li>
+</ul>
+
+<h2 id="comparing-user-inputs-with-database-record">
+<a class="anchor" href="#comparing-user-inputs-with-database-record" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing User Inputs with Database Record</h2>
+<p>In the previous section, we created a filter to query for records in the database where the username and password matched the @usrname and @pwd variables respectively.</p>
 
 <h2 id="references">
 <a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
