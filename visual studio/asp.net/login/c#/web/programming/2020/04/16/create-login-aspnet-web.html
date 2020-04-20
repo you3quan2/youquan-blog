@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -147,7 +147,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#adding-aspnet-controls-in-the-login-page">Adding ASP.NET Controls in the Login page</a></li>
 <li class="toc-entry toc-h2"><a href="#configuring-data-source">Configuring Data Source</a></li>
 <li class="toc-entry toc-h2"><a href="#create-a-method-for-the-login-button">Create a Method for the Login button</a></li>
+<li class="toc-entry toc-h2"><a href="#create-a-method-for-the-login-button-1">Create a Method for the Login button</a></li>
 <li class="toc-entry toc-h2"><a href="#connect-and-query-the-database-using-c">Connect and Query the Database using C#</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul>
 </li>
 </ul><h1 id="this-page-is-still-under-construction">
@@ -264,11 +266,39 @@ window.onload = wrap_img;
 
 <h2 id="create-a-method-for-the-login-button">
 <a class="anchor" href="#create-a-method-for-the-login-button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Method for the Login button</h2>
-<p>Now, w</p>
+<p>A method (a.k.a function) is a block of code which only runs when it is called. We can pass data, known as parameters, into a method. In our case, we want to run a method using C# so that when a user hit the login button, a series of code will be executed to establish the database connection, retrieve username and password submmited by the user from the Login form, and compare the data with the one stored in the database and respond accordingly (e.g. login sucessfully or failed).</p>
+
+<p>It is very easy to create an empty C# method with Visual Studio. In the Split/Design window, double click on the Login button. The Login.aspx.cs will be opened and we wil notice a C# method created automatically:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">protected</span> <span class="n">void</span> <span class="n">Button1_Click</span><span class="p">(</span><span class="nb">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+   <span class="p">{</span>
+
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The method name is Button1_Click. The explanantion for the four elements associated with the method is as follow:
+-Keyword: This method is only accessible within its class (in our case, it is the Login class) and by derived class instances.
+-Void: This indicates that the method doesn’t return a value.
+-Object Sender: Sender is a parameter that contains a reference to the control/object (in our case, it is the Login button) that raised the event.
+-EventArgs e: e is the parameter that contains the event data.</p>
+
+<h2 id="create-a-method-for-the-login-button-1">
+<a class="anchor" href="#create-a-method-for-the-login-button-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Method for the Login button</h2>
+<p>A method (a.k.a function) is a block of code which only runs when it is called. We can pass data, known as parameters, into a method. In our cas</p>
 
 <h2 id="connect-and-query-the-database-using-c">
 <a class="anchor" href="#connect-and-query-the-database-using-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect and Query the Database using C#</h2>
 <p>Now, w</p>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+<p><a href="https://www.w3schools.com/cs/cs_methods.asp">C# Methods from w3schools.com</a></p>
+
+<p>What is the use of “object sender” and “EventArgs e” parameters? https://stackoverflow.com/questions/14479143/what-is-the-use-of-object-sender-and-eventargs-e-parameters</p>
+
+<p>void (C# reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void</p>
+
+<p>protected (C# Reference) https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
